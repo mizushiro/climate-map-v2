@@ -1,0 +1,1237 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<title>기후변화상황지도</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../resources/css/ui.base.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="../resources/js/ui.plugins.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+</head>
+
+<body>
+	<div class="base-wrap">
+		<div class="head">
+			<h1 class="h1-logo">
+				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
+				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
+			</h1>
+			<div class="lang-box">
+				<a href="" class="btn-lang active">한국어</a>
+				<a href="" class="btn-lang">English</a>
+			</div>
+		</div>
+		<div class="map-container">
+			<div class="map-left-nav">
+				<button type="button" class="map-left-item" data-layer="data-layer1">
+					<span class="map-left-item-text">기후 시나리오</span>
+				</button>
+				<button type="button" class="map-left-item">
+					<span class="map-left-item-text">기후 예측모델</span>
+				</button>
+				<button type="button" class="map-left-item">
+					<span class="map-left-item-text">HISTORY</span>
+				</button>
+				<button type="button" class="map-left-item">
+					<span class="map-left-item-text">기후지수 및 영향정보</span>
+				</button>
+				<button type="button" class="map-left-item">
+					<span class="map-left-item-text">NCEP R1</span>
+				</button>
+			</div>
+			<div class="map-section-grid">
+				<div class="map-section-item">
+					<div class="map-section-head">
+						<h2 class="map-section-title">SSP126 전지구  평균기온  2023년 8월</h2>
+					</div>
+					<div class="map-section-content">
+						<div class="s-map-area">
+							<img src="../resources/img/temp/temp1.png" alt="" style="object-fit:cover;width:100%;height:100%">
+						 </div>
+						<div class="s-map-right-group">
+							<div class="s-map-right-type">
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-1.png" alt=""></span>
+									<span class="map-type-text">위성지도</span>
+								</button>
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-2.png" alt=""></span>
+									<span class="map-type-text">음영기복도</span>
+								</button>
+								<button type="button" class="btn-map-type active">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-3.png" alt=""></span>
+									<span class="map-type-text">경계지도</span>
+								</button>
+							</div>
+							<div class="s-map-right">
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-plus"></i>
+								</button>
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-minus"></i>
+								</button>
+							</div>
+							<div class="s-map-right-items">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-layer"></i>
+								</button>
+								<div class="btn-layer-hover">
+									<button type="button" class="btn-s-map-item">
+										<i class="icon-down"></i>
+									</button>
+									<div class="right-side-layer">
+										<div class="right-side-layer-box">
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-1"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-2"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-3"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer3">
+									<i class="icon-right-1"></i>
+								</button>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer2">
+									<i class="icon-right-2"></i>
+								</button>
+							</div>
+						</div>
+						<div class="player-box">
+							<div class="player-control-btn">
+								<button type="button" class="btn-control">
+									<i class="icon-pause"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-play"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-stop"></i>
+								</button>
+							</div>
+							<div class="player-slider-area">
+								<div class="slider-range-min"></div>
+							</div>
+							<p class="player-desc">2023년 6월 29일 오후 6시</p>
+						</div>
+					</div>
+					<div class="map-section-top-btn">
+						<button type="button" class="layer-top-btn-item dark btn-full-view">
+							<img src="../resources/img/icon/icon-full.png" alt="">
+						</button>
+						<button type="button" class="layer-top-btn-item dark">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+
+				<div class="map-section-item">
+					<div class="map-section-head">
+						<h2 class="map-section-title">SSP126 전지구  평균기온  2023년 8월</h2>
+					</div>
+					<div class="map-section-content">
+						<div class="s-map-area">
+							<img src="../resources/img/temp/temp1.png" alt="" style="object-fit:cover;width:100%;height:100%">
+						</div>
+						<div class="s-map-right-group">
+							<div class="s-map-right-type">
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-1.png" alt=""></span>
+									<span class="map-type-text">위성지도</span>
+								</button>
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-2.png" alt=""></span>
+									<span class="map-type-text">음영기복도</span>
+								</button>
+								<button type="button" class="btn-map-type active">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-3.png" alt=""></span>
+									<span class="map-type-text">경계지도</span>
+								</button>
+							</div>
+							<div class="s-map-right">
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-plus"></i>
+								</button>
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-minus"></i>
+								</button>
+							</div>
+							<div class="s-map-right-items">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-layer"></i>
+								</button>
+								<div class="btn-layer-hover">
+									<button type="button" class="btn-s-map-item">
+										<i class="icon-down"></i>
+									</button>
+									<div class="right-side-layer">
+										<div class="right-side-layer-box">
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-1"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-2"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-3"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer3">
+									<i class="icon-right-1"></i>
+								</button>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer2">
+									<i class="icon-right-2"></i>
+								</button>
+							</div>
+						</div>
+						<div class="player-box">
+							<div class="player-control-btn">
+								<button type="button" class="btn-control">
+									<i class="icon-pause"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-play"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-stop"></i>
+								</button>
+							</div>
+							<div class="player-slider-area">
+								<div class="slider-range-min"></div>
+							</div>
+							<p class="player-desc">2023년 6월 29일 오후 6시</p>
+						</div>
+					</div>
+					<div class="map-section-top-btn">
+						<button type="button" class="layer-top-btn-item dark btn-full-view">
+							<img src="../resources/img/icon/icon-full.png" alt="">
+						</button>
+						<button type="button" class="layer-top-btn-item dark">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+
+				<div class="map-section-item">
+					<div class="map-section-head">
+						<h2 class="map-section-title">SSP126 전지구  평균기온  2023년 8월</h2>
+					</div>
+					<div class="map-section-content">
+						<div class="s-map-area">
+							<img src="../resources/img/temp/temp1.png" alt="" style="object-fit:cover;width:100%;height:100%">
+						</div>
+						<div class="s-map-right-group">
+							<div class="s-map-right-type">
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-1.png" alt=""></span>
+									<span class="map-type-text">위성지도</span>
+								</button>
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-2.png" alt=""></span>
+									<span class="map-type-text">음영기복도</span>
+								</button>
+								<button type="button" class="btn-map-type active">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-3.png" alt=""></span>
+									<span class="map-type-text">경계지도</span>
+								</button>
+							</div>
+							<div class="s-map-right">
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-plus"></i>
+								</button>
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-minus"></i>
+								</button>
+							</div>
+							<div class="s-map-right-items">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-layer"></i>
+								</button>
+								<div class="btn-layer-hover">
+									<button type="button" class="btn-s-map-item">
+										<i class="icon-down"></i>
+									</button>
+									<div class="right-side-layer">
+										<div class="right-side-layer-box">
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-1"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-2"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-3"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer3">
+									<i class="icon-right-1"></i>
+								</button>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer2">
+									<i class="icon-right-2"></i>
+								</button>
+							</div>
+						</div>
+						<div class="player-box">
+							<div class="player-control-btn">
+								<button type="button" class="btn-control">
+									<i class="icon-pause"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-play"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-stop"></i>
+								</button>
+							</div>
+							<div class="player-slider-area">
+								<div class="slider-range-min"></div>
+							</div>
+							<p class="player-desc">2023년 6월 29일 오후 6시</p>
+						</div>
+					</div>
+					<div class="map-section-top-btn">
+						<button type="button" class="layer-top-btn-item dark btn-full-view">
+							<img src="../resources/img/icon/icon-full.png" alt="">
+						</button>
+						<button type="button" class="layer-top-btn-item dark">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+
+				<div class="map-section-item">
+					<div class="map-section-head">
+						<h2 class="map-section-title">SSP126 전지구  평균기온  2023년 8월</h2>
+					</div>
+					<div class="map-section-content">
+						<div class="s-map-area">
+							<img src="../resources/img/temp/temp1.png" alt="" style="object-fit:cover;width:100%;height:100%">
+						</div>
+						<div class="s-map-right-group">
+							<div class="s-map-right-type">
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-1.png" alt=""></span>
+									<span class="map-type-text">위성지도</span>
+								</button>
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-2.png" alt=""></span>
+									<span class="map-type-text">음영기복도</span>
+								</button>
+								<button type="button" class="btn-map-type active">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-3.png" alt=""></span>
+									<span class="map-type-text">경계지도</span>
+								</button>
+							</div>
+							<div class="s-map-right">
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-plus"></i>
+								</button>
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-minus"></i>
+								</button>
+							</div>
+							<div class="s-map-right-items">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-layer"></i>
+								</button>
+								<div class="btn-layer-hover">
+									<button type="button" class="btn-s-map-item">
+										<i class="icon-down"></i>
+									</button>
+									<div class="right-side-layer">
+										<div class="right-side-layer-box">
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-1"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-2"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-3"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer3">
+									<i class="icon-right-1"></i>
+								</button>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer2">
+									<i class="icon-right-2"></i>
+								</button>
+							</div>
+						</div>
+						<div class="player-box">
+							<div class="player-control-btn">
+								<button type="button" class="btn-control">
+									<i class="icon-pause"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-play"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-stop"></i>
+								</button>
+							</div>
+							<div class="player-slider-area">
+								<div class="slider-range-min"></div>
+							</div>
+							<p class="player-desc">2023년 6월 29일 오후 6시</p>
+						</div>
+					</div>
+					<div class="map-section-top-btn">
+						<button type="button" class="layer-top-btn-item dark btn-full-view">
+							<img src="../resources/img/icon/icon-full.png" alt="">
+						</button>
+						<button type="button" class="layer-top-btn-item dark">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+
+				<div class="map-section-item">
+					<div class="map-section-head">
+						<h2 class="map-section-title">SSP126 전지구  평균기온  2023년 8월</h2>
+					</div>
+					<div class="map-section-content">
+						<div class="s-map-area">
+							<img src="../resources/img/temp/temp1.png" alt="" style="object-fit:cover;width:100%;height:100%">
+						</div>
+						<div class="s-map-right-group">
+							<div class="s-map-right-type">
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-1.png" alt=""></span>
+									<span class="map-type-text">위성지도</span>
+								</button>
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-2.png" alt=""></span>
+									<span class="map-type-text">음영기복도</span>
+								</button>
+								<button type="button" class="btn-map-type active">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-3.png" alt=""></span>
+									<span class="map-type-text">경계지도</span>
+								</button>
+							</div>
+							<div class="s-map-right">
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-plus"></i>
+								</button>
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-minus"></i>
+								</button>
+							</div>
+							<div class="s-map-right-items">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-layer"></i>
+								</button>
+								<div class="btn-layer-hover">
+									<button type="button" class="btn-s-map-item">
+										<i class="icon-down"></i>
+									</button>
+									<div class="right-side-layer">
+										<div class="right-side-layer-box">
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-1"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-2"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-3"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer3">
+									<i class="icon-right-1"></i>
+								</button>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer2">
+									<i class="icon-right-2"></i>
+								</button>
+							</div>
+						</div>
+						<div class="player-box">
+							<div class="player-control-btn">
+								<button type="button" class="btn-control">
+									<i class="icon-pause"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-play"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-stop"></i>
+								</button>
+							</div>
+							<div class="player-slider-area">
+								<div class="slider-range-min"></div>
+							</div>
+							<p class="player-desc">2023년 6월 29일 오후 6시</p>
+						</div>
+					</div>
+					<div class="map-section-top-btn">
+						<button type="button" class="layer-top-btn-item dark btn-full-view">
+							<img src="../resources/img/icon/icon-full.png" alt="">
+						</button>
+						<button type="button" class="layer-top-btn-item dark">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+
+				<div class="map-section-item">
+					<div class="map-section-head">
+						<h2 class="map-section-title">SSP126 전지구  평균기온  2023년 8월</h2>
+					</div>
+					<div class="map-section-content">
+						<div class="s-map-area">
+							<img src="../resources/img/temp/temp1.png" alt="" style="object-fit:cover;width:100%;height:100%">
+						</div>
+						<div class="s-map-right-group">
+							<div class="s-map-right-type">
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-1.png" alt=""></span>
+									<span class="map-type-text">위성지도</span>
+								</button>
+								<button type="button" class="btn-map-type">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-2.png" alt=""></span>
+									<span class="map-type-text">음영기복도</span>
+								</button>
+								<button type="button" class="btn-map-type active">
+									<span class="map-type-img"><img src="../resources/img/icon/icon-map-3.png" alt=""></span>
+									<span class="map-type-text">경계지도</span>
+								</button>
+							</div>
+							<div class="s-map-right">
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-plus"></i>
+								</button>
+								<button type="button" class="btn-s-map-right">
+									<i class="icon-minus"></i>
+								</button>
+							</div>
+							<div class="s-map-right-items">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-layer"></i>
+								</button>
+								<div class="btn-layer-hover">
+									<button type="button" class="btn-s-map-item">
+										<i class="icon-down"></i>
+									</button>
+									<div class="right-side-layer">
+										<div class="right-side-layer-box">
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-1"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-2"></i>
+											</button>
+											<button type="button" class="btn-s-down-item">
+												<i class="icon-down-3"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer3">
+									<i class="icon-right-1"></i>
+								</button>
+								<button type="button" class="btn-s-map-item" data-layer="data-layer2">
+									<i class="icon-right-2"></i>
+								</button>
+							</div>
+						</div>
+						<div class="player-box">
+							<div class="player-control-btn">
+								<button type="button" class="btn-control">
+									<i class="icon-pause"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-play"></i>
+								</button>
+								<button type="button" class="btn-control">
+									<i class="icon-stop"></i>
+								</button>
+							</div>
+							<div class="player-slider-area">
+								<div class="slider-range-min"></div>
+							</div>
+							<p class="player-desc">2023년 6월 29일 오후 6시</p>
+						</div>
+					</div>
+					<div class="map-section-top-btn">
+						<button type="button" class="layer-top-btn-item dark btn-full-view">
+							<img src="../resources/img/icon/icon-full.png" alt="">
+						</button>
+						<button type="button" class="layer-top-btn-item dark">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer1" class="layer_section">
+		<div class="layer_section-container">
+			<div class="layer-title-box">
+				<h1 class="layer-title">기후 변화 시나리오</h1>
+			</div>
+			<div class="layer-content">
+				<div class="scenario-group">
+					<div class="scenario-item">
+						<div class="scenario-title">
+							시나리오
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-1" name="a1" class="inp-choice">
+									<label for="a1-1" class="choice-item-type-a-label">
+										SSP126
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-2" name="a1" class="inp-choice">
+									<label for="a1-2" class="choice-item-type-a-label">
+										SSP245
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-3" name="a1" class="inp-choice">
+									<label for="a1-3" class="choice-item-type-a-label">
+										SSP370
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-4" name="a1" class="inp-choice">
+									<label for="a1-4" class="choice-item-type-a-label">
+										SSP585
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							자료범위
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a2-1" name="a2" class="inp-choice">
+									<label for="a2-1" class="choice-item-type-a-label">
+										전지구
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a2-2" name="a2" class="inp-choice">
+									<label for="a2-2" class="choice-item-type-a-label">
+										남한상세
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							자료종류
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a3-1" name="a3" class="inp-choice">
+									<label for="a3-1" class="choice-item-type-a-label">
+										대기
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a3-2" name="a3" class="inp-choice">
+									<label for="a3-2" class="choice-item-type-a-label">
+										해양
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							기후요소
+						</div>
+						<div class="scenario-content">
+							<div class="select-item-box w-230">
+								<select name="" id="">
+									<option value="">평균기온</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							자료시점
+						</div>
+						<div class="scenario-content">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							체크형
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-group">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch01">
+									<label for="ch01" class="right-check-label">
+										<span class="right-check-data2">관측자료</span>
+									</label>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch02">
+									<label for="ch02" class="right-check-label">
+										<span class="right-check-data2">관측자료</span>
+									</label>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch03">
+									<label for="ch03" class="right-check-label">
+										<span class="right-check-data2">관측자료</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							온오프
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-34" type="checkbox">
+								<label class="tgl-btn" for="toggle-34"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-btn-box">
+					<button type="button" class="btn-type1 btn-blue">위젯 추가</button>
+					<button type="button" class="btn-type1 btn-white btn_layer-close">취소</button>
+				</div>
+			</div>
+			<div class="layer-top-right-btn">
+				<button type="button" class="layer-top-btn-item blue">
+					<img src="../resources/img/icon/icon-full.png" alt="">
+				</button>
+				<button type="button" class="layer-top-btn-item blue btn_layer-close">
+					<img src="../resources/img/icon/icon-close.png" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer2" class="layer_section layer-compare">
+		<div class="layer_section-container">
+			<div class="layer-content">
+				<div class="compare-map-area">
+					<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					<p class="compare-map-text-top">49.269,26.2900</p>
+					<p class="compare-map-text-bottom">1.269,6.29</p>
+				</div>
+				<div class="scenario-group">
+					<div class="scenario-item">
+						<div class="scenario-title">
+							시나리오
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-1" name="a11" class="inp-choice">
+									<label for="a11-1" class="choice-item-type-a-label">
+										SSP126
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-2" name="a11" class="inp-choice">
+									<label for="a11-2" class="choice-item-type-a-label">
+										SSP245
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-3" name="a11" class="inp-choice">
+									<label for="a11-3" class="choice-item-type-a-label">
+										SSP370
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-4" name="a11" class="inp-choice">
+									<label for="a11-4" class="choice-item-type-a-label">
+										SSP585
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							HISTORY
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-11" type="checkbox">
+								<label class="tgl-btn" for="toggle-11"></label>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							관측자료
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-12" type="checkbox">
+								<label class="tgl-btn" for="toggle-12"></label>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							예측자료
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-13" type="checkbox">
+								<label class="tgl-btn" for="toggle-13"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-btn-box">
+					<button type="button" class="btn-type1 btn-blue" data-layer="data-layer4">비교하기</button>
+					<button type="button" class="btn-type1 btn-white btn_layer-close">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer3" class="layer_section layer-full">
+		<div class="layer_section-container box-tab">
+			<div class="layer-title-box">
+				<h1 class="layer-title">기후자료 시점 비교</h1>
+				<ul class="type-tab-box">
+					<li class="list-item-tab">
+						<button type="button" class="list-item-btn btn-type-choice" name="#map-divide1">
+							<i class="icon-grid-1"></i>
+						</button>
+					</li>
+					<li class="list-item-tab">
+						<button type="button" class="list-item-btn btn-type-choice" name="#map-divide2">
+							<i class="icon-grid-2"></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<div class="layer-content tab-contents" id="map-divide1">
+				<div class="map-divide-box">
+					<div class="map-divide-box-item" style="width:33%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:33%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:34%">
+						<div class="map-divide-top">
+							<p class="map-divide-top-desc">2023년  8월  23일 </p>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:67%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:33%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+				</div>
+			</div>
+			<div class="layer-content tab-contents" id="map-divide2">
+				<div class="map-divide-box">
+					<div class="map-divide-box-item" style="width:25%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:25%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:42%">
+						<div class="map-divide-top">
+							<p class="map-divide-top-desc">2023년  8월  23일 </p>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:67%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:33%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+				</div>
+			</div>
+			<div class="layer-top-right-btn">
+				<button type="button" class="layer-top-btn-item dark btn_layer-close">
+					<img src="../resources/img/icon/icon-close.png" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer4" class="layer_section layer-full">
+		<div class="layer_section-container">
+			<div class="layer-title-box">
+				<h1 class="layer-title">기후자료 비교</h1>
+			</div>
+			<div class="layer-content chart-map-grid">
+				<div class="chart-area-grid">
+
+				</div>
+				<div class="map-items-grid grid-7">
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+				</div>
+			</div>
+			<div class="layer-top-right-btn">
+				<button type="button" class="layer-top-btn-item dark">
+					<img src="../resources/img/icon/icon-full.png" alt="">
+				</button>
+				<button type="button" class="layer-top-btn-item dark btn_layer-close">
+					<img src="../resources/img/icon/icon-close.png" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+		
+	<script>
+		newhome.callLayer();
+		;(function($, win, doc, undefined) {
+			$(doc).ready(function(){
+				$('.btn-full-view').on('click', function (e) {
+					$(this).parent().parent().toggleClass('active');
+				});
+				$('.btn-layer-hover').on('mouseover', function (e) {
+					$(this).addClass('selected');
+				});
+				$('.btn-layer-hover').on('mouseout', function (e) {
+					$(this).removeClass('selected');
+				});
+
+				$('.setting-open').on('click', function (e) {
+					$(this).toggleClass('active');
+				});
+				$( function() {
+					$( ".slider-range-min" ).slider({
+						range: "min",
+						value: 0,
+						min: 1,
+						max: 700,
+					});
+				} );
+			});
+		})(jQuery, window, document);
+	</script>
+</body>
+</html>
