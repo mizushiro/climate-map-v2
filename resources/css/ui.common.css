@@ -60,13 +60,12 @@ input[type="password"]:focus{border-color:#23b7e5}
 button.point{background:#2f89fc;border-color:#2f89fc;color:#fff;}
 button.point2{background:#f35757;border-color:#f35757;color:#fff;}
 button.dark{background:#0e3058;border-color:#0e3058;color:#fff;}
-.btn-large{height:48px;vertical-align:middle;border:1px solid #cfdadd;font-size:15px !important;color:#666;padding:0 50px;background:#fff;margin:0 5px;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:2px}
-.btn-small{height:34px;vertical-align:middle;border:1px solid #cfdadd;font-size:12px;color:#666;padding:0 25px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:2px}
-.btn-mini{height:28px;vertical-align:middle;border:1px solid #cfdadd;font-size:12px;color:#666;padding:0 8px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:2px}
 
 .btn-type1 {height:52px;min-width:150px;border-radius:4px;display:flex;justify-content:center;align-items:center;padding:0 20px;font-size:18px;border-style:solid;border-width:1px}
 .btn-blue {background-color:#3396ff;border-color:#3396ff;color:#fff;font-weight:700}
+.btn-blue2 {background-color:#136ef6;border-color:#136ef6;color:#fff;font-weight:700}
 .btn-white {background-color:#fff;border-color:#d9dce4;color:#1e2329;font-weight:800}
+.btn-type1.btn-small {height:38px;min-width:90px;font-size:16px}
 
 
 .select-item-box {position:relative;background:#fff url(../img/icon/icon-select.png) no-repeat 100% 50%;border-radius:4px;overflow:hidden;height:38px;width:100px}
@@ -450,6 +449,15 @@ input.amount-data {border:none;font-size:15px;font-weight:700;width:30px;padding
 .accordion-content-flex {display:flex;align-items:center;gap:20px}
 .accordion-content-title {flex-shrink:0;font-size:16px;font-weight:800;color:#1e2329}
 .accordion-checkbox-group {display:flex;gap:30px;align-items:center}
+.map2-right-top {position:absolute;right:20px;top:20px;display:flex;gap:10px;z-index:10}
+.map2-left-top {position:absolute;left:20px;top:20px;z-index:10;background-color:#f4f4f4;border-radius:8px;padding:10px}
+.map2-left-top .year-month .select-item-box ~ .select-item-box {width:80px}
+.map2-left-top-title {font-size:18px;font-weight:800;color:#1e2329;margin-bottom:8px;padding-top:4px}
+.map2-left-bottom {position:absolute;left:20px;bottom:20px;z-index:10;border:2px solid #2e7ef6;background-color:#2e7ef6;border-radius:8px;overflow:hidden;width:240px;height:290px;box-shadow:0 2px 6px rgba(0,0,0,.2);display:flex;flex-direction:column}
+.map2-s-map-box {flex:1}
+.map2-s-map-data {display:flex;flex-shrink:0;height:46px;align-items:center;justify-content:space-between;padding:0 6px}
+.map2-s-map-data-group {padding-left:6px;display:flex;flex-direction:column;justify-content:center;padding-top:2px}
+.map2-s-map-data-text {font-size:12px;font-weight:400;color:#fff;line-height:1.2}
 
 
 .checkbox-wrapper-34 {
