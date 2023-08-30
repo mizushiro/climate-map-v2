@@ -467,6 +467,7 @@ input.amount-data {border:none;font-size:15px;font-weight:700;width:30px;padding
 
 .time-series-area {position:relative}
 .time-series-detail .player-box,
+.time-series-detail .s-map-right-bottom,
 .time-series-area .player-box {display:flex}
 .time-series-detail {height:100%;overflow:hidden;display:flex;width:100%}
 .time-series-detail .map-container-right {border-top:1px solid #181d2b}
