@@ -1,0 +1,1159 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<title>기후변화상황지도</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../resources/css/ui.base.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="../resources/js/ui.plugins.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+</head>
+
+<body>
+	<div class="base-wrap no-bg">
+		<div class="head">
+			<h1 class="h1-logo">
+				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
+				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
+			</h1>
+			<div class="lang-box">
+				<a href="" class="btn-lang active">한국어</a>
+				<a href="" class="btn-lang">English</a>
+			</div>
+		</div>
+		<div class="map-container-box">
+			<div class="map-container">
+
+			</div>
+			<div class="map-container-right">
+				<div class="accordion-list">
+					<div class="accordion-group">
+						<div class="accordion-title">
+							<div class="accordion-title-group">
+								<h2 class="accordion-title-data">50HPA</h2>
+								<button type="button" class="btn-time-series">
+									<i class="icon-time-series"></i>
+								</button>
+							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
+						</div>
+						<div class="detailed-index">
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch01-1">
+									<label for="ch01-1" class="right-check-label">
+										<span class="right-check-data2">등압메쉬</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">과장</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch01-2">
+									<label for="ch01-2" class="right-check-label">
+										<span class="right-check-data2">등압선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch01-3">
+									<label for="ch01-3" class="right-check-label">
+										<span class="right-check-data2">등온선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="accordion-content-flex">
+									<p class="accordion-content-title">바람</p>
+									<div class="checkbox-wrapper-34">
+										<input class="tgl tgl-ios" id="ch01-4" type="checkbox">
+										<label class="tgl-btn" for="ch01-4"></label>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch01-5">
+									<label for="ch01-5" class="right-check-label">
+										<span class="right-check-data2">등온선채우기</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">투명</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-title">
+							<div class="accordion-title-group">
+								<h2 class="accordion-title-data">200HPA</h2>
+								<button type="button" class="btn-time-series">
+									<i class="icon-time-series"></i>
+								</button>
+							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
+						</div>
+						<div class="detailed-index">
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch02-1">
+									<label for="ch02-1" class="right-check-label">
+										<span class="right-check-data2">등압메쉬</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">과장</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch02-2">
+									<label for="ch02-2" class="right-check-label">
+										<span class="right-check-data2">등압선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch02-3">
+									<label for="ch02-3" class="right-check-label">
+										<span class="right-check-data2">등온선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="accordion-content-flex">
+									<p class="accordion-content-title">바람</p>
+									<div class="checkbox-wrapper-34">
+										<input class="tgl tgl-ios" id="ch02-4" type="checkbox">
+										<label class="tgl-btn" for="ch02-4"></label>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch02-5">
+									<label for="ch02-5" class="right-check-label">
+										<span class="right-check-data2">등온선채우기</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">투명</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-title">
+							<div class="accordion-title-group">
+								<h2 class="accordion-title-data">500HPA</h2>
+								<button type="button" class="btn-time-series">
+									<i class="icon-time-series"></i>
+								</button>
+							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
+						</div>
+						<div class="detailed-index">
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch03-1">
+									<label for="ch03-1" class="right-check-label">
+										<span class="right-check-data2">등압메쉬</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">과장</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch03-2">
+									<label for="ch03-2" class="right-check-label">
+										<span class="right-check-data2">등압선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch03-3">
+									<label for="ch03-3" class="right-check-label">
+										<span class="right-check-data2">등온선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="accordion-content-flex">
+									<p class="accordion-content-title">바람</p>
+									<div class="checkbox-wrapper-34">
+										<input class="tgl tgl-ios" id="ch03-4" type="checkbox">
+										<label class="tgl-btn" for="ch03-4"></label>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch03-5">
+									<label for="ch03-5" class="right-check-label">
+										<span class="right-check-data2">등온선채우기</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">투명</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-title">
+							<div class="accordion-title-group">
+								<h2 class="accordion-title-data">850HPA</h2>
+								<button type="button" class="btn-time-series">
+									<i class="icon-time-series"></i>
+								</button>
+							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
+						</div>
+						<div class="detailed-index">
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch04-1">
+									<label for="ch04-1" class="right-check-label">
+										<span class="right-check-data2">등압메쉬</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">과장</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch04-2">
+									<label for="ch04-2" class="right-check-label">
+										<span class="right-check-data2">등압선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch04-3">
+									<label for="ch04-3" class="right-check-label">
+										<span class="right-check-data2">등온선</span>
+									</label>
+								</div>
+								<div class="color-choice-box">
+									<button type="button" class="btn-color-choice" style="background-color:#26185f"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#004187"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#008cb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#00a6ae"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#18bdb0"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#a8e2bf"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e9fad7"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fcffdd"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ffffc8"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#fbe49a"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f8d074"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f7ba3c"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#f28400"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#ed6200"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#e13c00"></button>
+									<button type="button" class="btn-color-choice" style="background-color:#c32200"></button>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="accordion-content-flex">
+									<p class="accordion-content-title">바람</p>
+									<div class="checkbox-wrapper-34">
+										<input class="tgl tgl-ios" id="ch04-4" type="checkbox">
+										<label class="tgl-btn" for="ch04-4"></label>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-content-item">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch04-5">
+									<label for="ch04-5" class="right-check-label">
+										<span class="right-check-data2">등온선채우기</span>
+									</label>
+								</div>
+								<div class="option-slider-box">
+									<p class="option-slider-title">투명</p>
+									<div class="option-slider-area">
+										<div class="slider-range-min2"></div>
+									</div>
+									<input type="text" class="amount-data" readonly />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-title">
+							<div class="accordion-title-group">
+								<h2 class="accordion-title-data">지상</h2>
+								<button type="button" class="btn-time-series">
+									<i class="icon-time-series"></i>
+								</button>
+							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
+						</div>
+						<div class="detailed-index">
+							<div class="accordion-content-item">
+								<div class="accordion-checkbox-group">
+									<div class="checkbox-item">
+										<input type="checkbox" id="ch05-1">
+										<label for="ch05-1" class="right-check-label">
+											<span class="right-check-data2">지상기온</span>
+										</label>
+									</div>
+									<div class="checkbox-item">
+										<input type="checkbox" id="ch05-2">
+										<label for="ch05-2" class="right-check-label">
+											<span class="right-check-data2">해수면 온도</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer1" class="layer_section">
+		<div class="layer_section-container">
+			<div class="layer-title-box">
+				<h1 class="layer-title">기후 변화 시나리오</h1>
+			</div>
+			<div class="layer-content">
+				<div class="scenario-group">
+					<div class="scenario-item">
+						<div class="scenario-title">
+							시나리오
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-1" name="a1" class="inp-choice">
+									<label for="a1-1" class="choice-item-type-a-label">
+										SSP126
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-2" name="a1" class="inp-choice">
+									<label for="a1-2" class="choice-item-type-a-label">
+										SSP245
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-3" name="a1" class="inp-choice">
+									<label for="a1-3" class="choice-item-type-a-label">
+										SSP370
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-4" name="a1" class="inp-choice">
+									<label for="a1-4" class="choice-item-type-a-label">
+										SSP585
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							자료범위
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a2-1" name="a2" class="inp-choice">
+									<label for="a2-1" class="choice-item-type-a-label">
+										전지구
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a2-2" name="a2" class="inp-choice">
+									<label for="a2-2" class="choice-item-type-a-label">
+										남한상세
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							자료종류
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a3-1" name="a3" class="inp-choice">
+									<label for="a3-1" class="choice-item-type-a-label">
+										대기
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a3-2" name="a3" class="inp-choice">
+									<label for="a3-2" class="choice-item-type-a-label">
+										해양
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							기후요소
+						</div>
+						<div class="scenario-content">
+							<div class="select-item-box w-230">
+								<select name="" id="">
+									<option value="">평균기온</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							자료시점
+						</div>
+						<div class="scenario-content">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							체크형
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-group">
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch01">
+									<label for="ch01" class="right-check-label">
+										<span class="right-check-data2">관측자료</span>
+									</label>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch02">
+									<label for="ch02" class="right-check-label">
+										<span class="right-check-data2">관측자료</span>
+									</label>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" id="ch03">
+									<label for="ch03" class="right-check-label">
+										<span class="right-check-data2">관측자료</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							온오프
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-34" type="checkbox">
+								<label class="tgl-btn" for="toggle-34"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-btn-box">
+					<button type="button" class="btn-type1 btn-blue">위젯 추가</button>
+					<button type="button" class="btn-type1 btn-white btn_layer-close">취소</button>
+				</div>
+			</div>
+			<div class="layer-top-right-btn">
+				<button type="button" class="layer-top-btn-item blue">
+					<img src="../resources/img/icon/icon-full.png" alt="">
+				</button>
+				<button type="button" class="layer-top-btn-item blue btn_layer-close">
+					<img src="../resources/img/icon/icon-close.png" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer2" class="layer_section layer-compare">
+		<div class="layer_section-container">
+			<div class="layer-content">
+				<div class="compare-map-area">
+					<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					<p class="compare-map-text-top">49.269,26.2900</p>
+					<p class="compare-map-text-bottom">1.269,6.29</p>
+				</div>
+				<div class="scenario-group">
+					<div class="scenario-item">
+						<div class="scenario-title">
+							시나리오
+						</div>
+						<div class="scenario-content">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-1" name="a11" class="inp-choice">
+									<label for="a11-1" class="choice-item-type-a-label">
+										SSP126
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-2" name="a11" class="inp-choice">
+									<label for="a11-2" class="choice-item-type-a-label">
+										SSP245
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-3" name="a11" class="inp-choice">
+									<label for="a11-3" class="choice-item-type-a-label">
+										SSP370
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-4" name="a11" class="inp-choice">
+									<label for="a11-4" class="choice-item-type-a-label">
+										SSP585
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							HISTORY
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-11" type="checkbox">
+								<label class="tgl-btn" for="toggle-11"></label>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							관측자료
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-12" type="checkbox">
+								<label class="tgl-btn" for="toggle-12"></label>
+							</div>
+						</div>
+					</div>
+					<div class="scenario-item">
+						<div class="scenario-title">
+							예측자료
+						</div>
+						<div class="scenario-content">
+							<div class="checkbox-wrapper-34">
+								<input class="tgl tgl-ios" id="toggle-13" type="checkbox">
+								<label class="tgl-btn" for="toggle-13"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-btn-box">
+					<button type="button" class="btn-type1 btn-blue" data-layer="data-layer4">비교하기</button>
+					<button type="button" class="btn-type1 btn-white btn_layer-close">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer3" class="layer_section layer-full">
+		<div class="layer_section-container box-tab">
+			<div class="layer-title-box">
+				<h1 class="layer-title">기후자료 시점 비교</h1>
+				<ul class="type-tab-box">
+					<li class="list-item-tab">
+						<button type="button" class="list-item-btn btn-type-choice" name="#map-divide1">
+							<i class="icon-grid-1"></i>
+						</button>
+					</li>
+					<li class="list-item-tab">
+						<button type="button" class="list-item-btn btn-type-choice" name="#map-divide2">
+							<i class="icon-grid-2"></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<div class="layer-content tab-contents" id="map-divide1">
+				<div class="map-divide-box">
+					<div class="map-divide-box-item" style="width:33%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:33%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:34%">
+						<div class="map-divide-top">
+							<p class="map-divide-top-desc">2023년  8월  23일 </p>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:67%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:33%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+				</div>
+			</div>
+			<div class="layer-content tab-contents" id="map-divide2">
+				<div class="map-divide-box">
+					<div class="map-divide-box-item" style="width:25%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:25%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:42%">
+						<div class="map-divide-top">
+							<p class="map-divide-top-desc">2023년  8월  23일 </p>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-divide-line" style="left:67%">
+						<button type="button" class="btn-map-divide">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-box-item" style="width:33%">
+						<div class="map-divide-top">
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="" id="">
+										<option value="">1일</option>
+										<option value="">2일</option>
+										<option value="">3일</option>
+										<option value="">4일</option>
+										<option value="">5일</option>
+										<option value="">6일</option>
+										<option value="">7일</option>
+										<option value="">8일</option>
+										<option value="">9일</option>
+										<option value="">10일</option>
+										<option value="">11일</option>
+										<option value="">12일</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+				</div>
+			</div>
+			<div class="layer-top-right-btn">
+				<button type="button" class="layer-top-btn-item dark btn_layer-close">
+					<img src="../resources/img/icon/icon-close.png" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="data-layer4" class="layer_section layer-full">
+		<div class="layer_section-container">
+			<div class="layer-title-box">
+				<h1 class="layer-title">기후자료 비교</h1>
+			</div>
+			<div class="layer-content chart-map-grid">
+				<div class="chart-area-grid">
+
+				</div>
+				<div class="map-items-grid grid-7">
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+					<div class="map-items-box">
+						<p class="map-items-label">SSPA. 2.6</p>
+						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+				</div>
+			</div>
+			<div class="layer-top-right-btn">
+				<button type="button" class="layer-top-btn-item dark btn_layer-close">
+					<img src="../resources/img/icon/icon-close.png" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+		
+	<script>
+		newhome.callLayer();
+		;(function($, win, doc, undefined) {
+			$(doc).ready(function(){
+				$('.btn-full-view').on('click', function (e) {
+					$(this).parent().parent().toggleClass('active');
+				});
+				$('.btn-layer-hover').on('mouseover', function (e) {
+					$(this).addClass('selected');
+				});
+				$('.btn-layer-hover').on('mouseout', function (e) {
+					$(this).removeClass('selected');
+				});
+
+				$('.setting-open').on('click', function (e) {
+					$(this).toggleClass('active');
+				});
+				$( function() {
+					$( ".slider-range-min" ).slider({
+						range: "min",
+						value: 0,
+						min: 1,
+						max: 700,
+					});
+
+					$( ".slider-range-min2" ).slider({
+						range: "min",
+						value: 0,
+						min: 1,
+						max: 100,
+						slide: function( event, ui ) {
+							$(this).parent().parent().find( ".amount-data" ).val( ui.value );
+						}
+					});
+					$( ".amount-data" ).val( $( ".slider-range-min2" ).slider( "value" ) );
+				} );
+			});
+		})(jQuery, window, document);
+	</script>
+</body>
+</html>

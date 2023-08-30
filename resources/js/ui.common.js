@@ -48,6 +48,32 @@ $.fn.uxeTabs = function (options) {
     });
 };
 
+//아코디언 메뉴
+$.fn.uxeAccordionMenu = function (options) {
+    var settings = $.extend({
+        'selector' : 'js-accordion',
+        'itemSelector' : '.section-info-item',
+        'itemClass': 'js-accordion-item',
+        'navigation' : '.btn-accordion',
+        'activeItemClass': 'active',
+        'clickedShowOnly': false
+    }, options);
+    return this.each(function(){
+        var $this = $(this);
+        var $nav = $(this).find(settings.navigation);
+        $this.addClass(settings.selector).find(settings.itemSelector).addClass(settings.itemClass);
+        $nav.each(function(){
+            $(this).click(function(e){
+                e.preventDefault();
+                if(settings.clickedShowOnly === true){
+                    $(this).parents('.'+settings.itemClass).siblings().removeClass(settings.activeItemClass);
+                }
+                $(this).parents('.'+settings.itemClass).toggleClass(settings.activeItemClass);
+            });
+        });
+    });
+};
+
 var newhome = (function() {
         var callLayer = function() {
             var btnLayer = document.querySelectorAll('[data-layer]');
@@ -89,5 +115,11 @@ $(document).ready(function(){
         'useSubTarget': true,
         'autoFirstActivate': true,
         'navClickScrollToTabsTop':true
+    });
+
+    // 아코디언
+    $('.accordion-list').uxeAccordionMenu({
+        'clickedShowOnly': true,
+        'itemSelector' : '.accordion-group'
     });
 })
