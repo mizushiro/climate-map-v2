@@ -472,6 +472,9 @@ input.amount-data {border:none;font-size:15px;font-weight:700;width:30px;padding
 .time-series-detail {height:100%;overflow:hidden;display:flex;width:100%}
 .time-series-detail .map-container-right {border-top:1px solid #181d2b}
 
+.series-map-area {width:100%;height:100%}
+.time-series-area .player-box {z-index:100}
+
 #data-layer5 {z-index:9002}
 
 
