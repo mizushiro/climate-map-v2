@@ -1,0 +1,783 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<title>기후변화상황지도</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../resources/css/ui.base.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="../resources/js/ui.plugins.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+</head>
+
+<body>
+	<div class="base-wrap no-bg">
+		<div class="head">
+			<h1 class="h1-logo">
+				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
+				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
+			</h1>
+			<div class="lang-box">
+				<a href="" class="btn-lang active">한국어</a>
+				<a href="" class="btn-lang">English</a>
+			</div>
+		</div>
+		<div class="map-container-box overflow-hidden">
+			<div class="map-container">
+				<div class="map-original-area" style="background-color:#46555c">
+					<div class="map-left-box">
+						<div class="map-left-sh-box">
+							<input type="text" class="left-input-sh" placeholder="지역을 검색하세요" />
+						</div>
+						<div class="map-left-map-type">
+							<button type="button" class="btn-map-type">
+								<span class="map-type-img"><img src="../resources/img/icon/icon-map-6.png" alt=""></span>
+								<span class="map-type-text">수치지형도</span>
+							</button>
+							<button type="button" class="btn-map-type">
+								<span class="map-type-img"><img src="../resources/img/icon/icon-map-5.png" alt=""></span>
+								<span class="map-type-text">음영기복도</span>
+							</button>
+							<button type="button" class="btn-map-type active">
+								<span class="map-type-img"><img src="../resources/img/icon/icon-map-4.png" alt=""></span>
+								<span class="map-type-text">항공영상</span>
+							</button>
+						</div>
+						<div class="map-left-map-expand">
+							<button type="button" class="btn-s-map-right">
+								<i class="icon-plus"></i>
+							</button>
+							<button type="button" class="btn-s-map-right">
+								<i class="icon-minus"></i>
+							</button>
+						</div>
+						<div class="map-left-radio-group">
+							<div class="choice-item-type-a">
+								<input type="radio" id="a2-1" name="a2" class="inp-choice">
+								<label for="a2-1" class="choice-item-type-a-label">
+									시도 경계
+								</label>
+							</div>
+							<div class="choice-item-type-a">
+								<input type="radio" id="a2-2" name="a2" class="inp-choice">
+								<label for="a2-2" class="choice-item-type-a-label">
+									시군구 경계
+								</label>
+							</div>
+							<div class="choice-item-type-a">
+								<input type="radio" id="a2-3" name="a2" class="inp-choice">
+								<label for="a2-3" class="choice-item-type-a-label">
+									읍면동 경계
+								</label>
+							</div>
+							<div class="choice-item-type-a">
+								<input type="radio" id="a2-4" name="a2" class="inp-choice">
+								<label for="a2-4" class="choice-item-type-a-label">
+									10KM 격자
+								</label>
+							</div>
+							<div class="choice-item-type-a">
+								<input type="radio" id="a2-5" name="a2" class="inp-choice">
+								<label for="a2-5" class="choice-item-type-a-label">
+									1KM 격자
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="map3-btm-center">
+						<div class="map3-btm-item-box">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-1" name="a1" class="inp-choice">
+									<label for="a1-1" class="choice-item-type-a-label">
+										SSP126
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-2" name="a1" class="inp-choice">
+									<label for="a1-2" class="choice-item-type-a-label">
+										SSP245
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-3" name="a1" class="inp-choice">
+									<label for="a1-3" class="choice-item-type-a-label">
+										SSP370
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a1-4" name="a1" class="inp-choice">
+									<label for="a1-4" class="choice-item-type-a-label">
+										SSP585
+									</label>
+								</div>
+							</div>
+							<div class="carbon-box">
+								<span class="carbon-label">저탄소</span>
+								<span class="carbon-img"></span>
+								<span class="carbon-label">고탄소</span>
+							</div>
+						</div>
+						<div class="map3-btm-item-box">
+							<div class="player-control-top">
+								<button type="button" class="btn-player-control-top active">전중후</button>
+								<button type="button" class="btn-player-control-top">연대별</button>
+							</div>
+							<div class="player-control-area">
+								<div class="player-control-btn">
+									<button type="button" class="btn-control">
+										<i class="icon-pause"></i>
+									</button>
+									<button type="button" class="btn-control">
+										<i class="icon-play"></i>
+									</button>
+									<button type="button" class="btn-control">
+										<i class="icon-stop"></i>
+									</button>
+								</div>
+								<div class="player-slider-area">
+									<div class="slider-range-min"></div>
+									<div class="player-slider-data">
+										<span class="player-slider-data-value">전기</span>
+										<span class="player-slider-data-value">중기</span>
+										<span class="player-slider-data-value">후기</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="map3-right-top">
+						<button type="button" class="btn-right-round btn-right-open">
+						</button>
+						<button type="button" class="btn-right-round btn-comparison-open">
+						</button>
+					</div>
+					<div class="map2-right-bottom">
+						<button type="button" class="btn-setting-option setting-open">
+							<i class="icon-setting"></i>
+						</button>
+						<div class="level-group">
+							<div class="level-item" style="background-color:#004187"></div>
+							<div class="level-item" style="background-color:#008cb0"></div>
+							<div class="level-item" style="background-color:#00a6ae"></div>
+							<div class="level-item" style="background-color:#18bdb0"></div>
+							<div class="level-item" style="background-color:#a8e2bf"></div>
+							<div class="level-item" style="background-color:#e9fad7"></div>
+							<div class="level-item" style="background-color:#fcffdd"></div>
+							<div class="level-item" style="background-color:#ffffc8"></div>
+							<div class="level-item" style="background-color:#fbe49a"></div>
+							<div class="level-item" style="background-color:#f8d074"></div>
+							<div class="level-item" style="background-color:#f7ba3c"></div>
+							<div class="level-item" style="background-color:#f28400"></div>
+							<div class="level-item" style="background-color:#ed6200"></div>
+							<div class="level-item" style="background-color:#e13c00"></div>
+							<div class="level-item" style="background-color:#c32200"></div>
+							<div class="level-item" style="background-color:#a20706"></div>
+						</div>
+						<div class="layer-setting">
+							<p class="setting-title">범례설정</p>
+							<div class="setting-btn-group">
+								<button type="button" class="btn-setting-item">
+									<span class="level-group">
+										<span class="level-item" style="background-color:#678700"></span>
+										<span class="level-item" style="background-color:#b0a200"></span>
+										<span class="level-item" style="background-color:#ae8500"></span>
+										<span class="level-item" style="background-color:#d58800"></span>
+										<span class="level-item" style="background-color:#ff988b"></span>
+										<span class="level-item" style="background-color:#ffd2f6"></span>
+										<span class="level-item" style="background-color:#f8ddff"></span>
+										<span class="level-item" style="background-color:#efc8ff"></span>
+										<span class="level-item" style="background-color:#c896ff"></span>
+										<span class="level-item" style="background-color:#a96dff"></span>
+										<span class="level-item" style="background-color:#8334ff"></span>
+										<span class="level-item" style="background-color:#3f00f2"></span>
+										<span class="level-item" style="background-color:#1f00ed"></span>
+										<span class="level-item" style="background-color:#0004e1"></span>
+										<span class="level-item" style="background-color:#0015c3"></span>
+										<span class="level-item" style="background-color:#002ea8"></span>
+									</span>
+								</button>
+								<button type="button" class="btn-setting-item">
+									<span class="level-group">
+										<span class="level-item" style="background-color:#582f3e"></span>
+										<span class="level-item" style="background-color:#723d61"></span>
+										<span class="level-item" style="background-color:#713d68"></span>
+										<span class="level-item" style="background-color:#835181"></span>
+										<span class="level-item" style="background-color:#835181"></span>
+										<span class="level-item" style="background-color:#e3e7ee"></span>
+										<span class="level-item" style="background-color:#e9f1f3"></span>
+										<span class="level-item" style="background-color:#dbeaec"></span>
+										<span class="level-item" style="background-color:#bcd9d5"></span>
+										<span class="level-item" style="background-color:#a2cac2"></span>
+										<span class="level-item" style="background-color:#7db5a9"></span>
+										<span class="level-item" style="background-color:#549d84"></span>
+										<span class="level-item" style="background-color:#539a78"></span>
+										<span class="level-item" style="background-color:#4e9268"></span>
+										<span class="level-item" style="background-color:#447f55"></span>
+										<span class="level-item" style="background-color:#3c6b42"></span>
+									</span>
+								</button>
+								<button type="button" class="btn-setting-item active">
+									<span class="level-group">
+										<span class="level-item" style="background-color:#373737"></span>
+										<span class="level-item" style="background-color:#272727"></span>
+										<span class="level-item" style="background-color:#2b2b2b"></span>
+										<span class="level-item" style="background-color:#494949"></span>
+										<span class="level-item" style="background-color:#c5c5c5"></span>
+										<span class="level-item" style="background-color:#e7e7e7"></span>
+										<span class="level-item" style="background-color:#ebebeb"></span>
+										<span class="level-item" style="background-color:#e0e0e0"></span>
+										<span class="level-item" style="background-color:#c9c9c9"></span>
+										<span class="level-item" style="background-color:#b5b5b5"></span>
+										<span class="level-item" style="background-color:#999999"></span>
+										<span class="level-item" style="background-color:#7f7f7f"></span>
+										<span class="level-item" style="background-color:#828282"></span>
+										<span class="level-item" style="background-color:#828282"></span>
+										<span class="level-item" style="background-color:#757575"></span>
+										<span class="level-item" style="background-color:#5f5f5f"></span>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="map-comparison-right-area" style="background-color:#46555c">
+					<div class="comparison-control-area">
+						<button type="button" class="btn-comparison-control"></button>
+						<button type="button" class="btn-comparison-control"></button>
+					</div>
+					<div class="map3-btm-center">
+						<div class="map3-btm-item-box">
+							<div class="radio-group-box">
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-1" name="a11" class="inp-choice">
+									<label for="a11-1" class="choice-item-type-a-label">
+										SSP126
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-2" name="a11" class="inp-choice">
+									<label for="a11-2" class="choice-item-type-a-label">
+										SSP245
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-3" name="a11" class="inp-choice">
+									<label for="a11-3" class="choice-item-type-a-label">
+										SSP370
+									</label>
+								</div>
+								<div class="choice-item-type-a">
+									<input type="radio" id="a11-4" name="a11" class="inp-choice">
+									<label for="a11-4" class="choice-item-type-a-label">
+										SSP585
+									</label>
+								</div>
+							</div>
+							<div class="carbon-box">
+								<span class="carbon-label">저탄소</span>
+								<span class="carbon-img"></span>
+								<span class="carbon-label">고탄소</span>
+							</div>
+						</div>
+						<div class="map3-btm-item-box">
+							<div class="player-control-top">
+								<button type="button" class="btn-player-control-top active">전중후</button>
+								<button type="button" class="btn-player-control-top">연대별</button>
+							</div>
+							<div class="player-control-area">
+								<div class="player-control-btn">
+									<button type="button" class="btn-control">
+										<i class="icon-pause"></i>
+									</button>
+									<button type="button" class="btn-control">
+										<i class="icon-play"></i>
+									</button>
+									<button type="button" class="btn-control">
+										<i class="icon-stop"></i>
+									</button>
+								</div>
+								<div class="player-slider-area">
+									<div class="slider-range-min"></div>
+									<div class="player-slider-data">
+										<span class="player-slider-data-value">전기</span>
+										<span class="player-slider-data-value">중기</span>
+										<span class="player-slider-data-value">후기</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="map-comparison-right-btn">
+						<button type="button" class="layer-top-btn-item dark btn_comparison-close">
+							<img src="../resources/img/icon/icon-close.png" alt="">
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="map-detail-right-area">
+				<div class="map-detail-right-close-box">
+					<button type="button" class="layer-top-btn-item dark btn_right-close">
+						<i class="icon-close"></i>
+					</button>
+				</div>
+				<div class="map-detail-right-content-box">
+					<p class="choice-area-title">선택지역</p>
+					<p class="choice-area-value">서울특별시 강남구 …. 인근</p>
+					<table class="tbl-line">
+						<colgroup>
+							<col style="width:16%">
+							<col style="width:28%" span="3">
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col">전기</th>
+							<th scope="col">중기</th>
+							<th scope="col">후기</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>SSP126</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>SSP245</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>SSP370</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>SSP585</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						</tbody>
+					</table>
+
+					<p class="choice-area-chart-title">Number of +30 days</p>
+					<div class="choice-area-chart-area">
+
+					</div>
+					<div class="choice-area-btn">
+						<button type="button" class="btn-base btn-blue">자료 받기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="map-control-area">
+			<div class="map-control-btn-group">
+				<div class="layer-open-box">
+					<button type="button" class="map-control-layer-btn" data-layer="data-layer1-1">
+						<span class="map-control-layer-btn-text">전망자료 - 기온</span>
+					</button>
+					<div id="data-layer1-1" class="layer_section">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">전망자료 - 기온</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data1-1" name="data1" class="radio-style-a">
+										<label for="data1-1" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data1-2" name="data1" class="radio-style-a">
+										<label for="data1-2" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data1-3" name="data1" class="radio-style-a">
+										<label for="data1-3" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-open-box">
+					<button type="button" class="map-control-layer-btn" data-layer="data-layer1-2">
+						<span class="map-control-layer-btn-text">극한지수 - 고온</span>
+					</button>
+					<div id="data-layer1-2" class="layer_section">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">극한지수 - 고온</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data2-1" name="data2" class="radio-style-a">
+										<label for="data2-1" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data2-2" name="data2" class="radio-style-a">
+										<label for="data2-2" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data2-3" name="data2" class="radio-style-a">
+										<label for="data2-3" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-open-box">
+					<button type="button" class="map-control-layer-btn" data-layer="data-layer1-3">
+						<span class="map-control-layer-btn-text">극한지수 - 저온</span>
+					</button>
+					<div id="data-layer1-3" class="layer_section">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">극한지수 - 저온</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data3-1" name="data3" class="radio-style-a">
+										<label for="data3-1" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data3-2" name="data3" class="radio-style-a">
+										<label for="data3-2" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data3-3" name="data3" class="radio-style-a">
+										<label for="data3-3" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-open-box">
+					<button type="button" class="map-control-layer-btn" data-layer="data-layer1-4">
+						<span class="map-control-layer-btn-text">극한지수 - 강수</span>
+					</button>
+					<div id="data-layer1-4" class="layer_section">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">극한지수 - 강수</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data4-1" name="data4" class="radio-style-a">
+										<label for="data4-1" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data4-2" name="data4" class="radio-style-a">
+										<label for="data4-2" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data4-3" name="data4" class="radio-style-a">
+										<label for="data4-3" class="right-check-label">
+											<span class="right-check-data2">평균기온(Mean Temp.)(98C)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="map-control-period-group">
+				<div class="layer-open-box">
+					<button type="button" class="map-control-period-btn active" data-layer="data-layer1-5">
+						연별
+					</button>
+					<div id="data-layer1-5" class="layer_section size-small">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">연별 (ANNUAL)</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data5-1" name="data5" class="radio-style-a">
+										<label for="data5-1" class="right-check-label">
+											<span class="right-check-data2">2002년</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data5-2" name="data5" class="radio-style-a">
+										<label for="data5-2" class="right-check-label">
+											<span class="right-check-data2">2003년</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data5-3" name="data5" class="radio-style-a">
+										<label for="data5-3" class="right-check-label">
+											<span class="right-check-data2">2004년</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-open-box">
+					<button type="button" class="map-control-period-btn" data-layer="data-layer1-6">
+						계절별
+					</button>
+					<div id="data-layer1-6" class="layer_section position-type-b size-small">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">계절별 (SEASONAL)</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data6-1" name="data6" class="radio-style-a">
+										<label for="data6-1" class="right-check-label">
+											<span class="right-check-data2">봄(Spring)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data6-2" name="data6" class="radio-style-a">
+										<label for="data6-2" class="right-check-label">
+											<span class="right-check-data2">여름(Summer)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data6-3" name="data6" class="radio-style-a">
+										<label for="data6-3" class="right-check-label">
+											<span class="right-check-data2">가을(Fall)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data6-4" name="data6" class="radio-style-a">
+										<label for="data6-4" class="right-check-label">
+											<span class="right-check-data2">겨울(Winter)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-open-box">
+					<button type="button" class="map-control-period-btn" data-layer="data-layer1-7">
+						월별
+					</button>
+					<div id="data-layer1-7" class="layer_section position-type-c size-small">
+						<div class="layer_section-container">
+							<div class="map-section-head">
+								<h1 class="map-section-title">월별 (MONTHLY)</h1>
+							</div>
+							<div class="layer-content">
+								<div class="layer-radio-group">
+									<div class="radio-item">
+										<input type="radio" id="data7-1" name="data7" class="radio-style-a">
+										<label for="data7-1" class="right-check-label">
+											<span class="right-check-data2">1월(JAN)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-2" name="data7" class="radio-style-a">
+										<label for="data7-2" class="right-check-label">
+											<span class="right-check-data2">2월(FEB)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-3" name="data7" class="radio-style-a">
+										<label for="data7-3" class="right-check-label">
+											<span class="right-check-data2">3월(MAR)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-4" name="data7" class="radio-style-a">
+										<label for="data7-4" class="right-check-label">
+											<span class="right-check-data2">4월(APR)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-5" name="data7" class="radio-style-a">
+										<label for="data7-5" class="right-check-label">
+											<span class="right-check-data2">5월(MAY)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-6" name="data7" class="radio-style-a">
+										<label for="data7-6" class="right-check-label">
+											<span class="right-check-data2">6월(JUN)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-7" name="data7" class="radio-style-a">
+										<label for="data7-7" class="right-check-label">
+											<span class="right-check-data2">7월(JUL)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-8" name="data7" class="radio-style-a">
+										<label for="data7-8" class="right-check-label">
+											<span class="right-check-data2">8월(AUG)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-9" name="data7" class="radio-style-a">
+										<label for="data7-9" class="right-check-label">
+											<span class="right-check-data2">9월(SEP)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-10" name="data7" class="radio-style-a">
+										<label for="data7-10" class="right-check-label">
+											<span class="right-check-data2">10월(OCT)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-11" name="data7" class="radio-style-a">
+										<label for="data7-11" class="right-check-label">
+											<span class="right-check-data2">11월(NOV)</span>
+										</label>
+									</div>
+									<div class="radio-item">
+										<input type="radio" id="data7-12" name="data7" class="radio-style-a">
+										<label for="data7-12" class="right-check-label">
+											<span class="right-check-data2">12월(DEC)</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="layer-top-right-btn">
+								<button type="button" class="layer-top-btn-item dark btn_layer-close">
+									<img src="../resources/img/icon/icon-close.png" alt="">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		
+	<script>
+		newhome.callLayer();
+		;(function($, win, doc, undefined) {
+			$(doc).ready(function(){
+				$('.btn_right-close').on('click', function (e) {
+					$('.map-detail-right-area').removeClass('is-open');
+					$('.map-comparison-right-area').removeClass('hidden');
+				});
+				$('.btn-right-open').on('click', function (e) {
+					$('.map-detail-right-area').addClass('is-open');
+					$('.map-comparison-right-area').addClass('hidden');
+				});
+				$('.btn_comparison-close').on('click', function (e) {
+					$('.base-wrap').removeClass('is-map-comparison-open');
+				});
+				$('.btn-comparison-open').on('click', function (e) {
+					$('.base-wrap').addClass('is-map-comparison-open');
+					$('.map-detail-right-area').removeClass('is-open');
+					$('.map-comparison-right-area').removeClass('hidden');
+				});
+				$('.btn-layer-hover').on('mouseover', function (e) {
+					$(this).addClass('selected');
+				});
+				$('.btn-layer-hover').on('mouseout', function (e) {
+					$(this).removeClass('selected');
+				});
+
+				$('.setting-open').on('click', function (e) {
+					$(this).toggleClass('active');
+				});
+				$( function() {
+					$( ".slider-range-min" ).slider({
+						range: "min",
+						value: 0,
+						min: 1,
+						max: 700,
+					});
+
+					$( ".slider-range-min2" ).slider({
+						range: "min",
+						value: 0,
+						min: 1,
+						max: 100,
+						slide: function( event, ui ) {
+							$(this).parent().parent().find( ".amount-data" ).val( ui.value );
+						}
+					});
+					$( ".amount-data" ).val( $( ".slider-range-min2" ).slider( "value" ) );
+				} );
+			});
+		})(jQuery, window, document);
+	</script>
+</body>
+</html>
