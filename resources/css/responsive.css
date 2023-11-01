@@ -252,9 +252,10 @@
     .layer_section .btn-setting-item .level-group{
         width: 4rem;
     }
-    .map-left-box .btn-layer-hover{
-        margin-top:.5rem;
+    .map-left-box .map-left-btn-group{
+        position:relative;
         left: 1.5rem;
+        margin-top:0;
     }
     .map3-right-top{display: none;}
     .btn-s-map-item .icon-grid-1 {background:url("../img/icon/icon-grid-1.png") no-repeat 50% 50% / cover;width:28px;height:22px;display:block}
