@@ -64,16 +64,21 @@
 								<i class="icon-minus"></i>
 							</button>
 						</div>
-						<div class="btn-layer-hover">
-							<button type="button" class="btn-s-map-item">
-								<i class="icon-grid-3"></i>
-							</button>
-							<div class="left-tooltip-layer">
-								<div class="left-tooltip-layer-box">
-									격자
-								</div>
-							</div>
-						</div>
+                        <div class="map-left-btn-group">
+                            <button type="button" class="btn-s-map-item">
+                                <i class="icon-map-0"></i>
+                            </button>
+                            <div class="btn-layer-hover">
+                                <button type="button" class="btn-s-map-item active">
+                                    <i class="icon-grid-3"></i>
+                                </button>
+                                <div class="left-tooltip-layer">
+                                    <div class="left-tooltip-layer-box">
+                                        격자
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 					</div>
 					<div class="map-top-center map-original-top-center">
 						<p class="map-top-center-text-1">전망자료<i class="icon-arrow-small"></i>평균기온</p>
@@ -802,6 +807,9 @@
 
 	<div id="data-layer-space" class="layer_section layer-space-list">
 		<div class="layer_section-container">
+            <div class="map-section-head">
+                <h1 class="map-section-title">범위선택</h1>
+            </div>
 			<div class="layer-content">
 				<div class="layer-radio-group">
 					<div class="radio-item">
@@ -848,6 +856,11 @@
 					</div>
 				</div>
 			</div>
+            <div class="layer-top-right-btn">
+                <button type="button" class="layer-top-btn-item dark btn_layer-close">
+                    <img src="../resources/img/icon/icon-close.png" alt="">
+                </button>
+            </div>
 		</div>
 	</div>
 

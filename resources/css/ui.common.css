@@ -85,7 +85,7 @@ select optgroup,
 select option{font-style:normal;background-color:#fff;font-size:13px;}
 select[disabled]{background-color:#f7f7f7;color:#888;}
 select:focus{border-color:#23b7e5;background-position:100% -50px}
-    
+
 input[type="radio"],
 input[type="checkbox"]{opacity:0;display:inline-block;position:absolute;z-index:-1;vertical-align:top;appearance:none;-moz-appearance:none;-webkit-appearance:none;margin:0}
 input[type="radio"] + label,
@@ -343,6 +343,8 @@ button:hover .icon-stop {background-image:url("../img/icon/icon-stop-on.png")}
 .btn-setting-option {display:flex;width:32px;height:32px;background-color:#fff;border-radius:4px;box-shadow:1px 0 4px rgba(0,0,0,.25);align-items:center;justify-content:center}
 .icon-setting {background:url("../img/icon/icon-setting-off.png") no-repeat 50% 50%;width:16px;height:16px;display:block}
 
+.map-choice-grid {position:absolute;display:flex;justify-content:center;align-items:center;gap:10px;flex-direction:column}
+
 /* layer */
 .layer_section {opacity:0;visibility:hidden;transition:.2s;position:fixed;left:0;top:80px;width:100%;bottom:0;background-color:rgba(0,0,0,.45);z-index:9001;display:flex;align-items:center;justify-content:center}
 .layer_section .layer_section-container {transition:.4s;top:100px;width:640px;max-height:calc(100% - 80px);box-shadow:2px 0 6px 0 rgba(0,0,0,.2);display:flex;flex-direction:column;position:relative}
@@ -365,12 +367,31 @@ button:hover .icon-stop {background-image:url("../img/icon/icon-stop-on.png")}
 .layer-top-btn-item.blue {background-color:#136ef6}
 .layer-top-btn-item.dark {background-color:#181d2b}
 
+.layer-space-list.layer_section {background-color:transparent}
+.layer-space-list .layer-content {padding:4px 0;border-radius:0 0 10px 10px;border:2px solid #2c364f;border-top:none}
+.layer-space-list.layer_section .layer_section-container {box-shadow: 0 2px 6px rgba(0,0,0,.2);border-radius:10px;width:250px}
+.map-square-icon {display:block;width:10px;height:10px;border:2px solid #2e7ef6;background-color:#abcbfb;box-shadow:0 2px 0 rgba(0,0,0,.1);box-sizing:border-box}
+.map-round-icon {display:block;width:10px;height:10px;border:2px solid #2e7ef6;background-color:#abcbfb;box-shadow:0 2px 0 rgba(0,0,0,.1);box-sizing:border-box;border-radius:50%}
+
+.map-square {border:2px solid #2e7ef6;background-color:rgba(46,126,246,.4);box-shadow:0 2px 0 rgba(0,0,0,.1);box-sizing:border-box}
+.map-round {border:2px solid #2e7ef6;background-color:rgba(46,126,246,.4);box-shadow:0 2px 0 rgba(0,0,0,.1);box-sizing:border-box;border-radius:50%}
+.map-choice-grid-text {color:#1e2329;font-size:18px;font-weight:800}
+.map-size-sm {width:10px;height:10px}
+.map-size-md {width:100px;height:100px}
+.map-size-lg {width:200px;height:200px}
+
+
+
 .type-tab-box {background-color:#181d2b;border-radius:4px;padding:2px;display:flex}
 .btn-type-choice {width:58px;height:36px;display:flex;align-items:center;justify-content:center;background-color:transparent;border-radius:2px}
 .is-selected .btn-type-choice {background-color:#2e7ef6}
 .icon-grid-1 {background:url("../img/icon/icon-grid-1.png") no-repeat 50% 50%;width:28px;height:22px;display:block}
 .icon-grid-2 {background:url("../img/icon/icon-grid-2.png") no-repeat 50% 50%;width:26px;height:22px;display:block}
 .icon-grid-3 {background:url("../img/icon/icon-grid-3.png") no-repeat 50% 50%;width:18px;height:14px;display:block}
+.icon-map-0 {background:url("../img/icon/icon-map-0-off.png") no-repeat 50% 50%;width:18px;height:24px;display:block}
+
+.active .icon-grid-3 {background-image:url("../img/icon/icon-grid-3-on.png")}
+.active .icon-map-0 {background-image:url("../img/icon/icon-map-0-on.png")}
 
 .map-divide-type-box {display:none}
 
@@ -518,13 +539,14 @@ input.amount-data {border:none;font-size:15px;font-weight:700;width:30px;padding
 .map-left-map-type .btn-map-type {width:80px}
 .map-left-sh-box {margin-bottom:32px;position:relative}
 input[type="text"].left-input-sh {width:170px;height:50px;border-radius:4px;border:none;padding:0 12px 0 50px;box-shadow:1px 0 4px rgba(0,0,0,.25)}
-input[type="text"].left-input-sh::placeholder {color:transparent;font-weight:600;font-size:16px}
+input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-size:16px}
 .icon-sh {background:url("../img/icon/ic-sh.png") no-repeat 50% 50%;width:19px;height:19px;display:block;position:absolute;top:50%;transform:translateY(-50%);left:17px}
 .map-left-map-expand {margin-top:20px;border-radius:4px;background-color:#fff;box-shadow:1px 0 4px rgba(0,0,0,.25);width:42px;display:flex;flex-direction:column}
 .map-left-radio-group {margin-top:40px;display:flex;gap:8px;flex-direction:column}
 .map-left-radio-group .choice-item-type-a-label {height:50px;min-width:126px;background-color:#fff;box-shadow:1px 0 4px rgba(0,0,0,.25);font-weight:800}
 .map-left-radio-group .inp-choice:checked + .choice-item-type-a-label {border-color:transparent;background-color:#2e7ef7;color:#fff;font-weight:700}
-.map-left-box .btn-layer-hover {margin-top:10px;border-color:transparent !important;}
+.map-left-box .map-left-btn-group {margin-top:10px;display:flex;gap:10px;flex-direction:column}
+.map-left-box .btn-layer-hover {border-color:transparent !important;}
 .map-left-box .btn-layer-hover .btn-s-map-item {border-color:transparent}
 .map-left-box .btn-s-map-item .icon-grid-3 {width:18px;height:14px}
 
