@@ -68,53 +68,52 @@
 								<i class="icon-minus"></i>
 							</button>
 						</div>
-                        <div class="map-left-btn-group">
-                            <button type="button" class="btn-s-map-item">
-                                <i class="icon-map-0"></i>
-                            </button>
-                            <div class="btn-layer-hover" data-res="d">
-                                <button type="button" class="btn-s-map-item active">
-                                    <i class="icon-grid-3"></i>
-                                </button>
-                                <div class="left-tooltip-layer">
-                                    <div class="left-tooltip-layer-box">
-                                        격자
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-layer-hover" data-res="m">
-                                <button type="button" class="btn-s-map-item" data-layer="data-left2">
-                                    <i class="icon-grid-3"></i>
-                                </button>
-                                <div class="left-tooltip-layer">
-                                    <div class="left-tooltip-layer-box">
-                                        격자
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 모바일 전용 -->
-                            <div class="btn-layer-hover" data-res="m">
-                                <button type="button" class="btn-s-map-item" data-layer="data-left3">
-                                    <i class="icon-grid-5"></i>
-                                </button>
-                                <div class="left-tooltip-layer">
-                                    <div class="left-tooltip-layer-box">
-                                        ...
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 모바일 전용 -->
-                            <div class="btn-layer-hover" data-res="m">
-                                <button type="button" class="btn-s-map-item" data-layer="data-left4">
-                                    <i class="icon-grid-6"></i>
-                                </button>
-                                <div class="left-tooltip-layer">
-                                    <div class="left-tooltip-layer-box">
-                                        ...
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+						<!-- map-left-btn-group 빼야하나? -->
+						<div class="map-left-btn-group">
+							<!-- only mobile -->
+							<button type="button" class="btn-s-map-item active">
+								<i class="icon-map-0"></i>
+							</button>
+							<!-- //only mobile -->
+
+							<div class="btn-layer-hover">
+								<button type="button" class="btn-s-map-item">
+									<i class="icon-grid-3"></i>
+								</button>
+								<div class="left-tooltip-layer">
+									<div class="left-tooltip-layer-box">
+										격자
+									</div>
+								</div>
+							</div>
+
+							<!-- only mobile -->
+							<div class="btn-layer-hover" data-res="m">
+								<button type="button" class="btn-s-map-item" data-layer="data-left3">
+									<i class="icon-grid-5"></i>
+								</button>
+								<div class="left-tooltip-layer">
+									<div class="left-tooltip-layer-box">
+										뷰
+									</div>
+								</div>
+							</div>
+							<div class="btn-layer-hover" data-res="m">
+								<button type="button" class="btn-s-map-item" data-layer="data-left4">
+									<i class="icon-grid-6"></i>
+								</button>
+								<div class="left-tooltip-layer">
+									<div class="left-tooltip-layer-box">
+										범례
+									</div>
+								</div>
+							</div>
+							<!-- //only mobile -->
+						</div>
+                      
+						
+
 					</div>
 					<div class="map-top-center map-original-top-center">
 						<p class="map-top-center-text-1">전망자료<i class="icon-arrow-small"></i>평균기온</p>
@@ -169,9 +168,9 @@
 									<button type="button" class="btn-control">
 										<i class="icon-play"></i>
 									</button>
-									<button type="button" class="btn-control">
+									<!-- <button type="button" class="btn-control">
 										<i class="icon-stop"></i>
-									</button>
+									</button> -->
 								</div>
 								<div class="player-slider-area-box">
 									<span class="player-slider-value-s-e">2000</span>
@@ -491,6 +490,9 @@
 			</div>
 		</div>
 		<div class="map-control-area">
+			<button type="button" class="map-control-btn">
+				<span class="icon-grid-1"></span>
+			</button>
 			<div class="map-control-btn-group">
 				<div class="layer-open-box">
 					<button type="button" class="map-control-layer-btn" data-layer="data-layer1-1">
@@ -1142,19 +1144,15 @@
 				} );
 
 				//mobile nav 이벤트
-				const navEvent = ()=> {
-					const head = document.querySelector('.head');
-					const btn = head.querySelector('.head-nav-btn');
-					const act = () => {
-						if (head.dataset.nav === 'open') {
-							head.dataset.nav = 'close';
-						} else {
-							head.dataset.nav = 'open';
-						}
-					}
-					btn.addEventListener('click', act);
-				}
-				navEvent();
+				UIexe.navToggle = new UI_ToggleAct({
+					target: document.querySelector('.head'),
+					btn: document.querySelector('.head-nav-btn')
+				});
+				UIexe.controlToggle = new UI_ToggleAct({
+					target: document.querySelector('.map-control-area'),
+					btn: document.querySelector('.map-control-btn')
+				});
+
 			});
 		})(jQuery, window, document);
 	</script>

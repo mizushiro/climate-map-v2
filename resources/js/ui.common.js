@@ -122,4 +122,29 @@ $(document).ready(function(){
         'clickedShowOnly': true,
         'itemSelector' : '.accordion-group'
     });
-})
+});
+
+const UIexe = {};
+class UI_ToggleAct {
+    constructor(opt) {
+        this.btn = opt.btn;
+        this.target = opt.target;
+        this.state = opt.state;
+
+        this.init();
+    }
+
+    init() {
+        console.log(this)
+        this.btn.addEventListener('click', this.toggle);
+    }
+    toggle = (e) => {
+        this.target.dataset.toggle = (this.target.dataset.toggle === 'true') ? 'false' : 'true';
+    }
+    show() {
+        this.target.dataset.toggle = 'true';
+    }
+    hide() {
+        this.target.dataset.toggle = 'false';
+    }
+}
