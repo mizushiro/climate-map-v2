@@ -17,6 +17,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 	<script src="../resources/js/ui.plugins.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 </head>
@@ -1138,6 +1139,7 @@
 						max: 100,
 						slide: function( event, ui ) {
 							$(this).parent().parent().find( ".amount-data" ).val( ui.value );
+							$(this).parent().parent().find( ".slider-value-position" ).css('left', ui.value + '%');
 						}
 					});
 					$( ".amount-data" ).val( $( ".slider-range-min2" ).slider( "value" ) );
