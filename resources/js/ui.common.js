@@ -167,3 +167,48 @@ class UI_ToggleAct {
         }
     }
 }
+class UI_DragMap {
+    constructor(opt) {
+        this.divide = document.querySelector('.btn-map-divide');
+        this.area = document.querySelector('.map-original-area');
+        this.divide_line = document.querySelector('.map-divide-line');
+        this.divide_A = document.querySelector('.layer-deviation-item[data-name="a"]');
+        this.divide_B = document.querySelector('.layer-deviation-item[data-name="b"]');
+        this.ww = window.innerWidth;
+    }
+    start() {
+        this.divide.addEventListener('touchstart', this.actStart);
+    }
+    end() {
+        console.log('aaa');
+        this.divide.removeEventListener('touchstart', this.actStart);
+    }
+    actStart = (e) => {
+        console.log('actStart');
+        const el = e.currentTarget;
+        let _x;
+        let per;
+        let _per;
+
+        const actEnd = (e) => { 
+            console.log('actEnd');
+            this.area.removeEventListener('touchmove', actMove);
+            this.area.removeEventListener('touchend', actEnd);
+        }
+        const actMove = (e) => {
+            console.log('actMove');
+            _x = !!e.clientX ? e.clientX : e.targetTouches[0].clientX;
+
+            per = _x / this.ww * 100;
+            per < 0 ? per = 0 : per;
+            per > 100 ? per = 100 : per;
+            _per = 100 - per;
+
+            this.divide_line.style.left = per + '%';
+            this.divide_A.style.width = per + '%';
+            this.divide_B.style.width = _per + '%';
+        }
+        this.area.addEventListener('touchmove', actMove);
+        this.area.addEventListener('touchend', actEnd);
+    }
+}

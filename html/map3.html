@@ -332,7 +332,7 @@
 							</div>
 						</div>
 						<div class="map-divide-line" style="left:50%">
-							<button type="button" class="btn-map-divide">
+							<button type="button" class="btn-map-divide" >
 								<span class="for-a11y">조정</span>
 							</button>
 						</div>
@@ -972,7 +972,7 @@
 			<div class="layer-content">
 				<div class="radio-group-box">
 					
-					<button type="button" class="map-control-period-btn btn-deviation-open btn_layer-close" >
+					<button type="button" class="map-control-period-btn btn-deviation-open btn_layer-close">
 						편차 뷰
 					</button>
 					<button type="button" class="map-control-period-btn btn-comparison-open btn_layer-close" >
@@ -1153,9 +1153,10 @@
 						}
 					});
 					$( ".amount-data" ).val( $( ".slider-range-min2" ).slider( "value" ) );
-				} );
+				});
 
-				//mobile 이벤트
+
+				// mobile 메뉴 이벤트
 				UIexe.navToggle = new UI_ToggleAct({
 					target: document.querySelector('.head'),
 					btn: document.querySelector('.head-nav-btn')
@@ -1164,41 +1165,15 @@
 					target: [document.querySelector('.map-control-area'),document.querySelector('.map-container-box')],
 					btn: document.querySelector('.map-control-btn')
 				});
-				const dragMap = () => {
-					const divide = document.querySelector('.btn-map-divide');
-					const area = document.querySelector('.map-original-area');
-					const divide_line = document.querySelector('.map-divide-line');
-					const divide_A = document.querySelector('.layer-deviation-item[data-name="a"]');
-					const divide_B = document.querySelector('.layer-deviation-item[data-name="b"]');
-					const ww = window.innerWidth;
-					const actStart = (e) => {
-						const el = e.currentTarget;
-						const el_info = el.getBoundingClientRect();
-						const el_w = el.offsetWidth / 2;
-						const s_x = !!e.clientX ? e.clientX : e.targetTouches[0].clientX;
-						let _x;
-						let per;
-						let _per;
+				
+				//map 분할 드래그
+				UIexe.dragMap = new UI_DragMap();
+					// 드래그 이벤트 시작
+					UIexe.dragMap.start();
+					// 드래그 이벤트 종료
+					// UIexe.dragMap.end();
 
-						const actMove = (e) => {
-							_x = !!e.clientX ? e.clientX : e.targetTouches[0].clientX;
-		
-							per = _x / ww * 100;
-							per < 0 ? per = 0 : per;
-							per > 100 ? per = 100 : per;
-							_per = 100 - per;
-
-							divide_line.style.left = per + '%';
-							divide_A.style.width = per + '%';
-							divide_B.style.width = _per + '%';
-							console.log(per);
-						}
-						area.addEventListener('touchmove', actMove);
-						area.addEventListener('touchend', actEnd);
-					}
-					divide.addEventListener('touchstart', actStart);
-				}
-				dragMap();
+				// input value clear
 				const inputClear = document.querySelector('.btn-clear');
 				const actClear = (e) => {
 					const el = e.currentTarget;
@@ -1206,8 +1181,8 @@
 
 					document.querySelector('input[data-id="'+ id +'"]').value = '';
 				}
-
 				inputClear.addEventListener('click', actClear);
+
 
 			});
 		})(jQuery, window, document);
