@@ -137,6 +137,36 @@
         top: 0;
         left: 0;
         margin: 0;
+        display: flex;
+    }
+    .btn-clear{
+        width:2.1rem;
+        height: 2.1rem;
+        background: #d6d6d6;
+        position: relative;
+        border-radius: 50% ;
+        position: absolute;
+        right:.9rem;
+        top:.9rem
+    }
+    .btn-clear::after,
+    .btn-clear::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1rem;
+        height: .2rem;
+        border-radius: .1rem;
+        background: #fff;
+        transform-origin: 50% 50%;
+    }
+    .btn-clear::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .btn-clear::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 
     input[type="text"].left-input-sh {
@@ -145,6 +175,7 @@
         border-bottom: 1px solid #bdd9f6;
         height: 4rem;
         padding-left: 4.4rem;
+        padding-right: 4.4rem;
     }
 
     input[type="text"].left-input-sh::placeholder {
@@ -225,7 +256,21 @@
     .layer-close::after {
         transform: translate(-50%, -50%) rotate(-45deg);
     }
+
+    .layer-deviation-item[data-name="b"]{background-color: rgba(46,126,246,.4);}
+
+    .layer-deviation-item{overflow: hidden;}
     .left-tooltip-layer{display: none !important;}
+    .map-divide-line{z-index: 10;}
+    .radio-group-box {
+        flex-wrap: wrap;
+    }
+    .radio-group-box .choice-item-type-a:first-child{
+        flex:1;
+    }
+    .map3-btm-item-box .choice-item-type-a-label{
+        min-width: 5rem;
+    }
     .layer_section .radio-group-box{
         display: flex;
         flex-direction: column;
@@ -267,15 +312,32 @@
 
     .map-control-btn .icon-grid-1 {background:url("../img/icon/control-arrow.png") no-repeat 50% 50% / cover; width:1.5rem;height:1.05rem;display:block; transform: rotate(180deg);}
 
+    .is-map-comparison-open .map-top-center-text-1,
+    .is-view .map-top-center-text-1{color:#fff;}
+    .is-map-comparison-open .map-top-center,
+    .is-view .map-top-center{ background-color: rgba(24,29,43,.8);}
+    .map-comparison-right-area{border-left:0;}
+    .is-map-comparison-open .map-comparison-right-area::after{
+        content:"";
+        display: block;
+        position: absolute;
+        top:0; left:-1px;
+        width:2px; height: 100%;
+        background-color: #000;
+        z-index: 0;
+    }
+    .is-map-comparison-open .map3-btm-item-box{
+        padding:.6rem;
+    }
+    .comparison-control-area{z-index: 1;}
 
-    .map-top-center{top:5.5rem}
-    .map-top-center-text-1{font-size: 1.1rem; gap:0.6rem}
-    .map-top-center-text-2{font-size: 1.2rem;}
+    .map-top-center-text-1{font-size: 1.1rem; gap:0.6rem; }
+    .map-top-center-text-2{font-size: 1.2rem; white-space:nowrap;}
     .carbon-label{font-size: 1.2rem;}
 
     .icon-arrow-small{width: 0.25rem; height: .4rem; background-size: cover;}
     
-    .map-top-center {padding: 0.6rem 1rem; min-width: 15rem; border-radius: 0.2rem}
+    .map-top-center {top:5.5rem; padding: 0.6rem 1rem; min-width: 15rem; border-radius: 0.2rem;}
 
     .map-control-area .map-control-period-group,
     .map-control-area .map-control-btn-group{display: none;}
@@ -334,7 +396,7 @@
         max-width: 100%;
         min-width: 0;
         height: auto;
-        padding:1.5rem;
+        padding:1.2rem;
     }
     .map3-btm-item-box .choice-item-type-a-label{
         font-size: 1.1rem;
@@ -351,29 +413,98 @@
         gap:1.5rem;
         align-items: center;
     }
+    .is-map-comparison-open .player-control-area{
+        align-items: flex-start;
+        margin: 1rem 1rem ;
+    }
+    .is-map-comparison-open .player-control-top {
+        margin:0 1rem 1rem;
+    }
+    .is-map-comparison-open .btn-control{transform: translate(0,-.2rem);}
+    .is-map-comparison-open .player-slider-area-box{padding-bottom: 2.5rem;}
+    .player-slider-area-box{position: relative; }
+    .is-map-comparison-open .player-slider-value-s-e{position: absolute; bottom:0; left:0;}
+    .is-map-comparison-open .player-slider-value-s-e ~ .player-slider-value-s-e{left:auto; right:0}
+
     .map3-btm-item-box .player-slider-area-box .player-slider-value-s-e{
         font-size: 1.2rem;
         padding-top: 0;
     }
     .player-control-area .player-slider-area{margin-top: 0.5rem;}
-    .btn-player-control-top{font-size: 1.3rem;}
+    .btn-player-control-top{font-size: 1.2rem;}
     .slider-value-position{font-size: 1.1rem;}
     .map-detail-right-area{
         position: fixed;
         right:-80vw;
         top:9rem;
-        height: calc(100vh - 9rem);
+        height: calc(100vh - 12rem);
         z-index: 11;
         width: 80vw;
         max-width:80vw;
     }
+    .map-container-box[data-toggle="true"] .map-detail-right-area{
+         height: calc(100vh - 21.6rem);
+    }
     .map-detail-right-area.is-open{
         right:0;
+    }
+    .choice-area-chart-title{
+        font-size: 1.8rem;
+    }
+    .choice-area-title{
+        font-size: 1.1rem;
+    }
+    .choice-area-value {
+        font-size: 1.8rem;
+    }
+    .tbl-line thead th{
+        font-size: 1rem; padding: .8rem .6rem;
+    }
+    .tbl-line tbody td {
+        font-size: .9rem; padding:.6rem;
+    }
+    .choice-area-btn .btn-base{
+        font-size: 1.3rem;height:4rem; min-width:13rem;
+    }
+    .is-map-comparison-open .map-comparison-right-area{
+        display: block;
+    }
+    .map-comparison-right-area{display: none;}
+    .layer-space-list.layer_section,
+    .layer-open-box .layer_section{
+        position: fixed;
+        bottom: auto;
+        top: 0 !important;
+        left: 0 !important;
+        transform: translate(0,0) !important;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8) !important;
+    }
+    .radio-group-box .map-control-period-btn{
+        background-color:#fff;
+        color:#000;
+        height: 4rem;
+        min-width: 13rem;
+    }
+    .map-comparison-right-btn{
+        top:5rem;
+        right:1rem;
+    }
+    .layer-open-box .map-section-head .map-section-title{
+        font-size: 1.2rem;
+    }
+    .right-check-label{
+        font-size: 1.1rem;
+    }
+    .layer_section-container [class^="icon-btm-"]{
+        width: 2.4rem;
+        height: 2.4rem;
     }
 }
 @media (max-width:590px) {
     .carbon-label{font-size: 0.9rem;}
-    .map-top-center-text-1{font-size:0.7rem; gap:0.6rem}
+    .map-top-center-text-1{font-size:0.7rem; gap:0.6rem;}
     .map-top-center-text-2{font-size: 0.8rem;}
     .map-control-layer-btn{
         gap:1vw;
@@ -396,6 +527,6 @@
     }
    .btn-player-control-top{font-size: 1.1rem;}
 }
-@media (max-width:430px) {
+/* @media (max-width:430px) {
  .map3-btm-item-box .choice-item-type-a-label{font-size: 2.9vw;}
-}
+} */

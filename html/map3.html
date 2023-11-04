@@ -49,7 +49,8 @@
 					<div class="map-left-box">
 						<div class="map-left-sh-box">
 							<i class="icon-sh"></i>
-							<input type="text" class="left-input-sh" placeholder="" />
+							<input type="text" class="left-input-sh" placeholder="" data-id="search" />
+							<button type="button" class="btn-clear" aria-label="검색어 지우기" data-id="search"></button>
 						</div>
 						<div class="map-left-map-type">
 							<button type="button" class="btn-map-type active">
@@ -318,19 +319,19 @@
 						</div>
 					</div>
 					<div class="layer-deviation-area">
-						<div class="layer-deviation-item" style="width:40%">
+						<div class="layer-deviation-item" style="width:50%" data-name="a">
 							<div class="map-top-center">
 								<p class="map-top-center-text-1">전망자료<i class="icon-arrow-small"></i>평균기온</p>
 								<p class="map-top-center-text-2">SSP5-85 : 전기(2041 ~ 2080년) </p>
 							</div>
 						</div>
-						<div class="layer-deviation-item" style="width:60%">
+						<div class="layer-deviation-item" style="width:50%" data-name="b">
 							<div class="map-top-center">
 								<p class="map-top-center-text-1">전망자료<i class="icon-arrow-small"></i>평균기온</p>
 								<p class="map-top-center-text-2">SSP5-85 : 전기(2041 ~ 2080년) </p>
 							</div>
 						</div>
-						<div class="map-divide-line" style="left:40%">
+						<div class="map-divide-line" style="left:50%">
 							<button type="button" class="btn-map-divide">
 								<span class="for-a11y">조정</span>
 							</button>
@@ -970,7 +971,16 @@
 		<div class="layer_section-container">
 			<div class="layer-content">
 				<div class="radio-group-box">
-					<div class="choice-item-type-a">
+					
+					<button type="button" class="map-control-period-btn btn-deviation-open btn_layer-close" >
+						편차 뷰
+					</button>
+					<button type="button" class="map-control-period-btn btn-comparison-open btn_layer-close" >
+						비교 뷰
+					</button>
+					
+
+					<!-- <div class="choice-item-type-a">
 						<input type="radio" id="left3-a1-0" name="left3-a1" class="inp-choice" checked>
 						<label for="left3-a1-0" class="choice-item-type-a-label">
 							편차 뷰
@@ -981,7 +991,7 @@
 						<label for="left3-a1-1" class="choice-item-type-a-label">
 							비교 뷰
 						</label>
-					</div>
+					</div> -->
 
 				</div>
 
@@ -1151,9 +1161,53 @@
 					btn: document.querySelector('.head-nav-btn')
 				});
 				UIexe.controlToggle = new UI_ToggleAct({
-					target: document.querySelector('.map-control-area'),
+					target: [document.querySelector('.map-control-area'),document.querySelector('.map-container-box')],
 					btn: document.querySelector('.map-control-btn')
 				});
+				const dragMap = () => {
+					const divide = document.querySelector('.btn-map-divide');
+					const area = document.querySelector('.map-original-area');
+					const divide_line = document.querySelector('.map-divide-line');
+					const divide_A = document.querySelector('.layer-deviation-item[data-name="a"]');
+					const divide_B = document.querySelector('.layer-deviation-item[data-name="b"]');
+					const ww = window.innerWidth;
+					const actStart = (e) => {
+						const el = e.currentTarget;
+						const el_info = el.getBoundingClientRect();
+						const el_w = el.offsetWidth / 2;
+						const s_x = !!e.clientX ? e.clientX : e.targetTouches[0].clientX;
+						let _x;
+						let per;
+						let _per;
+
+						const actMove = (e) => {
+							_x = !!e.clientX ? e.clientX : e.targetTouches[0].clientX;
+		
+							per = _x / ww * 100;
+							per < 0 ? per = 0 : per;
+							per > 100 ? per = 100 : per;
+							_per = 100 - per;
+
+							divide_line.style.left = per + '%';
+							divide_A.style.width = per + '%';
+							divide_B.style.width = _per + '%';
+							console.log(per);
+						}
+						area.addEventListener('touchmove', actMove);
+						area.addEventListener('touchend', actEnd);
+					}
+					divide.addEventListener('touchstart', actStart);
+				}
+				dragMap();
+				const inputClear = document.querySelector('.btn-clear');
+				const actClear = (e) => {
+					const el = e.currentTarget;
+					const id = el.dataset.id;
+
+					document.querySelector('input[data-id="'+ id +'"]').value = '';
+				}
+
+				inputClear.addEventListener('click', actClear);
 
 			});
 		})(jQuery, window, document);

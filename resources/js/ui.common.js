@@ -139,12 +139,31 @@ class UI_ToggleAct {
         this.btn.addEventListener('click', this.toggle);
     }
     toggle = (e) => {
-        this.target.dataset.toggle = (this.target.dataset.toggle === 'true') ? 'false' : 'true';
+        if (this.target.length > 1) {
+            for (let i = 0; i < this.target.length; i++) {
+                this.target[i].dataset.toggle = (this.target[i].dataset.toggle === 'true') ? 'false' : 'true';
+            }
+        } else {
+            this.target.dataset.toggle = (this.target.dataset.toggle === 'true') ? 'false' : 'true';
+        }
+        
     }
     show() {
-        this.target.dataset.toggle = 'true';
+        if (this.target.length > 1) {
+            for (let i = 0; i < this.target.length; i++) {
+                this.target.dataset.toggle = 'true';       
+            }
+        } else {
+            this.target.dataset.toggle = 'true';
+        }
     }
     hide() {
-        this.target.dataset.toggle = 'false';
+        if (this.target.length > 1) {
+            for (let i = 0; i < this.target.length; i++) {
+                this.target.dataset.toggle = 'false';       
+            }
+        } else {
+            this.target.dataset.toggle = 'false';
+        }
     }
 }
