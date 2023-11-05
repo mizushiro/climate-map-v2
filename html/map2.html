@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -13,9 +13,11 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../resources/css/ui.base.css">
+    <link rel="stylesheet" href="../resources/css/responsive.css">
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 	<script src="../resources/js/ui.plugins.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 </head>
@@ -101,6 +103,19 @@
 						<span class="map-type-img"><img src="../resources/img/icon/icon-map-6.png" alt=""></span>
 						<span class="map-type-text">경계지도</span>
 					</button>
+
+					<!-- only mobile -->
+					<div class="btn-layer-hover" data-res="m">
+						<button type="button" class="btn-s-map-item" data-layer="data-left4">
+							<i class="icon-grid-6"></i>
+						</button>
+						<div class="left-tooltip-layer">
+							<div class="left-tooltip-layer-box">
+								범례
+							</div>
+						</div>
+					</div>
+					<!-- //only mobile -->
 				</div>
 				<div class="map2-left-bottom">
 					<div class="map2-s-map-box">
@@ -114,7 +129,7 @@
 						<button type="button" class="btn-type1 btn-blue2 btn-small" data-layer="data-layer6">상세보기</button>
 					</div>
 				</div>
-				<div class="map2-right-bottom">
+				<div class="map2-right-bottom" data-res="d">
 					<button type="button" class="btn-setting-option setting-open">
 						<i class="icon-setting"></i>
 					</button>
@@ -670,7 +685,98 @@
 		</div>
 	</div>
 
+	<div id="data-left4" class="layer_section layer-transparent">
+		<div class="layer_section-container">
+			<div class="layer-content">
+				<div class="setting-btn-group">
+					<button type="button" class="btn-setting-item">
+						<span class="level-group">
+							<span class="level-item" style="background-color:#004187"></span>
+							<span class="level-item" style="background-color:#008cb0"></span>
+							<span class="level-item" style="background-color:#00a6ae"></span>
+							<span class="level-item" style="background-color:#18bdb0"></span>
+							<span class="level-item" style="background-color:#a8e2bf"></span>
+							<span class="level-item" style="background-color:#e9fad7"></span>
+							<span class="level-item" style="background-color:#fcffdd"></span>
+							<span class="level-item" style="background-color:#ffffc8"></span>
+							<span class="level-item" style="background-color:#fbe49a"></span>
+							<span class="level-item" style="background-color:#f8d074"></span>
+							<span class="level-item" style="background-color:#f7ba3c"></span>
+							<span class="level-item" style="background-color:#f28400"></span>
+							<span class="level-item" style="background-color:#ed6200"></span>
+							<span class="level-item" style="background-color:#e13c00"></span>
+							<span class="level-item" style="background-color:#c32200"></span>
+							<span class="level-item" style="background-color:#a20706"></span>
+						</span>
+					</button>
 
+					<button type="button" class="btn-setting-item">
+						<span class="level-group">
+							<span class="level-item" style="background-color:#678700"></span>
+							<span class="level-item" style="background-color:#b0a200"></span>
+							<span class="level-item" style="background-color:#ae8500"></span>
+							<span class="level-item" style="background-color:#d58800"></span>
+							<span class="level-item" style="background-color:#ff988b"></span>
+							<span class="level-item" style="background-color:#ffd2f6"></span>
+							<span class="level-item" style="background-color:#f8ddff"></span>
+							<span class="level-item" style="background-color:#efc8ff"></span>
+							<span class="level-item" style="background-color:#c896ff"></span>
+							<span class="level-item" style="background-color:#a96dff"></span>
+							<span class="level-item" style="background-color:#8334ff"></span>
+							<span class="level-item" style="background-color:#3f00f2"></span>
+							<span class="level-item" style="background-color:#1f00ed"></span>
+							<span class="level-item" style="background-color:#0004e1"></span>
+							<span class="level-item" style="background-color:#0015c3"></span>
+							<span class="level-item" style="background-color:#002ea8"></span>
+						</span>
+					</button>
+					<button type="button" class="btn-setting-item">
+						<span class="level-group">
+							<span class="level-item" style="background-color:#582f3e"></span>
+							<span class="level-item" style="background-color:#723d61"></span>
+							<span class="level-item" style="background-color:#713d68"></span>
+							<span class="level-item" style="background-color:#835181"></span>
+							<span class="level-item" style="background-color:#835181"></span>
+							<span class="level-item" style="background-color:#e3e7ee"></span>
+							<span class="level-item" style="background-color:#e9f1f3"></span>
+							<span class="level-item" style="background-color:#dbeaec"></span>
+							<span class="level-item" style="background-color:#bcd9d5"></span>
+							<span class="level-item" style="background-color:#a2cac2"></span>
+							<span class="level-item" style="background-color:#7db5a9"></span>
+							<span class="level-item" style="background-color:#549d84"></span>
+							<span class="level-item" style="background-color:#539a78"></span>
+							<span class="level-item" style="background-color:#4e9268"></span>
+							<span class="level-item" style="background-color:#447f55"></span>
+							<span class="level-item" style="background-color:#3c6b42"></span>
+						</span>
+					</button>
+
+					<button type="button" class="btn-setting-item active">
+						<span class="level-group">
+							<span class="level-item" style="background-color:#373737"></span>
+							<span class="level-item" style="background-color:#272727"></span>
+							<span class="level-item" style="background-color:#2b2b2b"></span>
+							<span class="level-item" style="background-color:#494949"></span>
+							<span class="level-item" style="background-color:#c5c5c5"></span>
+							<span class="level-item" style="background-color:#e7e7e7"></span>
+							<span class="level-item" style="background-color:#ebebeb"></span>
+							<span class="level-item" style="background-color:#e0e0e0"></span>
+							<span class="level-item" style="background-color:#c9c9c9"></span>
+							<span class="level-item" style="background-color:#b5b5b5"></span>
+							<span class="level-item" style="background-color:#999999"></span>
+							<span class="level-item" style="background-color:#7f7f7f"></span>
+							<span class="level-item" style="background-color:#828282"></span>
+							<span class="level-item" style="background-color:#828282"></span>
+							<span class="level-item" style="background-color:#757575"></span>
+							<span class="level-item" style="background-color:#5f5f5f"></span>
+						</span>
+					</button>
+				</div>
+
+				<button type="button" class="layer-close btn_layer-close"></button>
+			</div>
+		</div>
+	</div>
 
 	<div id="data-layer5" class="layer_section layer-full">
 		<div class="layer_section-container">
