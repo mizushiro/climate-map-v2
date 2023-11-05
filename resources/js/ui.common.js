@@ -169,46 +169,88 @@ class UI_ToggleAct {
 }
 class UI_DragMap {
     constructor(opt) {
-        this.divide = document.querySelector('.btn-map-divide');
-        this.area = document.querySelector('.map-original-area');
-        this.divide_line = document.querySelector('.map-divide-line');
-        this.divide_A = document.querySelector('.layer-deviation-item[data-name="a"]');
-        this.divide_B = document.querySelector('.layer-deviation-item[data-name="b"]');
+        this.id = opt.id;
+        this.wrap = document.querySelector('[data-map="'+ this.id +'"]');
+        this.divides = this.wrap.querySelectorAll('[data-map-btn');
+        this.divide_items = this.wrap.querySelectorAll('[data-map-area]');
+        this.n = this.divides.length;
         this.ww = window.innerWidth;
     }
     start() {
-        this.divide.addEventListener('touchstart', this.actStart);
+        for (let i = 0; i < this.divides.length; i++) {
+            this.divides[i].dataset.n = i;
+            this.divides[i].addEventListener('touchstart', this.actStart);
+            this.divides[i].addEventListener('mousedown', this.actStart);
+        }
     }
     end() {
-        console.log('aaa');
         this.divide.removeEventListener('touchstart', this.actStart);
     }
     actStart = (e) => {
-        console.log('actStart');
         const el = e.currentTarget;
+        const n = Number(el.dataset.n);
+        const divide_line = el.closest('[data-map-line]');
         let _x;
         let per;
         let _per;
 
         const actEnd = (e) => { 
-            console.log('actEnd');
-            this.area.removeEventListener('touchmove', actMove);
-            this.area.removeEventListener('touchend', actEnd);
+            window.removeEventListener('touchmove', actMove);
+            window.removeEventListener('touchend', actEnd);
+            window.removeEventListener('mousemove', actMove);
+            window.removeEventListener('mouseup', actEnd);
         }
         const actMove = (e) => {
-            console.log('actMove');
             _x = !!e.clientX ? e.clientX : e.targetTouches[0].clientX;
-
-            per = _x / this.ww * 100;
+            per = _x / this.wrap.offsetWidth * 100;
             per < 0 ? per = 0 : per;
             per > 100 ? per = 100 : per;
             _per = 100 - per;
+           
+            divide_line.style.left = per + '%';
 
-            this.divide_line.style.left = per + '%';
-            this.divide_A.style.width = per + '%';
-            this.divide_B.style.width = _per + '%';
+            if (this.divide_items.length === 2) {
+                for (let i = n; i < this.divide_items.length; i++) {
+                    this.divide_items[n].style.width = per + '%';
+                    this.divide_items[n + 1].style.width = _per + '%';
+                }
+            } else {
+                for (let i = n; i < this.divide_items.length; i++) {
+                    let _w;
+                    if (n === 0) {
+                        _w = this.divide_items[n + 2].offsetWidth;
+                        _w = _w / this.wrap.offsetWidth * 100;
+
+                        if (_per - _w <= 0) {
+                            per = 100 - _w;
+                            divide_line.style.left = per + '%';
+                            this.divide_items[n].style.width = per + '%';
+                            this.divide_items[n + 1].style.width = _per - _w + '%';
+                        } else {
+                            this.divide_items[n].style.width = per + '%';
+                            this.divide_items[n + 1].style.width = _per - _w + '%';
+                        }
+                    } else {
+                        _w = this.divide_items[n - 1].offsetWidth;
+                        _w = _w / this.wrap.offsetWidth * 100;
+
+                        if (per - _w <= 0) {
+                            divide_line.style.left = _w + '%';
+                            this.divide_items[n].style.width = '0%';
+                            this.divide_items[n + 1].style.width = 100 - _w + '%';
+                        } else {
+                            _w = this.divide_items[n - 1].offsetWidth;
+                            _w = _w / this.wrap.offsetWidth * 100;   
+                            this.divide_items[n].style.width = per - _w + '%';
+                            this.divide_items[n + 1].style.width = _per + '%';
+                        }
+                    }
+                }
+            }
         }
-        this.area.addEventListener('touchmove', actMove);
-        this.area.addEventListener('touchend', actEnd);
+        window.addEventListener('touchmove', actMove);
+        window.addEventListener('touchend', actEnd);
+        window.addEventListener('mousemove', actMove);
+        window.addEventListener('mouseup', actEnd);
     }
 }
