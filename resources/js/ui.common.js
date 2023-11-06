@@ -125,46 +125,114 @@ $(document).ready(function(){
 });
 
 const UIexe = {};
+UIexe.layerFullSmall = () => {
+    const fulls = document.querySelectorAll('.btn-full-view');
+    const actLayerFullSmall = (e) => {
+        const _this = e.currentTarget;
+        _this.parentNode.parentNode.classList.toggle('active');
+    }
+    for (let item of fulls) {
+        item.addEventListener('click', actLayerFullSmall);
+    }
+
+}
+UIexe.inputClear = () => {
+    const inputClear = document.querySelector('.btn-clear');
+    const actClear = (e) => {
+        const el = e.currentTarget;
+        const id = el.dataset.id;
+
+        document.querySelector('input[data-id="'+ id +'"]').value = '';
+    }
+    inputClear.addEventListener('click', actClear);
+}
+UIexe.hoverLayer = (opt) => {
+    const btnLayerHovers = document.querySelectorAll('.' + opt.classname);
+    const actHover = (e) => {
+        const _this = e.currentTarget;
+        _this.classList.toggle('selected');
+    }
+    for (let item of btnLayerHovers) {
+        item.addEventListener('mouseover', actHover);
+        item.addEventListener('mouseout', actHover);
+    }
+}
 class UI_ToggleAct {
     constructor(opt) {
-        this.btn = opt.btn;
-        this.target = opt.target;
-        this.state = opt.state;
-
+        this.btn = !opt.btn ? null : opt.btn;
+        this.target = !opt.target ? null : opt.target;
+        this.callback_show = !opt.callback_show ? null : opt.callback_show;
+        this.callback_hide = !opt.callback_hide ? null : opt.callback_hide;
         this.init();
     }
 
     init() {
-        console.log(this)
-        this.btn.addEventListener('click', this.toggle);
+        if (!!this.btn) {
+            for (let item of this.btn) {
+                item.addEventListener('click', this.toggle);
+            }
+        } 
     }
     toggle = (e) => {
+        const _this = e.currentTarget;
+
         if (this.target.length > 1) {
             for (let i = 0; i < this.target.length; i++) {
-                this.target[i].dataset.toggle = (this.target[i].dataset.toggle === 'true') ? 'false' : 'true';
+                if (this.target[i].dataset.toggle === 'true') {
+                    this.target[i].dataset.toggle = 'false';
+                    this.callback_hide && this.callback_hide();
+                    _this.classList.remove('active');
+                } else {
+                    this.target[i].dataset.toggle = 'true';
+                    this.callback_show && this.callback_show();
+                    _this.classList.add('active');
+                }              
             }
         } else {
-            this.target.dataset.toggle = (this.target.dataset.toggle === 'true') ? 'false' : 'true';
+            if (this.target.dataset.toggle === 'true') {
+                this.target.dataset.toggle = 'false';
+                this.callback_hide && this.callback_hide();
+                _this.classList.remove('active');
+            } else {
+                this.target.dataset.toggle = 'true';
+                this.callback_show && this.callback_show();
+                _this.classList.add('active');
+            }
         }
         
     }
     show() {
         if (this.target.length > 1) {
             for (let i = 0; i < this.target.length; i++) {
-                this.target.dataset.toggle = 'true';       
+                this.target[i].dataset.toggle = 'true';       
             }
         } else {
             this.target.dataset.toggle = 'true';
+           
         }
+
+        if (!!this.btn) {
+            for (let item of this.btn) {
+                item.classList.add('active');
+            }
+        } 
+        this.callback_show && this.callback_show();
     }
     hide() {
         if (this.target.length > 1) {
             for (let i = 0; i < this.target.length; i++) {
-                this.target.dataset.toggle = 'false';       
+                this.target[i].dataset.toggle = 'false';       
             }
         } else {
             this.target.dataset.toggle = 'false';
         }
+
+        if (!!this.btn) {
+            for (let item of this.btn) {
+                item.classList.remove('active');
+            }
+        } 
+        this.callback_hide && this.callback_hide();
     }
 }
 class UI_DragMap {

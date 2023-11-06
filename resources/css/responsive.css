@@ -2,7 +2,13 @@
 [data-res="m"] {
     display: none ;
 }
-
+.map-choice-grid{pointer-events: none;}
+.map-detail-right-area[data-toggle="true"] {
+    margin-right: 0;
+}
+.layer-deviation-area[data-toggle="true"] {
+   display:flex;
+}
 @media (max-width:1024px) {
     html {
         font-size: 62.5%;
@@ -460,6 +466,7 @@
     .map-container-box[data-toggle="true"] .map-detail-right-area{
          height: calc(100vh - 21.6rem);
     }
+    .map-detail-right-area[data-toggle="true"],
     .map-detail-right-area.is-open{
         right:0;
     }
@@ -500,6 +507,10 @@
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,0.8) !important;
+    }
+    .radio-group-box .map-control-period-btn.active{
+        background-color: #2e7ef7;
+        color:#fff;
     }
     .radio-group-box .map-control-period-btn{
         background-color:#fff;
@@ -618,9 +629,12 @@
         top: 1.5rem;
     }
     .map-section-item.active .player-box {
+        display: flex;
+    }
+    .player-box {
         height: auto;
         padding: .6rem 1.4rem;
-        display: flex;
+        
         flex-wrap: wrap;
         justify-content: center;
         gap:.6rem 1.8rem;
@@ -628,10 +642,10 @@
         bottom:1.5rem;
         min-width: 18rem;
     }
-    .map-section-item.active .player-desc{
+    .player-desc{
         font-size: 1.2rem;
     }
-    .map-section-item.active .player-slider-area{
+    .player-slider-area{
         min-width: 5rem;
     }
 
@@ -669,17 +683,36 @@
         height: 3rem;font-size: 1.1rem;
         padding: 0 1.8rem 0 .6rem;
     }
+    .layer-setting {
+        width: auto;
+    }
+    .map2-left-bottom{
+        left: 1.5rem;
+        bottom: 1.5rem;
+        width: 24rem;
+        height: 28rem;
+    }
+    .map2-s-map-data .btn-type1.btn-small{flex:inherit;}
     .btn-type1.btn-small{
         height: 3rem;font-size: 1.1rem;min-width:0;
         padding: 0 .6rem;
         white-space: nowrap;
         flex:1;
     }
+    .map-container-right[data-toggle="true"]{
+        right: 0;
+    }
+    .time-series-detail .map-container-right{
+         top:4.5rem;
+          height: calc(100vh - 4.5rem);
+    }
     .map-container-right{
         position: fixed;
         width: 50vw;
         height: calc(100vh - 9rem);
-        top:9rem; right:0;
+        top:9rem; right:-50vw;
+        transition:right .2s ease-in;
+        z-index: 100
     }
     .map2-right-top {
         position: fixed;
@@ -721,6 +754,7 @@
     }
     .btn-accordion {
         width: 2.8rem;
+        height: 100%;
     }
     .icon-accordion {
         width: .6rem;
@@ -855,6 +889,9 @@
     }
     .btn-type-choice{width: 3.4rem; height: 3rem;}
     .icon-grid-1{width: 2.4rem; height: 1.8rem; background-size: cover; }
+
+
+
 }
 
 

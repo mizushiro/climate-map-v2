@@ -24,6 +24,7 @@
 
 <body>
 	<div class="base-wrap no-bg">
+		<!-- 상단 메뉴 ----------------------------------------  -->
 		<div class="head">
 			<h1 class="h1-logo">
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
@@ -34,8 +35,13 @@
 				<a href="" class="btn-lang">English</a>
 			</div>
 		</div>
+
+		<!-- 중간 컨텐츠 ----------------------------------------  -->
 		<div class="map-container-box">
-			<div class="map-container">
+			<div class="map-container" style="background-color:#46555c">
+
+				
+
 				<div class="map2-left-top">
 					<p class="map2-left-top-title">NCEP R1 자료선택 </p>
 					<div class="year-month">
@@ -104,7 +110,6 @@
 						<span class="map-type-text">경계지도</span>
 					</button>
 
-					<!-- only mobile -->
 					<div class="btn-layer-hover" data-res="m">
 						<button type="button" class="btn-s-map-item" data-layer="data-left4">
 							<i class="icon-grid-6"></i>
@@ -115,8 +120,13 @@
 							</div>
 						</div>
 					</div>
-					<!-- //only mobile -->
+
+					<button type="button" class="btn-right-open" 	style="border:1px solid rgba(255,255,255,.5);color:#fff">
+					우측 레이어오픈 샘플
+					</button>
+				
 				</div>
+
 				<div class="map2-left-bottom">
 					<div class="map2-s-map-box">
 						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
@@ -685,6 +695,7 @@
 		</div>
 	</div>
 
+	<!-- 레이어팝업 ---------------------------------------- -->
 	<div id="data-left4" class="layer_section layer-transparent">
 		<div class="layer_section-container">
 			<div class="layer-content">
@@ -820,6 +831,13 @@
 			</div>
 			<div class="layer-content time-series-detail">
 				<div class="map-layer-container">
+					<button type="button" class="btn-right-open" onclick="UIexe.layerRightAccoToggle.show()"	style="border:1px solid rgba(255,255,255,.5);color:#000">
+					우측 레이어오픈 샘플열기
+					</button><br>
+					<button type="button" class="btn-right-open" onclick="UIexe.layerRightAccoToggle.hide()"	style="border:1px solid rgba(255,255,255,.5);color:#000">
+					우측 레이어오픈 샘플닫기
+					</button>
+
 					<div class="player-box">
 						<div class="player-control-btn">
 							<button type="button" class="btn-control">
@@ -926,7 +944,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="map-container-right">
+				<div class="map-container-right" data-id="layerRight">
 					<div class="accordion-list">
 						<div class="accordion-group">
 							<div class="accordion-title">
@@ -1403,38 +1421,84 @@
 		newhome.callLayer();
 		;(function($, win, doc, undefined) {
 			$(doc).ready(function(){
-				$('.btn-full-view').on('click', function (e) {
-					$(this).parent().parent().toggleClass('active');
-				});
-				$('.btn-layer-hover').on('mouseover', function (e) {
-					$(this).addClass('selected');
-				});
-				$('.btn-layer-hover').on('mouseout', function (e) {
-					$(this).removeClass('selected');
+				/** -------------------------------
+				 * UI_ToggleAct : toggle 이벤트
+				 * [옵션]
+				 * target : 적용될 영역, 여러곳일경우 ['', ''] array로 사용
+				 * btn : 이벤트 버튼(복수). 없을 경우 null
+				 * callback_show: show일 경우 콜백 
+				 * callback_hide: hide일 경우 콜백 
+				 *
+				 * [실행]
+				 * UIexe.{name}.show();
+				 * UIexe.{name}.hide();
+				 ------------------------------- */
+				UIexe.rightAccoToggle = new UI_ToggleAct({
+					target: document.querySelector('.map-container-right'),
+					btn: document.querySelectorAll('.btn-right-open'),
+					callback_show: () => {
+						console.log('rightAccoToggle show');
+						
+					},
+					callback_hide: () => {
+						console.log('rightAccoToggle hide');
+						
+					},
 				});
 
-				$('.setting-open').on('click', function (e) {
-					$(this).toggleClass('active');
+				UIexe.layerRightAccoToggle = new UI_ToggleAct({
+					target: document.querySelector('[data-id="layerRight"]'),
+					btn: null,
+					callback_show: () => {
+						console.log('layerRightAccoToggle show');
+						
+					},
+					callback_hide: () => {
+						console.log('layerRightAccoToggle hide');
+						
+					},
 				});
-				$( function() {
-					$( ".slider-range-min" ).slider({
-						range: "min",
-						value: 0,
-						min: 1,
-						max: 700,
-					});
 
-					$( ".slider-range-min2" ).slider({
-						range: "min",
-						value: 0,
-						min: 1,
-						max: 100,
-						slide: function( event, ui ) {
-							$(this).parent().parent().find( ".amount-data" ).val( ui.value );
-						}
-					});
-					$( ".amount-data" ).val( $( ".slider-range-min2" ).slider( "value" ) );
-				} );
+				UIexe.settingToggle = new UI_ToggleAct({
+					target: document.querySelector('.layer-setting'),
+					btn: document.querySelectorAll('.setting-open'),
+					callback_show: () => {
+						console.log('settingToggle show');
+					},
+					callback_hide: () => {
+						console.log('settingToggle hide');
+					},
+				});
+
+				//hover layer
+				UIexe.hoverLayer({
+					classname: 'btn-layer-hover'
+				});
+
+				//모달창 확대 축소
+				UIexe.layerFullSmall();
+				
+				//slider range
+				$('.slider-range-min').slider({
+					range: 'min',
+					value: 0,
+					min: 1,
+					max: 700,
+				});
+
+				$('.slider-range-min2').slider({
+					range: 'min',
+					value: 0,
+					min: 1,
+					max: 100,
+					slide: function(event, ui) {
+						const _wrap = $(this).parent().parent();
+
+						_wrap.find('.amount-data').val(ui.value);
+						_wrap.find('.slider-value-position').css('left', ui.value + '%');
+					}
+				});
+				$('.amount-data').val($('.slider-range-min2').slider('value'));
 			});
 		})(jQuery, window, document);
 	</script>

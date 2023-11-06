@@ -24,6 +24,7 @@
 
 <body>
 	<div class="base-wrap no-bg">
+		<!-- 상단 메뉴 ----------------------------------------  -->
 		<div class="head">
 			<h1 class="h1-logo">
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
@@ -44,10 +45,11 @@
 			</div>-->
 		</div>
 
+		<!-- 중간 컨텐츠 ----------------------------------------  -->
 		<div class="map-container-box overflow-hidden">
 			<div class="map-container">
 				<div class="map-original-area" style="background-color:#46555c">
-
+					<!-- content : LEFT -->
 					<div class="map-left-box">
 						<div class="map-left-sh-box">
 							<i class="icon-sh"></i>
@@ -116,10 +118,14 @@
 						</div>
 
 					</div>
+
+					<!-- content : TOP -->
 					<div class="map-top-center map-original-top-center">
 						<p class="map-top-center-text-1">전망자료<i class="icon-arrow-small"></i>평균기온</p>
 						<p class="map-top-center-text-2">SSP5-85 : 전기(2041 ~ 2080년) </p>
 					</div>
+
+					<!-- content : BOTTOM -->
 					<div class="map3-btm-center">
 						<div class="map3-btm-item-box">
 							<div class="radio-group-box">
@@ -190,12 +196,17 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="btn-right-open" style="position:absolute;left:50%;top:50%;border:1px solid rgba(255,255,255,.5);color:#fff">
+
+
+
+					<button type="button" class="btn-right-open" onclick="UIexe.rightToggle.show();" style="position:absolute;left:50%;top:50%;border:1px solid rgba(255,255,255,.5);color:#fff">
 						우측 레이어오픈 샘플
 					</button>
+
 					<button type="button" style="position:absolute;left:50%;top:60%;border:1px solid rgba(255,255,255,.5);color:#fff" data-layer="data-layer-space">
 						거리 선택 샘플
 					</button>
+
 					<div class="map-choice-grid" style="top:160px;left:200px">
 						<div class="map-square map-size-sm"></div>
 						<span class="map-choice-grid-text">1Km</span>
@@ -221,6 +232,9 @@
 						<div class="map-round map-size-lg"></div>
 						<span class="map-choice-grid-text">20Km</span>
 					</div>
+
+
+					<!-- content : RIGHT : ONLY DESKTOP -->
 					<div class="map3-right-top">
 						<button type="button" class="btn-right-round btn-deviation-open">
 							<i class="icon-map-open-1"></i>
@@ -318,6 +332,7 @@
 						</div>
 					</div>
 
+					<!-- 비교 -->
 					<div class="layer-deviation-area" data-map="dragmap1">
 						<div class="layer-deviation-item" style="width:50%" data-map-area="1">
 							<div class="map-top-center">
@@ -426,7 +441,7 @@
 						</div>
 					</div>
 					<div class="map-comparison-right-btn">
-						<button type="button" class="layer-top-btn-item dark btn_comparison-close">
+						<button type="button" class="layer-top-btn-item dark btn_comparison-close" onclick="UIexe.comparisonToggle.hide();">
 							<img src="../resources/img/icon/icon-close.png" alt="">
 						</button>
 					</div>
@@ -434,7 +449,7 @@
 			</div>
 			<div class="map-detail-right-area">
 				<div class="map-detail-right-close-box">
-					<button type="button" class="layer-top-btn-item dark btn_right-close">
+					<button type="button" class="layer-top-btn-item dark btn_right-close" onclick="UIexe.rightToggle.hide();">
 						<i class="icon-close"></i>
 					</button>
 				</div>
@@ -493,8 +508,10 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- 하단컨트롤 ----------------------------------------  -->
 		<div class="map-control-area">
-			<button type="button" class="map-control-btn">
+			<button type="button" class="map-control-btn" data-res="m">
 				<span class="icon-grid-1"></span>
 			</button>
 			<div class="map-control-btn-group">
@@ -847,6 +864,7 @@
 		</div>
 	</div>
 
+	<!-- 레이어팝업 ---------------------------------------- -->
 	<div id="data-layer-space" class="layer_section layer-space-list">
 		<div class="layer_section-container">
             <div class="map-section-head">
@@ -906,7 +924,6 @@
 		</div>
 	</div>
 
-
 	<!-- only mobile 팝업 -->
 	<div id="data-left1" class="layer_section layer-transparent">
 		<div class="layer_section-container">
@@ -927,6 +944,7 @@
 		</div>
 	</div>
 
+	<!-- 경계 -->
 	<div id="data-left2" class="layer_section layer-transparent">
 		<div class="layer_section-container">
 			<div class="layer-content">
@@ -1100,92 +1118,160 @@
 		newhome.callLayer();
 		;(function($, win, doc, undefined) {
 			$(doc).ready(function(){
-				$('.btn_right-close').on('click', function (e) {
-					$('.map-detail-right-area').removeClass('is-open');
-					$('.map-comparison-right-area').removeClass('hidden');
-				});
-				$('.btn-deviation-open').on('click', function (e) {
-					$('.btn-deviation-open').toggleClass('active');
-					$('.map-original-top-center').toggleClass('hidden');
-					$('.layer-deviation-area').toggleClass('is-view');
-				});
-				$('.btn-right-open').on('click', function (e) {
-					$('.map-detail-right-area').addClass('is-open');
-					$('.map-comparison-right-area').addClass('hidden');
-					$('.btn-right-open').addClass('active');
-				});
-				$('.btn_comparison-close').on('click', function (e) {
-					$('.base-wrap').removeClass('is-map-comparison-open');
-				});
-				$('.btn-comparison-open').on('click', function (e) {
-					$('.base-wrap').addClass('is-map-comparison-open');
-					$('.map-detail-right-area').removeClass('is-open');
-					$('.map-comparison-right-area').removeClass('hidden');
-					$('.btn-right-open').removeClass('active');
-					$('.btn-deviation-open').removeClass('active');
-					$('.map-original-top-center').removeClass('hidden');
-					$('.layer-deviation-area').removeClass('is-view');
-				});
-				$('.btn-layer-hover').on('mouseover', function (e) {
-					$(this).addClass('selected');
-				});
-				$('.btn-layer-hover').on('mouseout', function (e) {
-					$(this).removeClass('selected');
-				});
 
-				$('.setting-open').on('click', function (e) {
-					$(this).toggleClass('active');
-				});
-				$( function() {
-					$( ".slider-range-min" ).slider({
-						range: "min",
-						value: 0,
-						min: 1,
-						max: 700,
-					});
-
-					$( ".slider-range-min2" ).slider({
-						range: "min",
-						value: 0,
-						min: 1,
-						max: 100,
-						slide: function( event, ui ) {
-							$(this).parent().parent().find( ".amount-data" ).val( ui.value );
-							$(this).parent().parent().find( ".slider-value-position" ).css('left', ui.value + '%');
-						}
-					});
-					$( ".amount-data" ).val( $( ".slider-range-min2" ).slider( "value" ) );
-				});
+				// $('.btn_right-close').on('click', function (e) {
+				// 	$('.map-detail-right-area').removeClass('is-open');
+				// 	$('.map-comparison-right-area').removeClass('hidden');
+				// });
 
 
-				// mobile 메뉴 이벤트
+				// $('.btn-deviation-open').on('click', function (e) {
+				// 	$('.btn-deviation-open').toggleClass('active');
+				// 	$('.map-original-top-center').toggleClass('hidden');
+				// 	$('.layer-deviation-area').toggleClass('is-view');
+				// });
+
+				// $('.btn-right-open').on('click', function (e) {
+				// 	$('.map-detail-right-area').addClass('is-open');
+				// 	$('.map-comparison-right-area').addClass('hidden');
+				// 	$('.btn-right-open').addClass('active');
+				// });
+
+				// $('.btn_comparison-close').on('click', function (e) {
+				// 	$('.base-wrap').removeClass('is-map-comparison-open');
+				// });
+				// $('.btn-comparison-open').on('click', function (e) {
+				// 	$('.base-wrap').addClass('is-map-comparison-open');
+				// 	$('.map-detail-right-area').removeClass('is-open');
+				// 	$('.map-comparison-right-area').removeClass('hidden');
+				// 	$('.btn-right-open').removeClass('active');
+				// 	$('.btn-deviation-open').removeClass('active');
+				// 	$('.map-original-top-center').removeClass('hidden');
+				// 	$('.layer-deviation-area').removeClass('is-view');
+				// });
+
+
+				/** -------------------------------
+				 * UI_ToggleAct : toggle 이벤트
+				 * [옵션]
+				 * target : 적용될 영역, 여러곳일경우 ['', ''] array로 사용
+				 * btn : 이벤트 버튼(복수). 없을 경우 null
+				 * callback_show: show일 경우 콜백 
+				 * callback_hide: hide일 경우 콜백 
+				 *
+				 * [실행]
+				 * UIexe.{name}.show();
+				 * UIexe.{name}.hide();
+				 ------------------------------- */
+				UIexe.comparisonToggle = new UI_ToggleAct({
+					target: document.querySelector('.map-comparison-right-area'),
+					btn: document.querySelectorAll('.btn-comparison-open'),
+					callback_show: () => {
+						console.log('comparisonToggle show');
+						document.querySelector('.base-wrap').classList.add('is-map-comparison-open');
+						UIexe.deviationToggle.hide();
+					},
+					callback_hide: () => {
+						console.log('comparisonToggle hide');
+						document.querySelector('.base-wrap').classList.remove('is-map-comparison-open');
+					},
+				});
+
+				UIexe.deviationToggle = new UI_ToggleAct({
+					target: document.querySelector('.layer-deviation-area'),
+					btn: document.querySelectorAll('.btn-deviation-open'),
+					callback_show: () => {
+						console.log('deviationToggle show');
+						document.querySelector('.map-original-top-center').style.display = 'none';
+						UIexe.comparisonToggle.hide();
+					},
+					callback_hide: () => {
+						console.log('deviationToggle hide');
+						document.querySelector('.map-original-top-center').style.display = 'block';
+					},
+				});
+
+				UIexe.rightToggle = new UI_ToggleAct({
+					target: document.querySelector('.map-detail-right-area'),
+					btn: null,
+					callback_show: () => {
+						console.log('rightToggle show');
+					},
+					callback_hide: () => {
+						console.log('rightToggle hide');
+					},
+				});
+
 				UIexe.navToggle = new UI_ToggleAct({
 					target: document.querySelector('.head'),
-					btn: document.querySelector('.head-nav-btn')
+					btn: document.querySelectorAll('.head-nav-btn'),
+					callback_show: () => {
+						console.log('navToggle show');
+					},
+					callback_hide: () => {
+						console.log('navToggle hide');
+					},
 				});
-				UIexe.controlToggle = new UI_ToggleAct({
-					target: [document.querySelector('.map-control-area'),document.querySelector('.map-container-box')],
-					btn: document.querySelector('.map-control-btn')
+
+				if (!!document.querySelector('.map-control-btn')) {
+					UIexe.controlToggle = new UI_ToggleAct({
+						target: [document.querySelector('.map-control-area'),document.querySelector('.map-container-box')],
+						btn: document.querySelectorAll('.map-control-btn'),
+						callback_show: () => {
+							console.log('controlToggle show');
+						},
+						callback_hide: () => {
+							console.log('controlToggle hide');
+						},
+					});
+				}
+
+				UIexe.settingToggle = new UI_ToggleAct({
+					target: document.querySelector('.layer-setting'),
+					btn: document.querySelectorAll('.setting-open'),
+					callback_show: () => {
+						console.log('settingToggle show');
+					},
+					callback_hide: () => {
+						console.log('settingToggle hide');
+					},
+				});
+
+				
+				/** -------------------------------
+				 * UI_DragMap : 맵 좌우 드래그
+				 * [옵션]
+				 * id : 유니크한 data-id 기준
+				 * 
+				 * [실행]
+				 * UIexe.{name}.start(); 이벤트 시작
+				 * UIexe.{name}.end(); 이벤트 종료
+				------------------------------- */ 
+				UIexe.dragMap1 = new UI_DragMap({id: 'dragmap1'});
+				UIexe.dragMap1.start();
+
+				//input value clear
+				UIexe.inputClear();
+
+				//hover layer
+				UIexe.hoverLayer({
+					classname : 'btn-layer-hover'
 				});
 				
-				//map 분할 드래그
-				UIexe.dragMap1 = new UI_DragMap({
-					id: 'dragmap1'
+				//slider range
+				$('.slider-range-min2').slider({
+					range: 'min',
+					value: 0,
+					min: 1,
+					max: 100,
+					slide: function(event, ui) {
+						const _wrap = $(this).parent().parent();
+
+						_wrap.find('.amount-data').val(ui.value);
+						_wrap.find('.slider-value-position').css('left', ui.value + '%');
+					}
 				});
-					// 드래그 이벤트 시작
-					UIexe.dragMap1.start();
-					// 드래그 이벤트 종료
-					// UIexe.dragMap1.end();
-
-				// input value clear
-				const inputClear = document.querySelector('.btn-clear');
-				const actClear = (e) => {
-					const el = e.currentTarget;
-					const id = el.dataset.id;
-
-					document.querySelector('input[data-id="'+ id +'"]').value = '';
-				}
-				inputClear.addEventListener('click', actClear);
+				$('.amount-data').val($('.slider-range-min2').slider('value'));
 
 
 			});
