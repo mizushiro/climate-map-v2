@@ -582,6 +582,7 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .carbon-box {display:flex;gap:16px;margin-top:12px}
 .carbon-label {font-size:14px;font-weight:600;color:#fff;flex-shrink:0}
 .carbon-img {flex:1;background:url("../img/icon/img-carbon.png") no-repeat 50% 50%;background-size:contain}
+.map3-btm-item-box .carbon-box {padding-left:calc(((100% - 24px) / 5) + 6px)}
 
 .map3-btm-item-box .icon-pause {background-image:url("../img/icon/icon-pause-off-w.png")}
 .map3-btm-item-box .icon-play {background-image:url("../img/icon/icon-play-off-w.png")}
