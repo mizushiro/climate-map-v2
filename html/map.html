@@ -783,8 +783,8 @@
 				</div>
 			</div>
 			<div class="layer-content tab-contents" id="map-divide2">
-				<div class="map-divide-box">
-					<div class="map-divide-box-item" style="width:25%">
+				<div class="map-divide-box" data-map="dragmap3">
+					<div class="map-divide-box-item" style="width:25%" data-map-area="1">
 						<div class="map-divide-top">
 							<div class="year-month">
 								<div class="select-item-box">
@@ -837,23 +837,15 @@
 						</div>
 						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
 					</div>
-					<div class="map-divide-line" style="left:25%">
-						<button type="button" class="btn-map-divide">
-							<span class="for-a11y">조정</span>
-						</button>
-					</div>
-					<div class="map-divide-box-item" style="width:42%">
+					
+					<div class="map-divide-box-item" style="width:42%" data-map-area="2">
 						<div class="map-divide-top">
 							<p class="map-divide-top-desc">2023년  8월  23일 </p>
 						</div>
 						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
 					</div>
-					<div class="map-divide-line" style="left:67%">
-						<button type="button" class="btn-map-divide">
-							<span class="for-a11y">조정</span>
-						</button>
-					</div>
-					<div class="map-divide-box-item" style="width:33%">
+					
+					<div class="map-divide-box-item" style="width:33%" data-map-area="3">
 						<div class="map-divide-top">
 							<div class="year-month">
 								<div class="select-item-box">
@@ -905,6 +897,17 @@
 							</div>
 						</div>
 						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
+					</div>
+
+					<div class="map-divide-line" style="left:25%" data-map-line="1">
+						<button type="button" class="btn-map-divide" data-map-btn="1">
+							<span class="for-a11y">조정</span>
+						</button>
+					</div>
+					<div class="map-divide-line" style="left:67%" data-map-line="2">
+						<button type="button" class="btn-map-divide" data-map-btn="2">
+							<span class="for-a11y">조정</span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -999,6 +1002,14 @@
 			UIexe.dragMap2.start();
 			// 드래그 이벤트 종료
 			// UIexe.dragMap2.end();
+
+			UIexe.dragMap3 = new UI_DragMap({
+				id: 'dragmap3'
+			});
+			// 드래그 이벤트 시작
+			UIexe.dragMap3.start();
+			// 드래그 이벤트 종료
+			// UIexe.dragMap3.end();
 
 		})(jQuery, window, document);
 	</script>
