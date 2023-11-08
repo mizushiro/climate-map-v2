@@ -891,7 +891,10 @@
     .icon-grid-1{width: 2.4rem; height: 1.8rem; background-size: cover; }
 
 
-
+    .main-title img{width:40vw; height: auto;}
+    .main-nav-group{gap:.8rem; overflow-x: auto; width: 100vw; padding: 0 8vw;}
+    .main-nav-item{min-width:40vw}
+     .main-nav-item img{width: 100%;}
 }
 
 
@@ -902,6 +905,7 @@
         width: calc(50% - 0.6rem);
         height: 52vw;
     }
+  
 }
 @media (max-width:440px) {
      .map-section-item {
