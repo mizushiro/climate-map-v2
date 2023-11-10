@@ -27,61 +27,79 @@
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
-			<div class="lang-box">
+			<div class="head-nav">
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link active"><i class="icon-head-2"></i>2D 전세계 기상 기후상황지도</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-1"></i>3D 전세계 기상 기후상황지도</a>
+					<div class="nav-2depth">
+						<div class="nav-2depth-list">
+							<a href="" class="head-nav-2depth-item">2D 지도</a>
+							<a href="" class="head-nav-2depth-item active">3D 지도</a>
+						</div>
+					</div>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-4"></i>기상 기후 자료 서비스</a>
+				</div>
+			</div>
+			<!--<div class="lang-box">
 				<a href="" class="btn-lang active">한국어</a>
 				<a href="" class="btn-lang">English</a>
-			</div>
+			</div>-->
 		</div>
 		<div class="map-container-box">
 			<div class="map-container">
 				<div class="map2-left-top">
-					<p class="map2-left-top-title">NCEP R1 자료선택 </p>
-					<div class="year-month">
-						<div class="select-item-box">
-							<select name="" id="">
-								<option value="">2001년</option>
-								<option value="">2002년</option>
-								<option value="">2003년</option>
-								<option value="">2004년</option>
-								<option value="">2005년</option>
-								<option value="">2006년</option>
-								<option value="">2007년</option>
-								<option value="">2008년</option>
-								<option value="">2009년</option>
-								<option value="">2010년</option>
-							</select>
-						</div>
-						<div class="select-item-box">
-							<select name="" id="">
-								<option value="">1월</option>
-								<option value="">2월</option>
-								<option value="">3월</option>
-								<option value="">4월</option>
-								<option value="">5월</option>
-								<option value="">6월</option>
-								<option value="">7월</option>
-								<option value="">8월</option>
-								<option value="">9월</option>
-								<option value="">10월</option>
-								<option value="">11월</option>
-								<option value="">12월</option>
-							</select>
-						</div>
-						<div class="select-item-box">
-							<select name="" id="">
-								<option value="">1일</option>
-								<option value="">2일</option>
-								<option value="">3일</option>
-								<option value="">4일</option>
-								<option value="">5일</option>
-								<option value="">6일</option>
-								<option value="">7일</option>
-								<option value="">8일</option>
-								<option value="">9일</option>
-								<option value="">10일</option>
-								<option value="">11일</option>
-								<option value="">12일</option>
-							</select>
+					<div class="map2-select-choice-box">
+						<div class="map2-select-list">
+							<div class="select-item-box text-bold">
+								<select name="">
+									<option value="">NCEP R1 자료선택</option>
+									<option value="">nims 시나리오 </option>
+								</select>
+							</div>
+							<div class="year-month">
+								<div class="select-item-box">
+									<select name="">
+										<option value="">시나리오</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="">
+										<option value="">2001년</option>
+										<option value="">2002년</option>
+										<option value="">2003년</option>
+										<option value="">2004년</option>
+										<option value="">2005년</option>
+										<option value="">2006년</option>
+										<option value="">2007년</option>
+										<option value="">2008년</option>
+										<option value="">2009년</option>
+										<option value="">2010년</option>
+									</select>
+								</div>
+								<div class="select-item-box">
+									<select name="">
+										<option value="">1월</option>
+										<option value="">2월</option>
+										<option value="">3월</option>
+										<option value="">4월</option>
+										<option value="">5월</option>
+										<option value="">6월</option>
+										<option value="">7월</option>
+										<option value="">8월</option>
+										<option value="">9월</option>
+										<option value="">10월</option>
+										<option value="">11월</option>
+										<option value="">12월</option>
+									</select>
+								</div>
+							</div>
 						</div>
 						<button class="btn-type1 btn-blue btn-small" type="button">
 							조회
@@ -945,8 +963,8 @@
 							<div class="detailed-index">
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch02-1">
-										<label for="ch02-1" class="right-check-label">
+										<input type="checkbox" id="ch022-1">
+										<label for="ch022-1" class="right-check-label">
 											<span class="right-check-data2">등압메쉬</span>
 										</label>
 									</div>
@@ -960,8 +978,8 @@
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch02-2">
-										<label for="ch02-2" class="right-check-label">
+										<input type="checkbox" id="ch022-2">
+										<label for="ch022-2" class="right-check-label">
 											<span class="right-check-data2">등압선</span>
 										</label>
 									</div>
@@ -986,8 +1004,8 @@
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch02-3">
-										<label for="ch02-3" class="right-check-label">
+										<input type="checkbox" id="ch022-3">
+										<label for="ch022-3" class="right-check-label">
 											<span class="right-check-data2">등온선</span>
 										</label>
 									</div>
@@ -1014,15 +1032,15 @@
 									<div class="accordion-content-flex">
 										<p class="accordion-content-title">바람</p>
 										<div class="checkbox-wrapper-34">
-											<input class="tgl tgl-ios" id="ch02-4" type="checkbox">
-											<label class="tgl-btn" for="ch02-4"></label>
+											<input class="tgl tgl-ios" id="ch022-4" type="checkbox">
+											<label class="tgl-btn" for="ch022-4"></label>
 										</div>
 									</div>
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch02-5">
-										<label for="ch02-5" class="right-check-label">
+										<input type="checkbox" id="ch022-5">
+										<label for="ch022-5" class="right-check-label">
 											<span class="right-check-data2">등온선채우기</span>
 										</label>
 									</div>
@@ -1052,8 +1070,8 @@
 							<div class="detailed-index">
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch03-1">
-										<label for="ch03-1" class="right-check-label">
+										<input type="checkbox" id="ch023-1">
+										<label for="ch023-1" class="right-check-label">
 											<span class="right-check-data2">등압메쉬</span>
 										</label>
 									</div>
@@ -1067,8 +1085,8 @@
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch03-2">
-										<label for="ch03-2" class="right-check-label">
+										<input type="checkbox" id="ch023-2">
+										<label for="ch023-2" class="right-check-label">
 											<span class="right-check-data2">등압선</span>
 										</label>
 									</div>
@@ -1093,8 +1111,8 @@
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch03-3">
-										<label for="ch03-3" class="right-check-label">
+										<input type="checkbox" id="ch023-3">
+										<label for="ch023-3" class="right-check-label">
 											<span class="right-check-data2">등온선</span>
 										</label>
 									</div>
@@ -1121,15 +1139,15 @@
 									<div class="accordion-content-flex">
 										<p class="accordion-content-title">바람</p>
 										<div class="checkbox-wrapper-34">
-											<input class="tgl tgl-ios" id="ch03-4" type="checkbox">
-											<label class="tgl-btn" for="ch03-4"></label>
+											<input class="tgl tgl-ios" id="ch023-4" type="checkbox">
+											<label class="tgl-btn" for="ch023-4"></label>
 										</div>
 									</div>
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch03-5">
-										<label for="ch03-5" class="right-check-label">
+										<input type="checkbox" id="ch023-5">
+										<label for="ch023-5" class="right-check-label">
 											<span class="right-check-data2">등온선채우기</span>
 										</label>
 									</div>
@@ -1159,8 +1177,8 @@
 							<div class="detailed-index">
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch04-1">
-										<label for="ch04-1" class="right-check-label">
+										<input type="checkbox" id="ch024-1">
+										<label for="ch024-1" class="right-check-label">
 											<span class="right-check-data2">등압메쉬</span>
 										</label>
 									</div>
@@ -1174,8 +1192,8 @@
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch04-2">
-										<label for="ch04-2" class="right-check-label">
+										<input type="checkbox" id="ch024-2">
+										<label for="ch024-2" class="right-check-label">
 											<span class="right-check-data2">등압선</span>
 										</label>
 									</div>
@@ -1200,8 +1218,8 @@
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch04-3">
-										<label for="ch04-3" class="right-check-label">
+										<input type="checkbox" id="ch024-3">
+										<label for="ch024-3" class="right-check-label">
 											<span class="right-check-data2">등온선</span>
 										</label>
 									</div>
@@ -1228,15 +1246,15 @@
 									<div class="accordion-content-flex">
 										<p class="accordion-content-title">바람</p>
 										<div class="checkbox-wrapper-34">
-											<input class="tgl tgl-ios" id="ch04-4" type="checkbox">
-											<label class="tgl-btn" for="ch04-4"></label>
+											<input class="tgl tgl-ios" id="ch024-4" type="checkbox">
+											<label class="tgl-btn" for="ch024-4"></label>
 										</div>
 									</div>
 								</div>
 								<div class="accordion-content-item">
 									<div class="checkbox-item">
-										<input type="checkbox" id="ch04-5">
-										<label for="ch04-5" class="right-check-label">
+										<input type="checkbox" id="ch024-5">
+										<label for="ch024-5" class="right-check-label">
 											<span class="right-check-data2">등온선채우기</span>
 										</label>
 									</div>
@@ -1267,14 +1285,14 @@
 								<div class="accordion-content-item">
 									<div class="accordion-checkbox-group">
 										<div class="checkbox-item">
-											<input type="checkbox" id="ch05-1">
-											<label for="ch05-1" class="right-check-label">
+											<input type="checkbox" id="ch025-1">
+											<label for="ch025-1" class="right-check-label">
 												<span class="right-check-data2">지상기온</span>
 											</label>
 										</div>
 										<div class="checkbox-item">
-											<input type="checkbox" id="ch05-2">
-											<label for="ch05-2" class="right-check-label">
+											<input type="checkbox" id="ch025-2">
+											<label for="ch025-2" class="right-check-label">
 												<span class="right-check-data2">해수면 온도</span>
 											</label>
 										</div>
