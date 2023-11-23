@@ -16,8 +16,15 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="../resources/js/swiper.min.js"></script>
 	<script src="../resources/js/ui.plugins.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
+	<style>
+
+		.swiper-slide img {
+			display: block;
+		}
+	</style>
 </head>
 
 <body>
@@ -27,13 +34,35 @@
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
-			<div class="lang-box">
+			<div class="head-nav">
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link active"><i class="icon-head-2"></i>2D 전세계 기상 기후상황지도</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-1"></i>3D 전세계 기상 기후상황지도</a>
+					<div class="nav-2depth">
+						<div class="nav-2depth-list">
+							<a href="" class="head-nav-2depth-item">2D 지도</a>
+							<a href="" class="head-nav-2depth-item active">3D 지도</a>
+						</div>
+					</div>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-4"></i>기상 기후 자료 서비스</a>
+				</div>
+			</div>
+			<!--<div class="lang-box">
 				<a href="" class="btn-lang active">한국어</a>
 				<a href="" class="btn-lang">English</a>
-			</div>
+			</div>-->
 		</div>
 		<div class="main-content">
-			<h2 class="main-title"><img src="../resources/img/main-title.png" alt=""></h2>
+			<div class="main-btn-help">
+				<button type="button" class="btn-type1 btn-small2 btn-white2">도움말</button>
+			</div>
 			<div class="main-nav-group">
 				<a href="" class="main-nav-item">
 					<img src="../resources/img/main-nav1.png" alt="">
@@ -48,8 +77,67 @@
 					<img src="../resources/img/main-nav4.png" alt="">
 				</a>
 			</div>
-			<p class="main-copy">Copyright@2022 KMA. All Rights RESERVED. 전자우편 : webmasterkma@ko</p>
+			<p class="main-content-desc">탄소중립 이행을 위한 기후·기후변화 감시정보 생산 및 활용 확대<br> 미래 수요에 부합하는 선진 기후·기후변화 정보 </p>
+			<div class="main-content-list">
+				<div class="main-content-list-item">
+					평균기온 MKPRISM, SSP1-2.6, SSP5-8.5
+				</div>
+				<div class="main-content-list-item">
+					강수량 MKPRISM, SSP1-2.6, SSP5-8.5
+				</div>
+				<div class="main-content-list-item">
+					SSP1-2.6, SSP5-8.5 계절길이 변화
+				</div>
+			</div>
+			<p class="main-copy">Copyright@2022 KMA. All Rights RESERVED. 전자우편 : webmasterkma@ko.kr</p>
+		</div>
+		<div class="main-notice-layer">
+			<div class="main-notice-list">
+				<div class="swiper-wrapper">
+					<div class="notice-item swiper-slide">
+						<img src="../resources/img/temp/n1.png" alt="">
+					</div>
+					<div class="notice-item swiper-slide">
+						<img src="../resources/img/temp/n2.png" alt="">
+					</div>
+					<div class="notice-item swiper-slide">
+						<img src="../resources/img/temp/n3.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+			<div class="main-notice-close-box">
+				<div class="checkbox-item">
+					<input type="checkbox" id="noticeClose" checked>
+					<label for="noticeClose" class="notice-close-label">
+						하루동안 이창 열지않기
+					</label>
+				</div>
+				<button type="button" class="layer-top-btn-item dark">
+					<i class="icon-close"></i>
+				</button>
+			</div>
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	var swiper = new Swiper(".main-notice-list", {
+		slidesPerView: 1,
+		spaceBetween: 30,
+		loop: true,
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination: {
+			el: ".swiper-pagination",
+		},
+	});
+</script>
 </html>
