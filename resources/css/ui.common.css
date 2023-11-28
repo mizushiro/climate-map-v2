@@ -776,7 +776,7 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .dashboard-grid-select-group select option {background-color:#212633;border:1px solid #2a3141;outline:none;padding:10px 0}
 .dashboard-grid-select-group select option:checked,
 .dashboard-grid-select-group select option:hover {background-color:#2e7ef6}
-.dashboard-grid-1-title {text-align:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0}
+.dashboard-grid-1-title {text-align:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px}
 .dashboard-grid-1-map {flex:1}
 .dashboard-grid-group-2 {flex-shrink:0;height:248px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .dashboard-grid-2 {grid-column:span 2/span 2;grid-row:span 1/span 1}
@@ -791,9 +791,9 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .btn-dashboard-chart-view:after {content:'';position:absolute;background-color:#fff;top:50%;left:50%}
 .btn-dashboard-chart-view:before {width:10px;height:2px;margin:-1px 0 0 -5px}
 .btn-dashboard-chart-view:after {height:10px;width:2px;margin:-5px 0 0 -1px}
-.dashboard-chart-grid {display:grid;grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));flex:1;gap:8px 0}
-.dashboard-chart-grid-item-1 {grid-column:span 10/span 10;grid-row:span 1/span 1}
-.dashboard-chart-grid-item-2 {grid-column:span 3/span 3;grid-row:span 1/span 1}
+.dashboard-chart-grid {display:grid;grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));flex:1;gap:8px 0}
+.dashboard-chart-grid-item-1 {grid-column:span 10/span 10;grid-row:span 3/span 3}
+.dashboard-chart-grid-item-2 {grid-column:span 10/span 10;grid-row:span 2/span 2}
 .dashboard-chart-grid-item-3 {grid-column:span 7/span 7;grid-row:span 1/span 1}
 .dashboard-chart-half {flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(1,minmax(0,1fr))}
 .dashboard-chart-grid-item-4 {grid-column:span 1/span 1;grid-row:span 1/span 1}
@@ -826,3 +826,11 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .dashboard-layer-area .dashboard-chart-half-name-item {font-size:28px;color:#fff}
 .dashboard-layer-area .dashboard-chart-full,
 .dashboard-layer-area .dashboard-chart-grid {min-height:100%}
+.dashboard-chart-grid-v2 {height:100%;display:flex;flex-direction:column}
+.dashboard-chart-grid-top {flex-shrink:0;padding-left:160px;height:40px;display:flex}
+.dashboard-chart-grid-top-title {display:flex;flex:1;align-items:center;justify-content:center;font-size:16px;color:#fff;font-weight:600}
+.dashboard-chart-grid-group {display:flex;flex:1}
+.dashboard-chart-grid-left {flex-shrink:0;width:160px;display:flex;flex-direction:column}
+.dashboard-chart-grid-left-title {flex:1;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:700}
+.dashboard-chart-grid-center {flex:1;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));display:grid}
+.dashboard-chart-grid-center-item {grid-column:span 1/span 1;grid-row:span 1/span 1}
