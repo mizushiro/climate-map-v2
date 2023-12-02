@@ -871,7 +871,7 @@
 				</div>
 			</div>
 			<div class="layer-top-right-btn">
-				<button type="button" class="layer-top-btn-item blue">
+				<button type="button" class="layer-top-btn-item blue btn-full-view">
 					<i class="icon-full"></i>
 				</button>
 				<button type="button" class="layer-top-btn-item blue">
@@ -1309,16 +1309,16 @@
 				 * UIexe.{name}.show();
 				 * UIexe.{name}.hide();
 				 ------------------------------- */
-				UIexe.settingToggle = new UI_ToggleAct({
-					target: document.querySelector('.layer-setting'),
-					btn: document.querySelectorAll('.setting-open'),
-					callback_show: () => {
-						console.log('settingToggle show');
-					},
-					callback_hide: () => {
-						console.log('settingToggle hide');
-					},
-				});
+				// UIexe.settingToggle = new UI_ToggleAct({
+				// 	target: document.querySelector('.layer-setting'),
+				// 	btn: document.querySelectorAll('.setting-open'),
+				// 	callback_show: () => {
+				// 		console.log('settingToggle show');
+				// 	},
+				// 	callback_hide: () => {
+				// 		console.log('settingToggle hide');
+				// 	},
+				// });
 
 				/** -------------------------------
 				 * UI_DragMap : 맵 좌우 드래그
@@ -1329,14 +1329,10 @@
 				 * UIexe.{name}.start(); 이벤트 시작
 				 * UIexe.{name}.end(); 이벤트 종료
 				------------------------------- */ 
-				UIexe.dragMap2 = new UI_DragMap({
-					id: 'dragmap2'
-				});
+				UIexe.dragMap2 = new UI_DragMap({ id: 'dragmap2' });
 				UIexe.dragMap2.start();
 
-				UIexe.dragMap3 = new UI_DragMap({
-					id: 'dragmap3'
-				});
+				UIexe.dragMap3 = new UI_DragMap({ id: 'dragmap3' });
 				UIexe.dragMap3.start();
 
 				//모달창 확대 축소

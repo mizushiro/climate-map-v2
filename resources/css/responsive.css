@@ -12,6 +12,8 @@
 .time-series-detail .map-layer-container{background-color: #979797;}
 .layer-setting[data-toggle="true"]{display: block;}
 .layer-close{display: none;}
+.layer_section-container.active{width: 100%; height: 100%; top:0; left:0; max-height: 100% ;}
+.layer_section-container.active .layer-content{height: 100%;}
 @media (max-width:1024px) {
     html {
         font-size: 62.5%;
