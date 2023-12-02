@@ -25,15 +25,38 @@
 <body class="map1">
 	<div class="base-wrap">
 		<!-- 상단 메뉴 ----------------------------------------  -->
-		<div class="head">
+		<div class="head" data-toggle-target="nav">
 			<h1 class="h1-logo">
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
-			<div class="lang-box">
+			<button type="button" class="head-nav-btn" aria-label="메뉴열고닫기" data-toggle-obj="nav">
+				<span></span>
+			</button>
+			<div class="head-nav">
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link active"><i class="icon-head-2"></i>2D 전세계 기상 기후상황지도</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-1"></i>3D 전세계 기상 기후상황지도</a>
+					<div class="nav-2depth">
+						<div class="nav-2depth-list">
+							<a href="" class="head-nav-2depth-item">2D 지도</a>
+							<a href="" class="head-nav-2depth-item active">3D 지도</a>
+						</div>
+					</div>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-4"></i>기상 기후 자료 서비스</a>
+				</div>
+			</div>
+			<!--<div class="lang-box">
 				<a href="" class="btn-lang active">한국어</a>
 				<a href="" class="btn-lang">English</a>
-			</div>
+			</div>-->
 		</div>
 
 		<!-- 중간 컨텐츠 ----------------------------------------  -->
@@ -95,11 +118,12 @@
 
 							<div class="s-map-right-items">
 								<div class="btn-layer-hover">
-									<button type="button" class="btn-s-map-item">
+									<button type="button" class="btn-s-map-item" data-hoverlayer="btn">
 										<i class="icon-layer"></i>
 									</button>
 									<div class="right-side-layer">
 										<div class="right-side-layer-box">
+											<button type="button" class="layer-close" aria-label="레이어 닫기"></button>
 											<button type="button" class="btn-s-map-type">
 												<i class="icon-map-3"></i>
 											</button>
@@ -114,11 +138,12 @@
 								</div>
 
 								<div class="btn-layer-hover">
-									<button type="button" class="btn-s-map-item">
+									<button type="button" class="btn-s-map-item" data-hoverlayer="btn">
 										<i class="icon-down"></i>
 									</button>
 									<div class="right-side-layer">
 										<div class="right-side-layer-box">
+											<button type="button" class="layer-close" aria-label="레이어 닫기"></button>
 											<button type="button" class="btn-s-down-item">
 												<i class="icon-down-1"></i>
 											</button>
@@ -141,11 +166,12 @@
 								</button>
 								
 								<div class="btn-layer-hover" data-res="m">
-									<button type="button" class="btn-s-map-item" aria-label="범례">
+									<button type="button" class="btn-s-map-item" aria-label="범례"  data-hoverlayer="btn">
 										<i class="icon-grid-6"></i>
 									</button>
 									<div class="right-side-layer" data-ps="bottom">
 										<div class="right-side-layer-box">
+											<button type="button" class="layer-close" aria-label="레이어 닫기"></button>
 											<div class="setting-btn-group">
 												<button type="button" class="btn-setting-item">
 													<span class="level-group">
@@ -388,11 +414,12 @@
 
 							<div class="s-map-right-items">
 								<div class="btn-layer-hover">
-									<button type="button" class="btn-s-map-item">
+									<button type="button" class="btn-s-map-item" data-hoverlayer="btn">
 										<i class="icon-layer"></i>
 									</button>
 									<div class="right-side-layer">
 										<div class="right-side-layer-box">
+											<button type="button" class="layer-close" aria-label="레이어 닫기"></button>
 											<button type="button" class="btn-s-map-type">
 												<i class="icon-map-3"></i>
 											</button>
@@ -407,11 +434,12 @@
 								</div>
 
 								<div class="btn-layer-hover">
-									<button type="button" class="btn-s-map-item">
+									<button type="button" class="btn-s-map-item" data-hoverlayer="btn">
 										<i class="icon-down"></i>
 									</button>
 									<div class="right-side-layer">
 										<div class="right-side-layer-box">
+											<button type="button" class="layer-close" aria-label="레이어 닫기"></button>
 											<button type="button" class="btn-s-down-item">
 												<i class="icon-down-1"></i>
 											</button>
@@ -434,11 +462,12 @@
 								</button>
 								
 								<div class="btn-layer-hover" data-res="m">
-									<button type="button" class="btn-s-map-item" aria-label="범례">
+									<button type="button" class="btn-s-map-item" aria-label="범례" data-hoverlayer="btn">
 										<i class="icon-grid-6"></i>
 									</button>
 									<div class="right-side-layer" data-ps="bottom">
 										<div class="right-side-layer-box">
+											<button type="button" class="layer-close" aria-label="레이어 닫기"></button>
 											<div class="setting-btn-group">
 												<button type="button" class="btn-setting-item">
 													<span class="level-group">
@@ -838,14 +867,14 @@
 				</div>
 				<div class="layer-btn-box">
 					<button type="button" class="btn-type1 btn-blue">위젯 추가</button>
-					<button type="button" class="btn-type1 btn-white btn_layer-close">취소</button>
+					<button type="button" class="btn-type1 btn-white">취소</button>
 				</div>
 			</div>
 			<div class="layer-top-right-btn">
 				<button type="button" class="layer-top-btn-item blue">
 					<i class="icon-full"></i>
 				</button>
-				<button type="button" class="layer-top-btn-item blue btn_layer-close">
+				<button type="button" class="layer-top-btn-item blue">
 					<i class="icon-close"></i>
 				</button>
 			</div>
@@ -930,7 +959,7 @@
 				</div>
 				<div class="layer-btn-box">
 					<button type="button" class="btn-type1 btn-blue" data-layer="data-layer4">비교하기</button>
-					<button type="button" class="btn-type1 btn-white btn_layer-close">취소</button>
+					<button type="button" class="btn-type1 btn-white">취소</button>
 				</div>
 			</div>
 		</div>
@@ -1210,7 +1239,7 @@
 				</div>
 			</div>
 			<div class="layer-top-right-btn">
-				<button type="button" class="layer-top-btn-item dark btn_layer-close">
+				<button type="button" class="layer-top-btn-item dark">
 					<i class="icon-close"></i>
 				</button>
 			</div>
@@ -1258,7 +1287,7 @@
 				</div>
 			</div>
 			<div class="layer-top-right-btn">
-				<button type="button" class="layer-top-btn-item dark btn_layer-close">
+				<button type="button" class="layer-top-btn-item dark">
 					<i class="icon-close"></i>
 				</button>
 			</div>
@@ -1266,8 +1295,7 @@
 	</div>
 		
 	<script>
-		newhome.callLayer();
-		;(function($, win, doc, undefined) {
+		(($, win, doc, undefined) => {
 			$(doc).ready(function(){
 				/** -------------------------------
 				 * UI_ToggleAct : toggle 이벤트
@@ -1310,11 +1338,6 @@
 					id: 'dragmap3'
 				});
 				UIexe.dragMap3.start();
-
-				//hover layer
-				UIexe.hoverLayer({
-					classname: 'btn-layer-hover'
-				});
 
 				//모달창 확대 축소
 				UIexe.layerFullSmall();

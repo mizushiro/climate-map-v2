@@ -25,12 +25,12 @@
 <body>
 	<div class="base-wrap no-bg">
 		<!-- 상단 메뉴 ----------------------------------------  -->
-		<div class="head">
+		<div class="head" data-toggle-target="nav">
 			<h1 class="h1-logo">
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
-			<button type="button" class="head-nav-btn" aria-label="메뉴열고닫기">
+			<button type="button" class="head-nav-btn" aria-label="메뉴열고닫기" data-toggle-obj="nav">
 				<span></span>
 			</button>
 			<div class="head-nav">
@@ -113,7 +113,7 @@
 							</button>
 
 							<div class="btn-layer-hover">
-								<button type="button" class="btn-s-map-item" aria-label="격자">
+								<button type="button" class="btn-s-map-item" aria-label="격자" data-hoverlayer="btn">
 									<i class="icon-grid-3"></i>
 								</button>
 								<div class="left-tooltip-layer">
@@ -125,7 +125,7 @@
 
 							<!-- only mobile -->
 							<div class="btn-layer-hover" data-res="m">
-								<button type="button" class="btn-s-map-item" data-layer="data-left3" aria-label="뷰">
+								<button type="button" class="btn-s-map-item" data-layer="data-left3" aria-label="뷰" data-hoverlayer="btn">
 									<i class="icon-grid-5"></i>
 								</button>
 								<div class="left-tooltip-layer">
@@ -135,7 +135,7 @@
 								</div>
 							</div>
 							<div class="btn-layer-hover" data-res="m">
-								<button type="button" class="btn-s-map-item" data-layer="data-left4" aria-label="범례">
+								<button type="button" class="btn-s-map-item" data-layer="data-left4" aria-label="범례" data-hoverlayer="btn">
 									<i class="icon-grid-6"></i>
 								</button>
 								<div class="left-tooltip-layer">
@@ -1276,42 +1276,8 @@
 
 		
 	<script>
-		newhome.callLayer();
-		;(function($, win, doc, undefined) {
+		(($, win, doc, undefined) => {
 			$(doc).ready(function(){
-
-				// $('.btn_right-close').on('click', function (e) {
-				// 	$('.map-detail-right-area').removeClass('is-open');
-				// 	$('.map-comparison-right-area').removeClass('hidden');
-				// });
-
-
-				// $('.btn-deviation-open').on('click', function (e) {
-				// 	$('.btn-deviation-open').toggleClass('active');
-				// 	$('.map-original-top-center').toggleClass('hidden');
-				// 	$('.layer-deviation-area').toggleClass('is-view');
-				// });
-
-				// $('.btn-right-open').on('click', function (e) {
-				// 	$('.map-detail-right-area').addClass('is-open');
-				// 	$('.map-comparison-right-area').addClass('hidden');
-				// 	$('.btn-right-open').addClass('active');
-				// });
-
-				// $('.btn_comparison-close').on('click', function (e) {
-				// 	$('.base-wrap').removeClass('is-map-comparison-open');
-				// });
-				// $('.btn-comparison-open').on('click', function (e) {
-				// 	$('.base-wrap').addClass('is-map-comparison-open');
-				// 	$('.map-detail-right-area').removeClass('is-open');
-				// 	$('.map-comparison-right-area').removeClass('hidden');
-				// 	$('.btn-right-open').removeClass('active');
-				// 	$('.btn-deviation-open').removeClass('active');
-				// 	$('.map-original-top-center').removeClass('hidden');
-				// 	$('.layer-deviation-area').removeClass('is-view');
-				// });
-
-
 				/** -------------------------------
 				 * UI_Loading 				 * 
 				 * [실행]
@@ -1374,17 +1340,7 @@
 					},
 				});
 
-				UIexe.navToggle = new UI_ToggleAct({
-					target: document.querySelector('.head'),
-					btn: document.querySelectorAll('.head-nav-btn'),
-					callback_show: () => {
-						console.log('navToggle show');
-					},
-					callback_hide: () => {
-						console.log('navToggle hide');
-					},
-				});
-
+				
 				if (!!document.querySelector('.map-control-btn')) {
 					UIexe.controlToggle = new UI_ToggleAct({
 						target: [document.querySelector('.map-control-area'),document.querySelector('.map-container-box')],
@@ -1425,11 +1381,6 @@
 				//input value clear
 				UIexe.inputClear();
 
-				//hover layer
-				UIexe.hoverLayer({
-					classname : 'btn-layer-hover'
-				});
-				
 				//slider range
 				let sliderTimer;
 				$('.slider-range-min2').slider({
