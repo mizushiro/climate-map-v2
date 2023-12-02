@@ -116,6 +116,14 @@ $(document).ready(function(){
         'autoFirstActivate': true,
         'navClickScrollToTabsTop':true
     });
+    $('.box-tab2').uxeTabs({
+        'tabsContentSlector':'.tab-contents2',
+        'menuSelector': '.list-item-tab2',
+        'menuBtnSelector' : '.list-item-btn2',
+        'useSubTarget': true,
+        'autoFirstActivate': true,
+        'navClickScrollToTabsTop':true
+    });
 
     // 아코디언
     $('.accordion-list').uxeAccordionMenu({

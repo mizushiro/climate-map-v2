@@ -13,7 +13,6 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../resources/css/ui.base.css">
-    <link rel="stylesheet" href="../resources/css/responsive.css">
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -30,14 +29,25 @@
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
-			<button type="button" class="head-nav-btn" aria-label="메뉴열고닫기">
-				<span></span>
-			</button>
 			<div class="head-nav">
-				<a href="" class="head-nav-item"><i class="icon-head-1"></i>3D 전세계 기상 기후상황지도</a>
-				<a href="" class="head-nav-item active"><i class="icon-head-2"></i>2D 전세계 기상 기후상황지도</a>
-				<a href="" class="head-nav-item"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
-				<a href="" class="head-nav-item"><i class="icon-head-4"></i>기상 기후 자료 서비스</a>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link active"><i class="icon-head-2"></i>2D 전세계 기상 기후상황지도</a>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-1"></i>3D 전세계 기상 기후상황지도</a>
+					<div class="nav-2depth">
+						<div class="nav-2depth-list">
+							<a href="" class="head-nav-2depth-item">2D 지도</a>
+							<a href="" class="head-nav-2depth-item active">3D 지도</a>
+						</div>
+					</div>
+				</div>
+				<div class="head-nav-item">
+					<a href="" class="head-nav-item-link"><i class="icon-head-4"></i>기상 기후 자료 서비스</a>
+				</div>
 			</div>
 			<!--<div class="lang-box">
 				<a href="" class="btn-lang active">한국어</a>
@@ -55,6 +65,21 @@
 							<i class="icon-sh"></i>
 							<input type="text" class="left-input-sh" placeholder="" data-id="search" />
 							<button type="button" class="btn-clear" aria-label="검색어 지우기" data-id="search"></button>
+						
+							<div class="map-left-sh-list">
+								<button type="button" class="map-left-sh-list-item">
+									<i class="icon-location-pin"></i>
+									서울 양천구 목동
+								</button>
+								<button type="button" class="map-left-sh-list-item">
+									<i class="icon-location-pin"></i>
+									서울 양천구 목동
+								</button>
+								<button type="button" class="map-left-sh-list-item">
+									<i class="icon-location-pin"></i>
+									서울 양천구 목동
+								</button>
+							</div>
 						</div>
 
 						<div class="map-left-map-type" data-res="d">
@@ -243,7 +268,7 @@
 							<i class="icon-map-open-2"></i>
 						</button>
 					</div>
-					<div class="map2-right-bottom" data-res="d">
+					<div class="map2-right-bottom">
 						<button type="button" class="btn-setting-option setting-open">
 							<i class="icon-setting"></i>
 						</button>
@@ -347,15 +372,33 @@
 							</div>
 						</div>
 						<div class="map-divide-line" style="left:50%" data-map-line="1">
+							<div class="btn-comparison-type-area">
+								<button type="button" class="btn-comparison-type btn-comparison-open">
+									<i class="icon-view-1"></i>
+									<span class="for-a11y">편자뷰</span>
+								</button>
+							</div>
 							<button type="button" class="btn-map-divide" data-map-btn="1">
 								<span class="for-a11y">조정</span>
 							</button>
+							<div class="btn-comparison-control-area">
+								<button type="button" class="btn-comparison-control" disabled>
+									<i class="icon-link"></i>
+									<span class="for-a11y">연결</span>
+								</button>
+							</div>
 						</div>
 					</div>
 
 
 				</div>
 				<div class="map-comparison-right-area" style="background-color:#46555c">
+					<div class="btn-comparison-type-area">
+						<button type="button" class="btn-comparison-type btn-deviation-open">
+							<i class="icon-view-2"></i>
+							<span class="for-a11y">비교뷰</span>
+						</button>
+					</div>
 					<div class="comparison-control-area">
 						<button type="button" class="btn-comparison-control">
 							<i class="icon-unlink"></i>
@@ -366,6 +409,9 @@
 							<span class="for-a11y">연결</span>
 						</button>
 					</div>
+					<button type="button" class="btn-map-divide" disabled>
+						<span class="for-a11y">조정</span>
+					</button>
 					<div class="map-top-center">
 						<p class="map-top-center-text-1">전망자료<i class="icon-arrow-small"></i>평균기온</p>
 						<p class="map-top-center-text-2">SSP5-85 : 전기(2041 ~ 2080년) </p>
@@ -437,6 +483,94 @@
 							<div class="player-control-top">
 								<button type="button" class="btn-player-control-top active">전중후</button>
 								<button type="button" class="btn-player-control-top">연대별</button>
+							</div>
+						</div>
+					</div>
+					<div class="map2-right-bottom">
+						<button type="button" class="btn-setting-option setting-open">
+							<i class="icon-setting"></i>
+						</button>
+						<div class="level-group">
+							<div class="level-item" style="background-color:#004187"></div>
+							<div class="level-item" style="background-color:#008cb0"></div>
+							<div class="level-item" style="background-color:#00a6ae"></div>
+							<div class="level-item" style="background-color:#18bdb0"></div>
+							<div class="level-item" style="background-color:#a8e2bf"></div>
+							<div class="level-item" style="background-color:#e9fad7"></div>
+							<div class="level-item" style="background-color:#fcffdd"></div>
+							<div class="level-item" style="background-color:#ffffc8"></div>
+							<div class="level-item" style="background-color:#fbe49a"></div>
+							<div class="level-item" style="background-color:#f8d074"></div>
+							<div class="level-item" style="background-color:#f7ba3c"></div>
+							<div class="level-item" style="background-color:#f28400"></div>
+							<div class="level-item" style="background-color:#ed6200"></div>
+							<div class="level-item" style="background-color:#e13c00"></div>
+							<div class="level-item" style="background-color:#c32200"></div>
+							<div class="level-item" style="background-color:#a20706"></div>
+						</div>
+						<div class="layer-setting">
+							<p class="setting-title">범례설정</p>
+							<div class="setting-btn-group">
+								<button type="button" class="btn-setting-item">
+									<span class="level-group">
+										<span class="level-item" style="background-color:#678700"></span>
+										<span class="level-item" style="background-color:#b0a200"></span>
+										<span class="level-item" style="background-color:#ae8500"></span>
+										<span class="level-item" style="background-color:#d58800"></span>
+										<span class="level-item" style="background-color:#ff988b"></span>
+										<span class="level-item" style="background-color:#ffd2f6"></span>
+										<span class="level-item" style="background-color:#f8ddff"></span>
+										<span class="level-item" style="background-color:#efc8ff"></span>
+										<span class="level-item" style="background-color:#c896ff"></span>
+										<span class="level-item" style="background-color:#a96dff"></span>
+										<span class="level-item" style="background-color:#8334ff"></span>
+										<span class="level-item" style="background-color:#3f00f2"></span>
+										<span class="level-item" style="background-color:#1f00ed"></span>
+										<span class="level-item" style="background-color:#0004e1"></span>
+										<span class="level-item" style="background-color:#0015c3"></span>
+										<span class="level-item" style="background-color:#002ea8"></span>
+									</span>
+								</button>
+								<button type="button" class="btn-setting-item">
+									<span class="level-group">
+										<span class="level-item" style="background-color:#582f3e"></span>
+										<span class="level-item" style="background-color:#723d61"></span>
+										<span class="level-item" style="background-color:#713d68"></span>
+										<span class="level-item" style="background-color:#835181"></span>
+										<span class="level-item" style="background-color:#835181"></span>
+										<span class="level-item" style="background-color:#e3e7ee"></span>
+										<span class="level-item" style="background-color:#e9f1f3"></span>
+										<span class="level-item" style="background-color:#dbeaec"></span>
+										<span class="level-item" style="background-color:#bcd9d5"></span>
+										<span class="level-item" style="background-color:#a2cac2"></span>
+										<span class="level-item" style="background-color:#7db5a9"></span>
+										<span class="level-item" style="background-color:#549d84"></span>
+										<span class="level-item" style="background-color:#539a78"></span>
+										<span class="level-item" style="background-color:#4e9268"></span>
+										<span class="level-item" style="background-color:#447f55"></span>
+										<span class="level-item" style="background-color:#3c6b42"></span>
+									</span>
+								</button>
+								<button type="button" class="btn-setting-item active">
+									<span class="level-group">
+										<span class="level-item" style="background-color:#373737"></span>
+										<span class="level-item" style="background-color:#272727"></span>
+										<span class="level-item" style="background-color:#2b2b2b"></span>
+										<span class="level-item" style="background-color:#494949"></span>
+										<span class="level-item" style="background-color:#c5c5c5"></span>
+										<span class="level-item" style="background-color:#e7e7e7"></span>
+										<span class="level-item" style="background-color:#ebebeb"></span>
+										<span class="level-item" style="background-color:#e0e0e0"></span>
+										<span class="level-item" style="background-color:#c9c9c9"></span>
+										<span class="level-item" style="background-color:#b5b5b5"></span>
+										<span class="level-item" style="background-color:#999999"></span>
+										<span class="level-item" style="background-color:#7f7f7f"></span>
+										<span class="level-item" style="background-color:#828282"></span>
+										<span class="level-item" style="background-color:#828282"></span>
+										<span class="level-item" style="background-color:#757575"></span>
+										<span class="level-item" style="background-color:#5f5f5f"></span>
+									</span>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -862,6 +996,12 @@
 				</div>
 			</div>
 		</div>
+		<div class="spinner-area">
+			<div class="spinner-box">
+				<div class="spinner-img"></div>
+				<p class="loading-text">LOADING</p>
+			</div>
+		</div>
 	</div>
 
 	<!-- 레이어팝업 ---------------------------------------- -->
@@ -923,6 +1063,11 @@
             </div>
 		</div>
 	</div>
+
+
+
+
+
 
 	<!-- only mobile 팝업 -->
 	<div id="data-left1" class="layer_section layer-transparent">
@@ -1272,8 +1417,7 @@
 					}
 				});
 				$('.amount-data').val($('.slider-range-min2').slider('value'));
-
-
+				
 			});
 		})(jQuery, window, document);
 	</script>
