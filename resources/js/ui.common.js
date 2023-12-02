@@ -165,6 +165,87 @@ UIexe.hoverLayer = (opt) => {
         item.addEventListener('mouseout', actHover);
     }
 }
+UIexe.loading = {
+    timerShow : {}, 
+    timerHide : {},
+    options : {
+        selector: null,
+        message : 'LOADING',
+        styleClass : 'spinner-area' //time
+    },
+    show(option){
+        const opt = Object.assign({}, this.options, option);
+        const selector = opt.selector; 
+        const styleClass = opt.styleClass; 
+        const message = opt.message;
+        const el = (selector !== null) ? selector : document.querySelector('body');
+        const el_loadingHides = document.querySelectorAll('.ui-loading:not(.visible)');
+
+        for (let i = 0, len = el_loadingHides.length; i < len; i++) {
+            const that = el_loadingHides[i];
+
+            that.remove();
+        }
+
+        let htmlLoading = '';
+
+
+        (selector === null) ?
+            htmlLoading += '<div class="ui-loading spinner-area">':
+            htmlLoading += '<div class="spinner-area type-area">';
+
+        htmlLoading += '<div class="spinner-box">';
+        htmlLoading += '<div class="spinner-img"></div><p class="loading-text">'+ message +'</p>';
+        htmlLoading += '</div>';
+        htmlLoading += '</div>';
+
+        const showLoading = () => {
+            const el_child = el.childNodes;
+            let is_loading = false;
+
+            for (let i = 0; i < el_child.length; i++) {
+                if (el_child[i].nodeName === 'DIV' && el_child[i].classList.contains('ui-loading')) {
+                    is_loading = true;
+                }
+            }
+
+            !is_loading && el.insertAdjacentHTML('beforeend', htmlLoading);
+            htmlLoading = null;		
+            
+            const el_loadings = document.querySelectorAll('.ui-loading');
+
+            this.timerShow = setTimeout(() => {
+                for (let i = 0, len = el_loadings.length; i < len; i++) {
+                    const that = el_loadings[i];
+
+                    that.classList.add('visible');
+                    that.classList.remove('close');
+                }
+            },0);
+            
+        }
+        clearTimeout(this.timerShow);
+        clearTimeout(this.timerHide);
+        showLoading();
+    },
+    hide(){
+        clearTimeout(this.timerShow);
+        this.timerHide = setTimeout(() => {
+            const el_loadings = document.querySelectorAll('.ui-loading');
+
+            for (let i = 0, len = el_loadings.length; i < len; i++) {
+                const that = el_loadings[i];
+
+                that.classList.add('close');
+                setTimeout(() => {
+                    that.classList.remove('visible')
+                    that.remove();
+                },200);
+            }
+        },200);
+    }
+}
+
 class UI_ToggleAct {
     constructor(opt) {
         this.btn = !opt.btn ? null : opt.btn;

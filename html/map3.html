@@ -13,6 +13,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../resources/css/ui.base.css">
+	<link rel="stylesheet" href="../resources/css/responsive.css">
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -29,6 +30,9 @@
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
+			<button type="button" class="head-nav-btn" aria-label="메뉴열고닫기">
+				<span></span>
+			</button>
 			<div class="head-nav">
 				<div class="head-nav-item">
 					<a href="" class="head-nav-item-link"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
@@ -57,8 +61,8 @@
 
 		<!-- 중간 컨텐츠 ----------------------------------------  -->
 		<div class="map-container-box overflow-hidden">
-			<div class="map-container">
-				<div class="map-original-area" style="background-color:#46555c">
+			<div class="map-container dark">
+				<div class="map-original-area">
 					<!-- content : LEFT -->
 					<div class="map-left-box">
 						<div class="map-left-sh-box">
@@ -153,6 +157,15 @@
 					<!-- content : BOTTOM -->
 					<div class="map3-btm-center">
 						<div class="map3-btm-item-box">
+							<div class="select-item-box dark">
+								<select name="">
+									<option value="">현재</option>
+									<option value="">SSP1-26</option>
+									<option value="">SSP2-45</option>
+									<option value="">SSP3-70</option>
+									<option value="">SSP5-85</option>
+								</select>
+							</div>
 							<div class="radio-group-box">
 								<div class="choice-item-type-a">
 									<input type="radio" id="a1-0" name="a1" class="inp-choice">
@@ -418,6 +431,15 @@
 					</div>
 					<div class="map3-btm-center">
 						<div class="map3-btm-item-box">
+							<div class="select-item-box dark">
+								<select name="">
+									<option value="">현재</option>
+									<option value="">SSP1-26</option>
+									<option value="">SSP2-45</option>
+									<option value="">SSP3-70</option>
+									<option value="">SSP5-85</option>
+								</select>
+							</div>
 							<div class="radio-group-box">
 								<div class="choice-item-type-a">
 									<input type="radio" id="a11-0" name="a11" class="inp-choice">
@@ -996,12 +1018,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="spinner-area">
-			<div class="spinner-box">
-				<div class="spinner-img"></div>
-				<p class="loading-text">LOADING</p>
-			</div>
-		</div>
 	</div>
 
 	<!-- 레이어팝업 ---------------------------------------- -->
@@ -1297,6 +1313,17 @@
 
 
 				/** -------------------------------
+				 * UI_Loading 				 * 
+				 * [실행]
+				 * UIexe.loading.show();
+				 * UIexe.loading.hide();
+				 ------------------------------- */
+				UIexe.loading.show();
+				setTimeout(() => {
+					UIexe.loading.hide();
+				},1000);
+
+				/** -------------------------------
 				 * UI_ToggleAct : toggle 이벤트
 				 * [옵션]
 				 * target : 적용될 영역, 여러곳일경우 ['', ''] array로 사용
@@ -1404,6 +1431,7 @@
 				});
 				
 				//slider range
+				let sliderTimer;
 				$('.slider-range-min2').slider({
 					range: 'min',
 					value: 0,
@@ -1414,6 +1442,11 @@
 
 						_wrap.find('.amount-data').val(ui.value);
 						_wrap.find('.slider-value-position').css('left', ui.value + '%');
+						_wrap.find('.slider-value-position').addClass('on');
+						clearTimeout(sliderTimer);
+						sliderTimer = setTimeout(() => {
+							_wrap.find('.slider-value-position').removeClass('on');
+						}, 700);
 					}
 				});
 				$('.amount-data').val($('.slider-range-min2').slider('value'));

@@ -787,7 +787,9 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:active:after {margin-left:-0.4em;}
 .checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:before {content:"ON";left:4px;color:#fff;}
 
-.spinner-area {position:fixed;top:60px;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);z-index:100}
+.spinner-area.visible{opacity: 1; }
+.spinner-area.close{opacity: 0; transition: opacity .2s ease-in;}
+.spinner-area {position:fixed;top:60px;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);z-index:100;opacity: 0;transition: opacity .2s ease-in;}
 .spinner-box {position:absolute;top:50%;left:50%;display:flex;gap:8px;align-items:center;justify-content:center;flex-direction:column;transform:translate(-50%, -50%)}
 .spinner-img {width:60px;height:60px;border:12px solid rgba(255,255,255,.7);border-top:12px solid #2e7ef6;border-radius:50%;animation:spin 1.5s linear infinite}
 .loading-text {font-size:11px;color:#fff;letter-spacing:2px}

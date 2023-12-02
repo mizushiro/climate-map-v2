@@ -33,10 +33,27 @@
         background-color: #f5faff;
         display: none;
         flex-direction: column;
-        padding: 4.8rem 1.5rem 0;
-        gap: 4.8rem;
+        padding: 2.8rem 1.5rem 0;
+        gap: 2.8rem;
     }
-
+    .nav-2depth{
+        display: flex;
+        width: 100%;
+        position: relative;
+        top:0;
+        margin-top: 1rem;
+        min-width:100%;
+        left: 0;
+        transform: translateX(0);
+    }
+    .nav-2depth-list{width: auto; margin-left: 3.8rem; }
+    .nav-2depth::before{display: none;}
+    .head-nav-item-link {
+        font-size: 1.8rem;
+        height: auto;
+        
+    }
+    .head-nav-2depth-item{padding: 0 2rem; }
     .head-nav-item~.head-nav-item:before {
         display: none;
     }
@@ -127,6 +144,50 @@
     .head[data-toggle="true"] .head-nav-btn span::after {
         transform-origin: 50% 50%;
         transform: translateY(-50%) rotate(-45deg);
+    }
+    .map-left-sh-list{
+        top:4rem;
+        width: 100%;
+        min-width: 100%;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        display: none;
+    }
+    .left-input-sh:focus ~  .map-left-sh-list{display: block;}
+
+    .map2-right-bottom{
+        display: none;
+        right: auto;
+        left:1.5rem;
+        top:33.8rem;   
+    }
+    .btn-setting-option {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+    .layer-setting{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+    }
+    .map3-btm-item-box .carbon-box{padding-left: 0;}
+    .spinner-area {
+        top: 9rem;
+    }
+    .btn-comparison-type-area{
+        margin-left: -2.5rem;
+        top:10rem
+    }
+    .btn-comparison-type{
+        width: 5rem;
+        height: 5rem;
+    }
+    .icon-view-1 {
+        width: 2rem;
+        height: 2rem;
     }
 
 
@@ -350,6 +411,23 @@
     .is-map-comparison-open .map3-btm-item-box{
         padding:.6rem;
     }
+    .is-map-comparison-open .player-control-area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .is-map-comparison-open .player-control-btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .is-map-comparison-open .player-slider-area-box{
+        width: 100%;
+    }
+    .slider-value-position.on{opacity: 1;}
+    .slider-value-position{opacity: 0; pointer-events: none;}
+
     .comparison-control-area{z-index: 1;}
 
     .map-top-center-text-1{font-size: 1.1rem; gap:0.6rem; }
@@ -403,7 +481,16 @@
     }
     [class^="icon-btm-"]{width: 2rem; height: 2rem;}
     .map-control-period-group:before{display: none;}
-
+    .is-map-comparison-open .map3-btm-center{
+        margin-left: auto;
+    }
+    .is-map-comparison-open .map-comparison-right-area .map3-btm-center{
+        padding-right: 1.5rem;
+    }
+    .map3-btm-center .select-item-box{
+        display: none;
+        width: 100%;
+    }
     .map3-btm-center{
         flex-direction: column;
         bottom:1rem;
@@ -446,6 +533,8 @@
     .player-slider-area-box{position: relative; }
     .is-map-comparison-open .player-slider-value-s-e{position: absolute; bottom:0; left:0;}
     .is-map-comparison-open .player-slider-value-s-e ~ .player-slider-value-s-e{left:auto; right:0}
+    .is-map-comparison-open .radio-group-box{display: none;}
+    .is-map-comparison-open .select-item-box{display: block;}
 
     .map3-btm-item-box .player-slider-area-box .player-slider-value-s-e{
         font-size: 1.2rem;
@@ -526,14 +615,18 @@
         font-size: 1.2rem;
     }
     .right-check-label{
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
     .layer_section-container [class^="icon-btm-"]{
         width: 2.4rem;
         height: 2.4rem;
     }
 
-
+    .map-left-sh-list-item{
+        font-size: 1.4rem;
+        height: 4rem;
+        padding:0 1.6rem;
+    }
 
 
     .btn-lang {
@@ -649,39 +742,55 @@
         min-width: 5rem;
     }
 
+    .map2-select-list .select-item-box{
+        width: auto;
+    }
+    .checkbox-group, .year-month{
+         flex-wrap: nowrap;
+    }
 
     .map2-left-top{
         position: fixed;
+        flex-wrap:wrap;
         top:5rem; left:0;
         width: 100%;
         border-radius: 0;
         display: flex;
-        gap:1.2rem;
+        gap:0.4rem;
         align-items: center;
-        justify-content: center;
-        padding: 0 1.5rem;
-        height: 4rem;
-         border:1px solid #bdd9f6;
+        justify-content: flex-start;
+        padding: .4rem 0.4rem;
+        height: auto;
+        border:1px solid #bdd9f6;
         box-shadow: 1px 0 4px rgba(0,0,0,.25);
+        border-top:0;
+        background-color: #f5faff;
+        overflow-x: auto;
     }
     .map2-left-top-title{
         font-size: 1rem;
         margin:0;
-        width: 4rem;
+        width: 100%;
         line-height: 1.1;
         padding: 0;
+        display: none;
     }
     .select-item-box{
         height: 3rem; 
         width: 6.3rem;
         background-position: right -0.8rem top 50%;
     }
+    .select-item-box.dark{
+        background-position: calc(100% + 0.8rem) 50%;
+    }
+    .map2-select-choice-box{width: 100%;}
     .map2-left-top .year-month .select-item-box ~ .select-item-box {
-        width: 5rem;
+        width: auto;
     }
     .select-item-box select {
         height: 3rem;font-size: 1.1rem;
         padding: 0 1.8rem 0 .6rem;
+        width: auto;
     }
     .layer-setting {
         width: auto;
@@ -698,6 +807,7 @@
         padding: 0 .6rem;
         white-space: nowrap;
         flex:1;
+        min-width: 4.5rem;
     }
     .map-container-right[data-toggle="true"]{
         right: 0;
@@ -709,15 +819,15 @@
     .map-container-right{
         position: fixed;
         width: 50vw;
-        height: calc(100vh - 9rem);
-        top:9rem; right:-50vw;
+        height: calc(100vh - 5rem);
+        top:5rem; right:-50vw;
         transition:right .2s ease-in;
         z-index: 100
     }
     .map2-right-top {
         position: fixed;
         right:auto;
-        top:10rem;
+        top:10.4rem;
         left:1.5rem;
         flex-direction: column;
         gap:0.6rem;
@@ -801,8 +911,7 @@
     .select-item-box.w-230{
         width: 100%;
     }
-    .checkbox-group,
-    .year-month{flex-wrap: wrap;}
+
     .layer-btn-box .btn-type1{
         min-width: 40%;
     }
