@@ -153,6 +153,41 @@
         transform-origin: 50% 50%;
         transform: translateY(-50%) rotate(-45deg);
     }
+
+
+
+    .dashboard-area{
+        padding: 6.5rem 1.5rem 1.5rem;
+        min-width: 100%;
+    }
+    .dashboard-grid-group-1{
+        gap:.8rem;
+        grid-template-columns: repeat(1,minmax(0,1fr));
+    }
+    .dashboard-grid-group-1 .dashboard-grid-1{order:2}
+    .dashboard-grid-group-1 .dashboard-grid-1.dashboard-map-type{
+        order:1;
+        min-height: 100vw;
+    }
+    .dashboard-grid-select-group select{width: 100% !important;}
+    .dashboard-grid-group-2 {
+        gap:.8rem;
+        grid-template-columns: repeat(1,minmax(0,1fr));
+        height: auto;
+    }
+    .dashboard-grid-2{
+        grid-column: 1 /span 3;
+        grid-row: 1;
+    }
+    .dashboard-grid-group-2 .dashboard-grid-3{    grid-column: 1 /span 3;}
+    .dashboard-grid-2-area {
+        grid-template-columns: repeat(1,minmax(0,1fr));
+        grid-template-rows: repeat(1,minmax(0,1fr));
+        gap:.8rem;
+    }
+
+    .map4{background-color: #181d2b;}
+
     .map-left-sh-list{
         top:4rem;
         width: 100%;

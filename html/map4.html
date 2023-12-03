@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -13,20 +13,26 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../resources/css/ui.base.css">
+    <link rel="stylesheet" href="../resources/css/skorea.css">
+	<link rel="stylesheet" href="../resources/css/responsive.css">
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 	<script src="../resources/js/ui.plugins.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 </head>
 
-<body>
+<body class="map4">
 	<div class="base-wrap no-bg">
-		<div class="head">
+		<div class="head" data-toggle-target="nav">
 			<h1 class="h1-logo">
 				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
 				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
 			</h1>
+			<button type="button" class="head-nav-btn" aria-label="메뉴열고닫기" data-toggle-obj="nav">
+				<span></span>
+			</button>
 			<div class="head-nav">
 				<div class="head-nav-item">
 					<a href="" class="head-nav-item-link"><i class="icon-head-3"></i>남한상세 기상 기후분석 대시보드</a>
@@ -470,8 +476,36 @@
 	</div>
 
 	<script>
-		newhome.callLayer();
-	</script>
+		(($, win, doc, undefined) => {
+			$(doc).ready(function(){
+				/** -------------------------------
+				 * UI_Loading 				 * 
+				 * [실행]
+				 * UIexe.loading.show();
+				 * UIexe.loading.hide();
+				 ------------------------------- */
+				UIexe.loading.show();
+				setTimeout(() => {
+					UIexe.loading.hide();
+				},1000);
 
+				/** -------------------------------
+				 * UI_ToggleAct : toggle 이벤트
+				 * [옵션]
+				 * target : 적용될 영역, 여러곳일경우 ['', ''] array로 사용
+				 * btn : 이벤트 버튼(복수). 없을 경우 null
+				 * callback_show: show일 경우 콜백 
+				 * callback_hide: hide일 경우 콜백 
+				 *
+				 * [실행]
+				 * UIexe.{name}.show();
+				 * UIexe.{name}.hide();
+				 ------------------------------- */
+
+				//지도분할비교
+				
+			});
+		})(jQuery, window, document);
+	</script>
 </body>
 </html>
