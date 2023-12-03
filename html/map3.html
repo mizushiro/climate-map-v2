@@ -1260,14 +1260,14 @@
 					target: document.querySelector('.layer-deviation-area'),
 					btn: document.querySelectorAll('.btn-deviation-open'),
 					callback_show: () => {
-						console.log('deviationToggle show');
+						document.querySelector('.base-wrap').classList.add('is-map-deviation-open');
 						document.querySelector('.map-original-top-center').style.display = 'none';
 						document.querySelector('#comparison-btm').classList.remove('show');
 
 						// UIexe.comparisonToggle.hide();
 					},
 					callback_hide: () => {
-						console.log('deviationToggle hide');
+						document.querySelector('.base-wrap').classList.remove('is-map-deviation-open');
 						document.querySelector('.map-original-top-center').style.display = 'block';
 						document.querySelector('#comparison-btm').classList.remove('show');
 					},
@@ -1276,7 +1276,8 @@
 					target: document.querySelector('.layer-deviation-area'),
 					btn: document.querySelectorAll('.btn-deviation-open2'),
 					callback_show: () => {
-						console.log('deviationToggle show');
+						document.querySelector('.base-wrap').classList.add('is-map-deviation-open');
+						document.querySelector('.base-wrap').classList.remove('is-map-deviation-open');
 						document.querySelector('.map-original-top-center').style.display = 'none';
 						document.querySelector('#comparison-btm').classList.add('show');
 

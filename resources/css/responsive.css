@@ -169,10 +169,12 @@
     .is-map-comparison-open .map-comparison-right-area .map2-right-bottom {
         right: 1.5rem
     }
+    .is-map-deviation-open .map2-right-bottom,
+     .is-map-comparison-open .map2-right-bottom {top:30.2rem;}
     .map2-right-bottom{
          left: 1.5rem;
         bottom:auto;
-        top:30.2rem;
+        top:24.2rem;
         z-index: 12;
     }
     .btn-setting-option {
@@ -343,10 +345,12 @@
         width: 3.8rem;
         height: 3.8rem;
     }
+    .is-map-deviation-open .map-left-map-expand,
+    .is-map-comparison-open .map-left-map-expand{ margin-top: 7.5rem;}
     .map-left-map-expand{
         left:1.5rem;
         position: relative;
-        margin-top: 7.5rem;
+        margin-top: 1.5rem;
         width: 3.8rem;
         margin-bottom: 1.5rem;
     }
