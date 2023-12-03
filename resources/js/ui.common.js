@@ -306,7 +306,8 @@ $(document).ready(function(){
             closeBtn && closeBtn.addEventListener('click', actClose);
 
             if (Global.state.device.mobile) {
-                btn.addEventListener('click', actClick);
+                console.log(btn);
+                btn && btn.addEventListener('click', actClick);
             } else {
                 item.addEventListener('mouseout', actOut);
                 item.addEventListener('mouseover', actHover);
