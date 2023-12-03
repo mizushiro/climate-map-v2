@@ -22,7 +22,7 @@
 	<script src="../resources/js/ui.common.js"></script>
 </head>
 
-<body>
+<body class="map2">
 	<div class="base-wrap no-bg">
 		<!-- 상단 메뉴 ----------------------------------------  -->
 		<div class="head" data-toggle-target="nav">
@@ -596,6 +596,8 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- 메인 우측영역 -->
 			<div class="map-container-right" data-toggle-target="right-open">
 				<div class="accordion-list">
 					<div class="accordion-group">
@@ -606,6 +608,10 @@
 									<i class="icon-time-series"></i>
 								</button>
 							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
 						</div>
 						<div class="detailed-index">
 							<div class="accordion-content-item ver2">
@@ -644,6 +650,10 @@
 									<i class="icon-time-series"></i>
 								</button>
 							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
 						</div>
 						<div class="detailed-index">
 							<div class="accordion-content-item ver2">
@@ -682,6 +692,10 @@
 									<i class="icon-time-series"></i>
 								</button>
 							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
 						</div>
 						<div class="detailed-index">
 							<div class="accordion-content-item ver2">
@@ -720,6 +734,10 @@
 									<i class="icon-time-series"></i>
 								</button>
 							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
 						</div>
 						<div class="accordion-content-item ver2">
 							<div class="checkbox-item">
@@ -756,6 +774,10 @@
 									<i class="icon-time-series"></i>
 								</button>
 							</div>
+							<button type="button" class="btn-accordion">
+								<i class="icon-accordion"></i>
+								<span class="for-a11y">열기</span>
+							</button>
 						</div>
 						<div class="detailed-index">
 							<div class="accordion-content-item ver2">
@@ -873,6 +895,7 @@
 		</div>
 	</div>
 
+	<!-- 시계열 동영상 -->
 	<div id="data-layer5" class="layer_section layer-full">
 		<div class="layer_section-container">
 			<div class="layer-title-box">
@@ -883,10 +906,18 @@
 
 				</div>
 				<div class="player-box">
+					<div class="select-item-box">
+						<select id="time-series-scnro">
+							<option value="ssp585">ssp585</option>
+							<option value="ssp370">ssp370</option>
+							<option value="ssp245">ssp245</option>
+							<option value="ssp126">ssp126</option>
+						</select>
+					</div>
 					<div class="player-control-btn">
-						<button type="button" class="btn-control">
+						<!-- <button type="button" class="btn-control">
 							<i class="icon-pause"></i>
-						</button>
+						</button> -->
 						<button type="button" class="btn-control">
 							<i class="icon-play"></i>
 						</button>
@@ -897,7 +928,7 @@
 					<div class="player-slider-area">
 						<div class="slider-range-min"></div>
 					</div>
-					<p class="player-desc">2023년 6월 29일 오후 6시</p>
+					<p class="player-desc">2023년 1월</p>
 				</div>
 			</div>
 			<div class="layer-top-right-btn">
@@ -908,6 +939,7 @@
 		</div>
 	</div>
 
+	<!-- GLOBE VIEW -->
 	<div id="data-layer6" class="layer_section layer-full">
 		<div class="layer_section-container">
 			<div class="layer-title-box">
@@ -919,7 +951,7 @@
 					우측 레이어오픈 샘플열기
 					</button><br>
 
-					<div class="player-box">
+					<!-- <div class="player-box">
 						<div class="player-control-btn">
 							<button type="button" class="btn-control">
 								<i class="icon-pause"></i>
@@ -934,13 +966,13 @@
 						<div class="player-slider-area">
 							<div class="slider-range-min"></div>
 						</div>
-						<p class="player-desc">2023년 6월 29일 오후 6시</p>
-					</div>
+						<p class="player-desc">2023년 1월</p>
+					</div> 
 					<div class="s-map-right-bottom">
 						<button type="button" class="btn-setting-option setting-open" data-toggle-obj="setting2">
 							<i class="icon-setting"></i>
 						</button>
-						<div class="level-group" >
+						<div class="level-group" data-res="d">
 							<div class="level-item" style="background-color:#004187"></div>
 							<div class="level-item" style="background-color:#008cb0"></div>
 							<div class="level-item" style="background-color:#00a6ae"></div>
@@ -963,25 +995,45 @@
 								<button type="button" class="layer-close" aria-label="레이어 닫기" data-toggle-obj="setting2"></button>
 								<p class="setting-title">범례설정</p>
 								<div class="setting-btn-group">
+									<button type="button active" class="btn-setting-item">
+										<span class="level-group">
+											<span class="level-item" style="background-color:#004187"></span>
+											<span class="level-item" style="background-color:#008cb0"></span>
+											<span class="level-item" style="background-color:#00a6ae"></span>
+											<span class="level-item" style="background-color:#18bdb0"></span>
+											<span class="level-item" style="background-color:#a8e2bf"></span>
+											<span class="level-item" style="background-color:#e9fad7"></span>
+											<span class="level-item" style="background-color:#fcffdd"></span>
+											<span class="level-item" style="background-color:#ffffc8"></span>
+											<span class="level-item" style="background-color:#fbe49a"></span>
+											<span class="level-item" style="background-color:#f8d074"></span>
+											<span class="level-item" style="background-color:#f7ba3c"></span>
+											<span class="level-item" style="background-color:#f28400"></span>
+											<span class="level-item" style="background-color:#ed6200"></span>
+											<span class="level-item" style="background-color:#e13c00"></span>
+											<span class="level-item" style="background-color:#c32200"></span>
+											<span class="level-item" style="background-color:#a20706"></span>
+										</span>
+									</button>
 									<button type="button" class="btn-setting-item">
-											<span class="level-group">
-												<span class="level-item" style="background-color:#678700"></span>
-												<span class="level-item" style="background-color:#b0a200"></span>
-												<span class="level-item" style="background-color:#ae8500"></span>
-												<span class="level-item" style="background-color:#d58800"></span>
-												<span class="level-item" style="background-color:#ff988b"></span>
-												<span class="level-item" style="background-color:#ffd2f6"></span>
-												<span class="level-item" style="background-color:#f8ddff"></span>
-												<span class="level-item" style="background-color:#efc8ff"></span>
-												<span class="level-item" style="background-color:#c896ff"></span>
-												<span class="level-item" style="background-color:#a96dff"></span>
-												<span class="level-item" style="background-color:#8334ff"></span>
-												<span class="level-item" style="background-color:#3f00f2"></span>
-												<span class="level-item" style="background-color:#1f00ed"></span>
-												<span class="level-item" style="background-color:#0004e1"></span>
-												<span class="level-item" style="background-color:#0015c3"></span>
-												<span class="level-item" style="background-color:#002ea8"></span>
-											</span>
+										<span class="level-group">
+											<span class="level-item" style="background-color:#678700"></span>
+											<span class="level-item" style="background-color:#b0a200"></span>
+											<span class="level-item" style="background-color:#ae8500"></span>
+											<span class="level-item" style="background-color:#d58800"></span>
+											<span class="level-item" style="background-color:#ff988b"></span>
+											<span class="level-item" style="background-color:#ffd2f6"></span>
+											<span class="level-item" style="background-color:#f8ddff"></span>
+											<span class="level-item" style="background-color:#efc8ff"></span>
+											<span class="level-item" style="background-color:#c896ff"></span>
+											<span class="level-item" style="background-color:#a96dff"></span>
+											<span class="level-item" style="background-color:#8334ff"></span>
+											<span class="level-item" style="background-color:#3f00f2"></span>
+											<span class="level-item" style="background-color:#1f00ed"></span>
+											<span class="level-item" style="background-color:#0004e1"></span>
+											<span class="level-item" style="background-color:#0015c3"></span>
+											<span class="level-item" style="background-color:#002ea8"></span>
+										</span>
 									</button>
 									<button type="button" class="btn-setting-item">
 											<span class="level-group">
@@ -1003,7 +1055,7 @@
 												<span class="level-item" style="background-color:#3c6b42"></span>
 											</span>
 									</button>
-									<button type="button" class="btn-setting-item active">
+									<button type="button" class="btn-setting-item">
 											<span class="level-group">
 												<span class="level-item" style="background-color:#373737"></span>
 												<span class="level-item" style="background-color:#272727"></span>
@@ -1028,7 +1080,10 @@
 							
 						</div>
 					</div>
+					-->
+
 				</div>
+
 				<div class="map-container-right" data-toggle-target="right-open2">
 					<div class="accordion-list">
 						<div class="accordion-group">

@@ -12,8 +12,8 @@
 .time-series-detail .map-layer-container{background-color: #979797;}
 .layer-setting[data-toggle="true"]{display: block;}
 .layer-close{display: none;}
-.layer_section-container.active{width: 100%; height: 100%; top:0; left:0; max-height: 100% ;}
-.layer_section-container.active .layer-content{height: 100%;}
+
+
 @media (max-width:1024px) {
     html {
         font-size: 62.5%;
@@ -22,6 +22,8 @@
     [data-res="m"] {display: block;}
     .btn-s-map-item[data-res="m"] {display: flex;}
     .layer-close{display: block;}
+    .layer_section-container.active{width: 100%; height: calc(100% - 4rem); top:0; left:0; max-height: 100% ; margin: 2rem;}
+
     .head {
         position: fixed;
         width: 100%;
@@ -168,6 +170,7 @@
     .btn-setting-option {
         width: 3.8rem;
         height: 3.8rem;
+        min-height: 3.8rem;
     }
     .right-side-layer.selected {
         display: flex;
@@ -672,8 +675,16 @@
     .layer-open-box .map-section-head .map-section-title{
         font-size: 1.2rem;
     }
+    .s-map-right-items{
+        gap:1rem;
+    }
+    .map1 .s-map-right-bottom{
+        right:1.5rem;
+        bottom: 1.5rem;
+    }
+    .map-section-content{border:0}
     .right-check-label{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     .layer_section-container [class^="icon-btm-"]{
         width: 2.4rem;
@@ -747,9 +758,14 @@
         background-size: 2.2rem;
     }
     .map-section-head{height: 4.5rem;}
+    .map-section-top-btn{
+        right: 1.2rem;
+        top:1rem;
+        gap:.6rem;
+    }
     .map-section-grid .map-section-head{
         height: auto;
-        min-height: 5rem;
+        min-height: 4rem;
         padding: .5rem 0;
     }
     .map-section-grid .map-section-head .map-section-title{
@@ -758,7 +774,9 @@
     .layer-top-btn-item{ width: 2rem; height: 2rem;}
     .layer-top-btn-item i{width: 1.2rem; height: 1.2rem; background-size: 1.2rem;}
 
-
+    .s-map-right-group{
+        right: 1.5rem;
+    }
     .map-section-item.active {
         top:0;
         left:0;
@@ -782,16 +800,19 @@
     .map-section-item.active .player-box {
         display: flex;
     }
+    .player-slider-area{margin-left: 0.8rem;}
     .player-box {
         height: auto;
         padding: .6rem 1.4rem;
-        
+        min-height: 3.8rem;
         flex-wrap: wrap;
         justify-content: center;
-        gap:.6rem 1.8rem;
-        width: calc(100vw - 13rem);
+        gap:.6rem 0.8rem;
+        width: calc(100vw - 8rem);
         bottom:1.5rem;
         min-width: 18rem;
+        left:1.5rem;
+        transform: none;
     }
     .player-desc{
         font-size: 1.2rem;
@@ -799,7 +820,9 @@
     .player-slider-area{
         min-width: 5rem;
     }
-
+    .map2-select-list{
+        flex:none;
+    }
     .map2-select-list .select-item-box{
         width: auto;
     }
@@ -839,10 +862,20 @@
         background-position: right -0.8rem top 50%;
         display: inline-block;
     }
+    .s-map-right-type{
+        margin-bottom: 1rem;
+        position: fixed;
+        right: auto;
+        left: 1.5rem;
+    }
     .select-item-box.dark{
         background-position: calc(100% + 0.8rem) 50%;
     }
-    .map2-select-choice-box{width: 100%;}
+    .map2 .layer-content .s-map-right-bottom{
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    .map2-select-choice-box{ display: flex;  }
     .map2-left-top .year-month .select-item-box ~ .select-item-box {
         width: auto;
     }
@@ -866,7 +899,7 @@
         height: 3rem;font-size: 1.1rem;min-width:0;
         padding: 0 .6rem;
         white-space: nowrap;
-        flex:1;
+        flex:none;
         min-width: 4.5rem;
     }
     .map-container-right[data-toggle="true"]{
@@ -878,9 +911,9 @@
     }
     .map-container-right{
         position: fixed;
-        width: 50vw;
+        width: 20rem;
         height: calc(100vh - 9rem);
-        top:9rem; right:-50vw;
+        top:9rem; right:-20rem;
         transition:right .2s ease-in;
         z-index: 100
     }
@@ -979,8 +1012,11 @@
         width: calc(33.5% - 0.6rem);
         height: 32vw;
     }
+    .time-series-area .player-box {
+        width: calc(100vw - 3rem);
+    }
     .map1 .layer_section {
-        top:5rem;
+        top:0;
     }
     .right-side-layer[data-ps="bottom"] {
         top: auto;
