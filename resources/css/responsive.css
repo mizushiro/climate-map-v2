@@ -179,6 +179,9 @@
         grid-column: 1 /span 3;
         grid-row: 1;
     }
+    .dashboard-grid-2-item{border-radius:1rem; padding: 1rem 1.5rem;}
+    .dashboard-chart-box{gap:1.2rem;padding:1rem; border-radius:1rem }
+    .dashboard-grid-2-data-box{gap:1.5rem; width:100%}
     .dashboard-grid-group-2 .dashboard-grid-3{    grid-column: 1 /span 3;}
     .dashboard-grid-2-area {
         grid-template-columns: repeat(1,minmax(0,1fr));
