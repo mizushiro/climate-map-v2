@@ -66,8 +66,8 @@
     .is-map-comparison-open .map-original-top-center {display:block !important}
     .is-map-comparison-open .map2-right-bottom {left:1.5rem}
     .is-map-comparison-open .map-comparison-right-area .map2-right-bottom {right:1.5rem}
-    .is-map-deviation-open .map2-right-bottom, 
-    .is-map-comparison-open .map2-right-bottom {top:30.2rem}
+    .is-map-deviation-open .map3-right-bottom, 
+    .is-map-comparison-open .map3-right-bottom {top:30.2rem}
     .map2-right-bottom {z-index:12}
     .map3-right-bottom {left:1.5rem;bottom:auto;top:24.2rem;z-index:12}
     .btn-setting-option {width:3.8rem;height:3.8rem;min-height:3.8rem}
