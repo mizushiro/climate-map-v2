@@ -1,25 +1,25 @@
-.map-left-box .btn-layer-hover.selected i { filter: invert(44%) sepia(17%) saturate(7028%) hue-rotate(201deg) brightness(95%) contrast(102%); }
+.map-left-box .btn-layer-hover.selected i {filter:invert(44%) sepia(17%) saturate(7028%) hue-rotate(201deg) brightness(95%) contrast(102%)}
 
-.d-none { display: none; }
-.disable { pointer-events: none; opacity: 50% !important; }
-body { -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.d-none {display:none}
+.disable {pointer-events:none;opacity:50% !important}
+body {-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 
-.split-map { position:absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: auto; }
-.select-distance-layer { position: absolute; }
-.select-distance-layer .layer-content { width: 250px; padding: 4px 0;}
-.map3-right-top { z-index: 5}
+.split-map {position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto}
+.select-distance-layer {position:absolute}
+.select-distance-layer .layer-content {width:250px;padding:4px 0}
+.map3-right-top {z-index:5}
 
 .level-group2 {display:flex;flex-direction:column;margin-top:10px}
 .level-group2 .level-item2 {height:3px;width:100%}
-.btn-setting-item .level-group2 {width:30px; margin-top:0}
+.btn-setting-item .level-group2 {width:30px;margin-top:0}
 
-.slider-value-position {width: max-content}
+.slider-value-position {width:max-content}
 
-.map-btm { position: absolute; display: flex; width: 100%; justify-content: center; bottom:38px; align-items: end; }
-.map-btm-item { display: flex; gap: 20px; flex-wrap: wrap; width: 50%; justify-content: center; }
-#comparison-btm { display: none; }
-#comparison-btm.show { display: flex; }
-.is-map-comparison-open .map3-btm-center { margin-left: 0; }
+.map-btm {position:absolute;display:flex;width:100%;justify-content:center;bottom:38px;align-items:end}
+.map-btm-item {display:flex;gap:20px;flex-wrap:wrap;width:50%;justify-content:center}
+#comparison-btm {display:none}
+#comparison-btm.show {display:flex}
+.is-map-comparison-open .map3-btm-center {margin-left:0}
 
-.layer-setting{width:378px;}
-.choice-area-table-title { font-size: 20px; font-weight: 800; color: #3497fd; }
+/*.layer-setting{width:378px}*/
+.choice-area-table-title {font-size:20px;font-weight:800;color:#3497fd}
