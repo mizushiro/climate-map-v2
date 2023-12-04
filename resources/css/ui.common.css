@@ -31,11 +31,12 @@ html.scroll_off {overflow:hidden}
 
 /* google material icons */
 .material-icons {font-family:'Material Icons'; font-weight:normal; font-style:normal; font-size:24px; display:block; line-height:1; text-transform:none; letter-spacing:normal; word-wrap:normal; white-space:nowrap; direction:ltr; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; -moz-osx-font-smoothing:grayscale; font-feature-settings:'liga'; }
-
-::-webkit-scrollbar {width:6px;height:6px}
-::-webkit-scrollbar-track {background-color:transparent}
-::-webkit-scrollbar-thumb {border-radius:30px;background-color:rgba(0,0,0,.2);border:none}
-::-webkit-scrollbar-button {width:0;height:0}
+@media (min-width:1025px) {
+    ::-webkit-scrollbar {width:6px;height:6px}
+    ::-webkit-scrollbar-track {background-color:transparent}
+    ::-webkit-scrollbar-thumb {border-radius:30px;background-color:rgba(0,0,0,.2);border:none}
+    ::-webkit-scrollbar-button {width:0;height:0}
+}
 
 .tbl-base {margin:0;min-width:100%;table-layout:auto;position:relative;background:#fff;border-top:1px solid #dee5e7;border-right:1px solid #dee5e7}
 .tbl-base thead th {background:#eef4fe;font-weight:600}
@@ -553,7 +554,7 @@ button:hover .icon-stop {background-image:url("../img/icon/icon-stop-on.png")}
 .map-container-box.overflow-hidden .map-container {display:flex;overflow:hidden}
 .map-original-area {flex:1;position:relative}
 .map-comparison-right-area {position:relative;flex-shrink:0;width:50%;border-left:2px solid #0a0d12;margin-right:-50%;transition:.2s}
-.map-container-right {flex-shrink:0;border-left:1px solid #2c364f;width:310px;background-color:#fafbfd;overflow-y:overlay}
+.map-container-right {flex-shrink:0;border-left:1px solid #2c364f;width:310px;background-color:#fafbfd;overflow-y:auto}
 .is-map-comparison-open .map3-right-top {display:none}
 .is-map-comparison-open .map2-right-bottom {right:auto;left:12px}
 .comparison-control-area {position:absolute;top:50%;left:0;margin-left:-32px;transform:translateY(-50%);display:none;flex-direction:column;gap:4px}
