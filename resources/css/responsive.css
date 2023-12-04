@@ -315,7 +315,7 @@
     .map2-left-bottom {left:1.5rem;bottom:1.5rem;width:18rem;height:18rem}
     .map2-s-map-data .btn-type1.btn-small {flex:inherit}
     .map-container-right[data-toggle="true"] {right:0}
-    .time-series-detail .map-container-right {top:4.5rem;height:calc(100vh - 4.8rem)}
+    .time-series-detail .map-container-right {top:4.8rem;height:calc(100vh - 4.8rem)}
     .map-container-right {position:fixed;width:20rem;height:calc(100vh - 9rem);top:9rem;right:-20rem;transition:right .2s ease-in;z-index:100; }
     .map2-right-top {position:fixed;right:1.5rem;top:10.4rem;flex-direction:column;gap:0.6rem}
     .map-type-img {height:4rem}
