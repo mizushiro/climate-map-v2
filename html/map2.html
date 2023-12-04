@@ -62,6 +62,7 @@
 
 		<div class="map-container-box overflow-hidden">
 			<div class="map-container dark">
+				<!-- 자료시점 -->
 				<div class="map2-left-top">
 					<p class="map2-left-top-title">자료시점 선택 </p>
 					<div class="map2-select-choice-box">
@@ -115,6 +116,7 @@
 					</div>
 				</div>
 
+				<!-- 지도선택 -->
 				<div class="map2-right-top">
 					<button type="button" class="btn-map-type">
 						<span class="map-type-img"><img src="../resources/img/icon/icon-map-4.png" alt=""></span>
@@ -128,26 +130,14 @@
 						<span class="map-type-img"><img src="../resources/img/icon/icon-map-6.png" alt=""></span>
 						<span class="map-type-text">경계지도</span>
 					</button>
-
-					<!-- <div class="btn-layer-hover" data-res="m">
-						<button type="button" class="btn-s-map-item" data-layer="data-left4" data-hoverlayer="btn">
-							<i class="icon-grid-6"></i>
-						</button>
-						<div class="left-tooltip-layer">
-							<div class="left-tooltip-layer-box">
-								범례
-							</div>
-						</div>
-					</div> -->
-
-				
 				</div>
 
-				<button type="button" class="btn-right-open" data-toggle-obj="right-open" data-res="m">
+				<button type="button" class="btn-right-open" data-res="m" data-toggle-obj="right-map">
 					<span class="for-a11y">우측 레이어오픈</span>
 					<i class="icon-btn-right-open"></i>
 				</button>
 
+				<!-- 작은지도 -->
 				<div class="map2-left-bottom">
 					<div class="map2-s-map-box">
 						<img src="../resources/img/temp/temp1.png" alt="" style="width:100%;height:100%;object-fit:cover">
@@ -160,6 +150,7 @@
 						<button type="button" class="btn-type1 btn-blue2 btn-small" data-layer="data-layer6">상세보기</button>
 					</div>
 				</div>
+				<!-- 세팅 -->
 				<div class="map2-right-bottom">
 					<button type="button" class="btn-setting-option setting-open" data-toggle-obj="setting1">
 						<i class="icon-setting"></i>
@@ -598,7 +589,7 @@
 			</div>
 
 			<!-- 메인 우측영역 -->
-			<div class="map-container-right" data-toggle-target="right-open">
+			<div class="map-container-right main" data-toggle-target="right-map">
 				<div class="accordion-list">
 					<div class="accordion-group">
 						<div class="accordion-title">
@@ -1291,8 +1282,6 @@
 							</div>
 						</div>
 					</div>
-					
-
 				</div>
 
 				<div class="map-container-right" data-toggle-target="right-open2">
@@ -1500,18 +1489,16 @@
 				 * UIexe.{name}.show();
 				 * UIexe.{name}.hide();
 				 ------------------------------- */
-				// UIexe.rightAccoToggle = new UI_ToggleAct({
-				// 	target: document.querySelector('.map-container-right'),
-				// 	btn: document.querySelectorAll('.btn-right-open'),
-				// 	callback_show: () => {
-				// 		console.log('rightAccoToggle show');
-						
-				// 	},
-				// 	callback_hide: () => {
-				// 		console.log('rightAccoToggle hide');
-						
-				// 	},
-				// });
+				//  UIexe.rightAccoToggle = new UI_ToggleAct({
+				//  	target: document.querySelector('.map-container-right.main'),
+				//  	btn: document.querySelectorAll('.btn-right-open'),
+				//  	callback_show: () => {
+				// 		document.querySelector('.btn-right-open').classList.add('is-open');
+				//  	},
+				//  	callback_hide: () => {
+				// 		document.querySelector('.btn-right-open').classList.remove('is-open');
+				//  	},
+				//  });
 
 				// UIexe.layerRightAccoToggle = new UI_ToggleAct({
 				// 	target: document.querySelector('[data-id="layerRight"]'),
