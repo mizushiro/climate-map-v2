@@ -406,6 +406,7 @@ $(document).ready(function(){
             const _this = e.currentTarget;
             console.log(_this);
             const target = document.querySelector('[data-toggle-target="'+ _this.dataset.toggleObj +'"]');
+            _this.dataset.toggle !== 'true' ? _this.dataset.toggle = true: _this.dataset.toggle = false;
             if (target) {
                 target.dataset.toggle !== 'true' ? target.dataset.toggle = true: target.dataset.toggle = false;
             }
