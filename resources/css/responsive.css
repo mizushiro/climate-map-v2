@@ -316,7 +316,7 @@
     .map2-s-map-data .btn-type1.btn-small {flex:inherit}
     .map-container-right[data-toggle="true"] {right:0}
     .time-series-detail .map-container-right {top:4.8rem}
-    .map-container-right {position:fixed;width:20rem;bottom:0;top:9rem;right:-20rem;transition:right .2s ease-in;z-index:100; }
+    .map-container-right {position:fixed;width:20rem;bottom:0;top:9rem;right:-20rem;transition:right .2s ease-in;z-index:100}
     .map2-right-top {position:fixed;right:1.5rem;top:10.4rem;flex-direction:column;gap:0.6rem}
     .map-type-img {height:4rem}
     .map-type-text {font-size:1rem}
