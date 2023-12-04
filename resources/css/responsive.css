@@ -14,7 +14,7 @@
     .layer-close {display:block}
     .layer_section-container.active {width:100%;height:calc(100% - 4rem);top:0;left:0;max-height:100%;margin:2rem}
     .map-detail-right-area .btn-right-open{right: auto;}
-    .btn-right-open {position:absolute;right:0;top:50%;height:4rem;width:2rem;display:flex;align-items:center;justify-content:center;border-radius:.4rem 0 0 .4rem;background-color:rgba(0,0,0,.5);border:none;transition:right .2s ease-in}
+    .btn-right-open {position:absolute;right:0;top:50%;margin-top:-2rem;height:4rem;width:2rem;display:flex;align-items:center;justify-content:center;border-radius:.4rem 0 0 .4rem;background-color:rgba(0,0,0,.5);border:none;transition:right .2s ease-in}
     .icon-btn-right-open {width:.6rem;height:.6rem;border-left:1px solid #fff;border-top:1px solid #fff;transform:rotate(315deg);margin-left:.4rem}
     .btn-right-open[data-toggle="true"] {right:20rem}
     [data-toggle="true"] .icon-btn-right-open {transform:rotate(135deg);margin-left:0;margin-right:.4rem}
