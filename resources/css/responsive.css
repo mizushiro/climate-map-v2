@@ -365,7 +365,7 @@
     .layer-btn-box {margin-top:1.5rem;gap:.6rem}
     .compare-map-area {width:100%;height:25rem;margin:0 auto 1.5rem}
     .map-items-label {height:auto;min-width:0;font-size:1.2rem;top:.8rem;text-align:center;width:90%}
-    .map-items-grid {height: calc(50vh + 4.5rem);display:flex !important;overflow-y:auto}
+    .map-items-grid {height: calc(50vh + 4.5rem);display:flex !important;overflow-y:auto;-webkit-overflow-scrolling:touch}
     .chart-area-grid {height: calc(50vh - 4.5rem)}
     .layer-full .layer-content,
     .layer-full .layer-title-box {border-radius:0;gap:.8rem}
