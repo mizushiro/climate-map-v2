@@ -834,7 +834,7 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .dashboard-chart-grid-item-2 {grid-column:span 10/span 10;grid-row:span 2/span 2}
 .dashboard-chart-grid-item-3 {grid-column:span 7/span 7;grid-row:span 1/span 1}
 .dashboard-chart-half {flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(1,minmax(0,1fr))}
-.dashboard-chart-half.ver2 {gap:8px}
+.dashboard-chart-half.ver2 {gap:12px}
 .dashboard-chart-grid-item-4 {grid-column:span 1/span 1;grid-row:span 1/span 1}
 .dashboard-chart-half.ver2 .dashboard-chart-grid-item-4 {background-color:#212633;height:100%;border-radius:10px;padding:12px;display:flex;flex-direction:column}
 .dashboard-chart-half-map {flex:1}
