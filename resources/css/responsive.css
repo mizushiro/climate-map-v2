@@ -46,18 +46,23 @@
     .head[data-toggle="true"] .head-nav-btn span::before {transform-origin:50% 50%;transform:translateY(-50%) rotate(45deg)}
     .head[data-toggle="true"] .head-nav-btn span::after {transform-origin:50% 50%;transform:translateY(-50%) rotate(-45deg)}
     
-    .dashboard-area {padding:6.5rem 1.5rem 1.5rem;min-width:100%}
-    .dashboard-grid-group-1 {gap:.8rem;display:flex;flex-direction:column}
-    .dashboard-grid-group-1 .dashboard-grid-1 {order:2;height:calc(100vh - 6.5rem)}
+    .dashboard-area {padding:6.5rem 1.5rem 1.5rem;min-width:100%;gap:1.2rem}
+    .dashboard-grid-group-1 {gap:1.2rem;display:flex;flex-direction:column}
+    .dashboard-grid-group-1 .dashboard-grid-1.ver2 {order:2;display:flex;flex-direction:column}
+    .dashboard-grid-group-1 .dashboard-grid-1.ver2 .dashboard-chart-item-1 {height:40rem}
     .dashboard-grid-group-1 .dashboard-grid-1.dashboard-map-type {order:1;height:calc(100vh - 6.5rem)}
     .dashboard-grid-select-group select {width:100% !important}
-    .dashboard-grid-group-2 {gap:.8rem;display:flex;flex-direction:column;height:auto}
-    .dashboard-grid-2-item {border-radius:1rem;padding:1rem 1.5rem;height:240px}
+    .dashboard-grid-group-2 {gap:1.2rem;display:flex;flex-direction:column;height:auto}
+    .dashboard-grid-2-item {border-radius:1rem;padding:1rem 1.5rem;height:200px}
     .dashboard-grid-2-data-item {justify-content:flex-end}
-    .dashboard-chart-box {gap:1.2rem;padding:1rem;border-radius:1rem}
+    .dashboard-chart-box {gap:1.2rem;}
+    .dashboard-grid-1.ver2 .dashboard-chart-box {height:auto;display:flex;flex-direction:column}
+    .dashboard-chart-item-2.ver2 {height:24rem}
     .dashboard-grid-2-data-box {width:100%}
-    .dashboard-grid-group-2 .dashboard-grid-3 {height:300px}
-    .dashboard-grid-2-area {display:flex;flex-direction:column;gap:.8rem}
+    .dashboard-grid-group-2 .dashboard-grid-3 {height:24rem}
+    .dashboard-grid-2-area {display:flex;flex-direction:column;gap:1.2rem}
+    .dashboard-chart-half.ver2 {gap:12px;display:flex;flex-direction:column}
+    .dashboard-chart-half.ver2 .dashboard-chart-grid-item-4 {height:24rem}
 
     .map4 {background-color:#181d2b}
 
