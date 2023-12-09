@@ -31,38 +31,31 @@
 	</style>
 </head>
 
-<body>
+<body class="mobile-main">
 	<div class="base-wrap main">
-		<div class="head">
-			<h1 class="h1-logo">
-				<img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
-				<span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
-			</h1>
-			<div class="head-nav">
-				<div class="head-nav-item">
-					<a href="" class="head-nav-item-link">우리동네 기후변화</a>
-				</div>
-				<div class="head-nav-item">
-					<a href="" class="head-nav-item-link active">남한 상세</a>
-				</div>
-				<div class="head-nav-item">
-					<a href="" class="head-nav-item-link">전지구 평면</a>
-					<div class="nav-2depth">
-						<div class="nav-2depth-list">
-							<a href="" class="head-nav-2depth-item">2D 지도</a>
-							<a href="" class="head-nav-2depth-item active">3D 지도</a>
-						</div>
-					</div>
-				</div>
-				<div class="head-nav-item">
-					<a href="" class="head-nav-item-link">전지구 입체</a>
-				</div>
-			</div>
-			<!--<div class="lang-box">
-				<a href="" class="btn-lang active">한국어</a>
-				<a href="" class="btn-lang">English</a>
-			</div>-->
-		</div>
+        <div class="head" data-toggle-target="nav">
+            <h1 class="h1-logo">
+                <img src="../resources/img/icon/icon-logo.png" alt="" class="logo-1">
+                <span class="h1-logo-text"><img src="../resources/img/icon/icon-logo2.png" alt="" class="logo-2"></span>
+            </h1>
+            <button type="button" class="head-nav-btn" aria-label="메뉴열고닫기" data-toggle-obj="nav">
+                <span></span>
+            </button>
+            <div class="head-nav">
+                <div class="head-nav-item">
+                    <a href="" class="head-nav-item-link">우리동네 기후변화</a>
+                </div>
+                <div class="head-nav-item">
+                    <a href="" class="head-nav-item-link active">남한 상세</a>
+                </div>
+                <div class="head-nav-item">
+                    <a href="" class="head-nav-item-link">전지구 평면</a>
+                </div>
+                <div class="head-nav-item">
+                    <a href="" class="head-nav-item-link">전지구 입체</a>
+                </div>
+            </div>
+        </div>
 		<div class="main-content">
 			<div class="main-btn-help">
 				<button type="button" class="btn-type1 btn-small2 btn-white2">도움말</button>
@@ -100,7 +93,7 @@
 					SSP1-2.6, SSP5-8.5 계절길이 변화
 				</div>
 			</div>-->
-			<p class="main-copy">Copyright@2022 KMA. All Rights RESERVED. 전자우편 : webmasterkma@ko.kr</p>
+            <p class="main-copy">Copyright@2022 KMA. All Rights RESERVED. <span>전자우편 : webmasterkma@ko.kr</span></p>
 		</div>
 		<div class="main-notice-layer" style="display:none">
 			<div class="main-notice-list">
