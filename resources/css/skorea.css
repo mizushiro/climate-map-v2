@@ -15,8 +15,8 @@ body {-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-s
 
 .slider-value-position {width:max-content}
 
-.map-btm {position:absolute;display:flex;width:100%;justify-content:center;bottom:38px;align-items:end}
-.map-btm-item {display:flex;gap:20px;flex-wrap:wrap;width:50%;justify-content:center}
+.map-btm {position:absolute;display:flex;width:100%;justify-content:center;bottom:10px;align-items:end}
+.map-btm-item {display:flex;gap:10px;flex-wrap:wrap;width:50%;justify-content:center}
 #comparison-btm {display:none}
 #comparison-btm.show {display:flex}
 .is-map-comparison-open .map3-btm-center {margin-left:0}

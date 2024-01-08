@@ -402,6 +402,9 @@
     .main-nav-content-title {font-size:3.4rem}
     .main-nav-content-desc {font-size:1.8rem;word-break:keep-all;text-align:left;line-height:1.4}
     .main-nav-item {width:calc((100% - 2.4rem) / 4)}
+
+    .help-info-box {flex-direction:column;align-items:flex-start}
+    .help-info-item ~ .help-info-item:before {display:none}
 }
 @media (max-width:768px) {
     .main-notice-list {max-width:calc(100% - 6rem)}
@@ -421,6 +424,7 @@
     .main-nav-item {width:calc(50% - .4rem)}
     .main-content {padding-top:10rem;padding-bottom:8rem}
     .main-copy span {display:block}
+    .dashboard-chart-grid-v3-item.table-data {padding-bottom:48px}
 }
 @media (max-width:590px) {
     .carbon-label {font-size:0.9rem}
