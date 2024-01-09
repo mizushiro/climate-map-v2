@@ -811,7 +811,7 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 }
 
 
-.dashboard-area {padding:20px;flex:1;background-color:#181d2b;min-width:1480px;display:flex;flex-direction:column;gap:12px}
+.dashboard-area {padding:20px;flex:1;background-color:#181d2b;/*min-width:1480px;*/display:flex;flex-direction:column;gap:12px}
 .dashboard-grid-group-1 {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;flex:1}
 .dashboard-grid-1 {grid-column:span 1/span 1;grid-row:span 1/span 1}
 .dashboard-map-type {display:flex;flex-direction:column}
@@ -902,3 +902,8 @@ input[type="text"].left-input-sh::placeholder {color:#999;font-weight:600;font-s
 .dashboard-chart-grid-table td:first-child {text-align:center}
 .table-data-close {position:absolute;right:10px;bottom:10px}
 .btn-table-data-close {height:30px;width:68px;display:flex;align-items:center;justify-content:center;color:#fff;background-color:#181d2b;border-radius:2px;font-size:12px;font-weight:700}
+.dashboard-chart-grid-4 {display:flex;flex:1}
+.dashboard-chart-grid-legend {width:20%;min-width:60px;flex-shrink:0}
+.dashboard-chart-grid-4-chart {flex:1;display:flex;flex-direction:column}
+.dashboard-chart-grid-4-chart-box {display:flex;flex:1}
+.dashboard-chart-grid-4-chart-item {flex:1}
